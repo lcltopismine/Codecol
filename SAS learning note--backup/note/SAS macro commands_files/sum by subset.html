@@ -1,0 +1,349 @@
+
+<!-- saved from url=(0069)https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_23.htm -->
+<html><!-- InstanceBegin template="/Templates/informationObject.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script language="JavaScript" src="./sum by subset_files/tut.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./sum by subset_files/APIConstants.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./sum by subset_files/Configuration.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./sum by subset_files/UtilityFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./sum by subset_files/SCORMFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./sum by subset_files/NONEFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./sum by subset_files/LMSAPI.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./sum by subset_files/API.js.&#19979;&#36733;"></script><meta http-equiv="imagetoolbar" content="no">
+<script language="JavaScript" src="./sum by subset_files/nav.js.&#19979;&#36733;"></script>
+<script language="JavaScript">
+ setPageTitle();
+ setCookie();
+  
+// Drop down menu link- © Dynamic Drive (www.dynamicdrive.com)
+// For full source code and 100's more DHTML scripts, visit http://www.dynamicdrive.com
+// Credit MUST stay intact for use -->
+
+</script><title>Creating List Reports - 23 of 55</title>
+
+<!-- InstanceBeginEditable name="extrascript" --> 
+<script language="JavaScript">
+</script>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="./sum by subset_files/tut.css">
+
+
+
+</head>
+
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFF0">
+<script>writeinformationObjectTopNav1();</script><table width="100%" border="0" cellpadding="0" cellspacing="0" background="./sum by subset_files/banner.gif">  <tbody><tr>     <td height="49" colspan="2" nowrap=""><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;      <script>setCourseTitle()</script>SAS OnlineTutor<sup><font size="-2">®</font></sup>: Basic and Intermediate SAS<sup><font size="-2">®</font></sup>      </font><br>      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;	  <script>setLessonTitle()</script>Creating List Reports      </font></strong>&nbsp;<img src="./sum by subset_files/bullet.gif" width="8" height="8" alt=" ">&nbsp;<font color="#FFFFFF" size="2"><strong>&nbsp;<script>document.write(myPage+" of "+eval(myModule))</script>23 of 55</strong></font>&nbsp;&nbsp;</td>    <td width="357" rowspan="3" valign="bottom"><img src="./sum by subset_files/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>  </tr>  <tr>     <td colspan="2" valign="bottom" nowrap=""><img src="./sum by subset_files/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./sum by subset_files/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./sum by subset_files/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><script>writeLessonMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;dropmenu0&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuless.htm&#39;)" onclick="if (ns4) return dropit(event, &#39;document.dropmenu0&#39;)" onmouseover="rOver(&#39;contents&#39;);window.status=&#39;Display the lesson menu.&#39;;return true" onmouseout="rOut(&#39;contents&#39;);window.status=&#39;&#39;;return true" accesskey="m"><img src="./sum by subset_files/contents.gif" width="122" height="19" border="0" alt="lesson menu" name="contents"></a></span></layer></ilayer><script>writePathOrExit()</script><a href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/paths.htm" target="SAS" onmouseover="rOver(&#39;path&#39;);window.status=&#39;Display the Learning Path.&#39;;return true" onmouseout="rOut(&#39;path&#39;);window.status=&#39;&#39;;return true" accesskey="p"><img src="./sum by subset_files/path.gif" alt="Learning Path" width="48" height="19" border="0" name="path"></a><script>writeHelpMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;helpmenu&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuhelp.htm&#39;)" onclick="if(ns4) return dropit(event, &#39;document.helpmenu&#39;)" onmouseover="rOver(&#39;help&#39;);window.status=&#39;Display the help menu.&#39;;return true" onmouseout="rOut(&#39;help&#39;);window.status=&#39;&#39;;return true" accesskey="h"><img src="./sum by subset_files/help.gif" width="48" height="19" border="0" alt="help menu" name="help"></a></span></layer></ilayer><img src="./sum by subset_files/tabright.gif" width="28" height="19" alt=" "></td>  </tr>  <tr>     <td height="3" colspan="2" valign="bottom"><img src="./sum by subset_files/border.gif" width="100%" height="3" alt=" "></td>  </tr>  <tr valign="top" bgcolor="#FFFFF0">     <td nowrap="">&nbsp;&nbsp;&nbsp;</td>    <td valign="middle"><br>      <img src="./sum by subset_files/cleardot.gif" width="411" height="1" alt=" "><br>
+	  
+	  <font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong><!-- InstanceBeginEditable name="TopicTitle" -->Generating 
+      Column Totals<!-- InstanceEndEditable --></strong></font> <!-- InstanceBeginEditable name="continued" --><font color="#003399" size="3" face="Arial, Helvetica, sans-serif">(continued)</font><!-- InstanceEndEditable -->
+	  
+<script>writeinformationObjectTopNav2();</script></td>    <td><img src="./sum by subset_files/arch.gif" width="357" height="64" align="top" alt=" "></td>  </tr></tbody></table>
+<br>
+<center>
+  <!-- InstanceBeginEditable name="content" --> 
+<table width="85%" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tbody><tr valign="top"> 
+    <td>
+<p><strong>Requesting Subtotals</strong></p>
+      <p>You might also want to subtotal numeric variables. To produce subtotals, 
+        add both a <strong>SUM statement</strong> and a <strong>BY statement</strong> 
+        to your PROC PRINT step. 
+    </p></td>
+  </tr>
+</tbody></table>
+<p align="center"><br>
+</p><center>
+  <table border="1" cellspacing="0" cellpadding="10" width="85%" bgcolor="#F7F7DE" title="General form, BY statement in the PRINT procedure">
+    <tbody><tr> 
+      <td align="left"><strong>General form, BY statement in the PRINT procedure:</strong> 
+        <blockquote> 
+          <dl> 
+            <dt><font color="#003399"><nobr><strong>BY</strong> &lt;DESCENDING&gt;<em> 
+              BY-variable-1</em></nobr> </font>
+            </dt><dd><font color="#003399"><nobr>&lt;...&lt;DESCENDING&gt; <em>&lt;BY-variable-n&gt;</em>&gt;</nobr> 
+              </font>
+            </dd><dd><font color="#003399">&lt;NOTSORTED&gt;<strong>;</strong> </font>
+          </dd></dl>
+        </blockquote>
+        <p> where 
+        </p><ul>
+          <li><font color="#003399"><em>BY-variable</em></font> specifies a variable 
+            that the procedure uses to form BY groups. You can specify more than 
+            one variable, separated by blanks. <br>
+            <br>
+          </li><li>the <strong>DESCENDING</strong> option specifies that the data set 
+            is sorted in descending order by the variable that immediately follows. 
+            <br>
+            <br>
+          </li><li>the <strong>NOTSORTED</strong> option specifies that observations 
+            are not necessarily sorted in alphabetic or numeric order. If observations 
+            that have the same values for the BY variables are not contiguous, 
+            the procedure treats each contiguous set as a separate BY group. 
+        </li></ul>
+        <table border="0" cellpadding="2" cellspacing="0">
+          <tbody><tr valign="Top"> 
+            <td width="41"><img border="0" src="./sum by subset_files/alert.gif" alt="NOTE:" width="37" height="32"></td>
+            <td>If you do not use the NOTSORTED option in the BY statement, the 
+              observations in the data set must either be sorted by all the variables 
+              that you specify, or they must be indexed appropriately.</td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"><br>
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td><strong>Example</strong> 
+        <p> The SUM statement in the following PROC PRINT step requests column 
+          totals for the variable <code>Fee</code>, and the BY statement produces 
+          a subtotal for each value of <code>ActLevel</code>. 
+        </p><pre>     <font color="#003399">proc sort data=clinic.admit out=work.activity;</font>
+<font color="#003399">        by actlevel;</font>
+<font color="#003399">     run;</font>
+     <font color="#003399">proc print data=work.activity;</font>
+<font color="#003399">        var age height weight fee;</font>
+<font color="#003399">        where age&gt;30;</font>
+<font color="#003399">        <strong>sum fee;</strong></font>
+<font color="#003399">        <strong>by actlevel;</strong></font>
+<font color="#003399">     run;</font></pre>
+        In the output, the BY variable name and value appear before each BY group. 
+        The BY variable name and the subtotal appear at the end of each BY group.</td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table cellspacing="1" cellpadding="1" rules="NONE" frame="VOID" border="0" width="100%" bgcolor="#FFFFF0">
+    <tbody><tr> 
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="2" color="#002288"><b><font size="3">ActLevel=HIGH</font></b></font></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><center>
+  <table cellspacing="1" cellpadding="2" rules="GROUPS" frame="BOX" border="1" bgcolor="#FFFFF0" bordercolor="#000000" title="PROC PRINT output">
+    <thead> 
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Obs</b></font></td>
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Age</b></font></td>
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Height</b></font></td>
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Weight</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Fee</b></font></td>
+    </tr>
+    </thead> <tbody> 
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        2</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">34</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">66</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">152</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        124.80</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        4</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">44</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">66</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">140</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        149.75</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        5</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">40</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">69</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">163</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        124.80</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        7</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">41</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">67</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">141</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        149.75</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>ActLevel</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        549.10</b></font></td>
+    </tr>
+    </tbody> 
+  </table>
+  <a name="IDX24">&nbsp;</a> 
+  <table cellspacing="1" cellpadding="1" rules="NONE" frame="VOID" border="0" width="100%" bgcolor="#FFFFF0">
+    <tbody><tr> 
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="2" color="#002288"><b><font size="3">ActLevel=LOW</font></b></font></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><center>
+  <table cellspacing="1" cellpadding="2" rules="GROUPS" frame="BOX" border="1" bgcolor="#FFFFF0" bordercolor="#000000" title="PROC PRINT output">
+    <thead> 
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Obs</b></font></td>
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Age</b></font></td>
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Height</b></font></td>
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Weight</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Fee</b></font></td>
+    </tr>
+    </thead> <tbody> 
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        8</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">31</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">61</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">123</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        149.75</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        9</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">51</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">71</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">158</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        124.80</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        10</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">34</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">73</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">154</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        124.80</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        11</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">49</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">64</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">172</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        124.80</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        13</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">60</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">71</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">191</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        149.75</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>ActLevel</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        673.90</b></font></td>
+    </tr>
+    </tbody> 
+  </table>
+  <a name="IDX25">&nbsp;</a> 
+  <table cellspacing="1" cellpadding="1" rules="NONE" frame="VOID" border="0" width="100%" bgcolor="#FFFFF0">
+    <tbody><tr> 
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="2" color="#002288"><b><font size="3">ActLevel=MOD</font></b></font></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><center>
+  <table cellspacing="1" cellpadding="2" rules="GROUPS" frame="BOX" border="1" bgcolor="#FFFFF0" bordercolor="#000000" title="PROC PRINT output">
+    <thead> 
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Obs</b></font></td>
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Age</b></font></td>
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Height</b></font></td>
+      <td align="CENTER" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Weight</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>Fee</b></font></td>
+    </tr>
+    </thead> <tbody> 
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        15</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">43</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">63</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">137</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        149.75</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        16</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">32</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">67</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">151</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        149.75</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        17</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">35</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">70</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">173</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        149.75</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        19</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">47</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">72</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">173</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        124.80</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        20</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">43</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">65</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">123</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        124.80</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        21</b></font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">54</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">71</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000">183</font></td>
+      <td align="RIGHT" bgcolor="#EFEFEF"><font face="Arial, Helvetica, Helv" size="2" color="#000000"> 
+        149.75</font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>ActLevel</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        848.60</b></font></td>
+    </tr>
+    <tr> 
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b>&nbsp;</b></font></td>
+      <td align="RIGHT" bgcolor="#CCCCCC"><font face="Arial, Helvetica, Helv" size="3" color="#002288"><b> 
+        2071.60</b></font></td>
+    </tr>
+    </tbody> 
+  </table>
+  <br>
+  <br>
+</center>
+<!-- InstanceEndEditable --> 
+</center>
+<script>writeNav_regular_bottom();</script><!-- #BeginLibraryItem "/Library/nav_regular_bottom.lbi" --><table width="100%" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="14"><img src="./sum by subset_files/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="./sum by subset_files/linegray.gif" width="100%" height="7" alt=" "></td></tr>  <tr>    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">© 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back2&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back2&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./sum by subset_files/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next2&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next2&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./sum by subset_files/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr></tbody></table><p>&nbsp;</p><script>writeLessonDiv()</script><div id="dropmenu0" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:450;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) dropmenu0.style.padding="4px"; for (i=0;i<menu4.length;i++)document.write(beginLink+menu4[i][0]+middleLink+menu4[i][1]+endLink);</script><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_1.htm" target="SAS">&nbsp;Lesson Overview&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_2.htm" target="SAS">&nbsp;Creating a Basic Report&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_6.htm" target="SAS">&nbsp;Selecting Variables&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_9.htm" target="SAS">&nbsp;Identifying Observations&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_11.htm" target="SAS">&nbsp;Selecting Observations&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_16.htm" target="SAS">&nbsp;Sorting Data&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_20.htm" target="SAS">&nbsp;Generating Column Totals&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_30.htm" target="SAS">&nbsp;Double Spacing Listing Output&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_32.htm" target="SAS">&nbsp;Specifying Titles and Footnotes&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_41.htm" target="SAS">&nbsp;Assigning Descriptive Labels&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_45.htm" target="SAS">&nbsp;Formatting Data Values&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_51.htm" target="SAS">&nbsp;Using Permanently Assigned Labels and Formats&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_52.htm" target="SAS">&nbsp;Additional Features&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_53.htm" target="SAS">&nbsp;Lesson Summary&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_54.htm" target="SAS">&nbsp;Lesson Quiz&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_55.htm" target="SAS">&nbsp;End of Lesson&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.dropmenu0.captureEvents(Event.CLICK); document.dropmenu0.onclick=hidemenu}</script><script>writeHelpDiv()</script><div id="helpmenu" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:160;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) helpmenu.style.padding="4px"; for (i=0;i<menuHelp.length;i++) if (menuHelp[i] ==",") document.write(""); else document.write(beginHelpLink+menuHelp[i][0]+middleLink+menuHelp[i][1]+endLink); </script><a class="menulink" href="JavaScript: openOther(&#39;../setup.htm&#39;)" target="SAS">&nbsp;Before You Begin&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../trouble.htm&#39;)" target="SAS">&nbsp;Troubleshooting Tips&nbsp;</a><br><a class="menulink" href="JavaScript: openGlossary(&#39;../glossary.htm&#39;)" target="SAS">&nbsp;Glossary&nbsp;</a><br><a class="menulink" href="JavaScript: openDoc(&#39;../sasdoc.htm&#39;)" target="SAS">&nbsp;SAS Documentation&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)" target="SAS">&nbsp;Copyright&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.helpmenu.captureEvents(Event.CLICK); document.helpmenu.onclick=hidemenu}</script><!-- #EndLibraryItem -->
+
+<!-- InstanceEnd -->
+</body></html>
