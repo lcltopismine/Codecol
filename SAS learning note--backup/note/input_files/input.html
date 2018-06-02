@@ -1,0 +1,332 @@
+
+<!-- saved from url=(0071)https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_15.htm -->
+<html><!-- InstanceBegin template="/Templates/informationObject.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script language="JavaScript" src="./Creating SAS Data Sets from Raw Data - input_files/tut.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Creating SAS Data Sets from Raw Data - input_files/APIConstants.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Creating SAS Data Sets from Raw Data - input_files/Configuration.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Creating SAS Data Sets from Raw Data - input_files/UtilityFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Creating SAS Data Sets from Raw Data - input_files/SCORMFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Creating SAS Data Sets from Raw Data - input_files/NONEFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Creating SAS Data Sets from Raw Data - input_files/LMSAPI.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Creating SAS Data Sets from Raw Data - input_files/API.js.&#19979;&#36733;"></script><meta http-equiv="imagetoolbar" content="no">
+<script language="JavaScript" src="./Creating SAS Data Sets from Raw Data - input_files/nav.js.&#19979;&#36733;"></script>
+<script language="JavaScript">
+ setPageTitle();
+ setCookie();
+  
+// Drop down menu link- © Dynamic Drive (www.dynamicdrive.com)
+// For full source code and 100's more DHTML scripts, visit http://www.dynamicdrive.com
+// Credit MUST stay intact for use -->
+
+</script><title>Creating SAS Data Sets from Raw Data - 15 of 48</title>
+
+<!-- InstanceBeginEditable name="extrascript" --> 
+<script language="JavaScript">
+</script>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="./Creating SAS Data Sets from Raw Data - input_files/tut.css">
+
+
+
+</head>
+
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFF0">
+<script>writeinformationObjectTopNav1();</script><table width="100%" border="0" cellpadding="0" cellspacing="0" background="./Creating SAS Data Sets from Raw Data - input_files/banner.gif">  <tbody><tr>     <td height="49" colspan="2" nowrap=""><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;      <script>setCourseTitle()</script>SAS OnlineTutor<sup><font size="-2">®</font></sup>: Basic and Intermediate SAS<sup><font size="-2">®</font></sup>      </font><br>      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;	  <script>setLessonTitle()</script>Creating SAS Data Sets from Raw Data      </font></strong>&nbsp;<img src="./Creating SAS Data Sets from Raw Data - input_files/bullet.gif" width="8" height="8" alt=" ">&nbsp;<font color="#FFFFFF" size="2"><strong>&nbsp;<script>document.write(myPage+" of "+eval(myModule))</script>15 of 48</strong></font>&nbsp;&nbsp;</td>    <td width="357" rowspan="3" valign="bottom"><img src="./Creating SAS Data Sets from Raw Data - input_files/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>  </tr>  <tr>     <td colspan="2" valign="bottom" nowrap=""><img src="./Creating SAS Data Sets from Raw Data - input_files/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Creating SAS Data Sets from Raw Data - input_files/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Creating SAS Data Sets from Raw Data - input_files/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><script>writeLessonMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;dropmenu0&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuless.htm&#39;)" onclick="if (ns4) return dropit(event, &#39;document.dropmenu0&#39;)" onmouseover="rOver(&#39;contents&#39;);window.status=&#39;Display the lesson menu.&#39;;return true" onmouseout="rOut(&#39;contents&#39;);window.status=&#39;&#39;;return true" accesskey="m"><img src="./Creating SAS Data Sets from Raw Data - input_files/contents.gif" width="122" height="19" border="0" alt="lesson menu" name="contents"></a></span></layer></ilayer><script>writePathOrExit()</script><a href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/paths.htm" target="SAS" onmouseover="rOver(&#39;path&#39;);window.status=&#39;Display the Learning Path.&#39;;return true" onmouseout="rOut(&#39;path&#39;);window.status=&#39;&#39;;return true" accesskey="p"><img src="./Creating SAS Data Sets from Raw Data - input_files/path.gif" alt="Learning Path" width="48" height="19" border="0" name="path"></a><script>writeHelpMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;helpmenu&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuhelp.htm&#39;)" onclick="if(ns4) return dropit(event, &#39;document.helpmenu&#39;)" onmouseover="rOver(&#39;help&#39;);window.status=&#39;Display the help menu.&#39;;return true" onmouseout="rOut(&#39;help&#39;);window.status=&#39;&#39;;return true" accesskey="h"><img src="./Creating SAS Data Sets from Raw Data - input_files/help.gif" width="48" height="19" border="0" alt="help menu" name="help"></a></span></layer></ilayer><img src="./Creating SAS Data Sets from Raw Data - input_files/tabright.gif" width="28" height="19" alt=" "></td>  </tr>  <tr>     <td height="3" colspan="2" valign="bottom"><img src="./Creating SAS Data Sets from Raw Data - input_files/border.gif" width="100%" height="3" alt=" "></td>  </tr>  <tr valign="top" bgcolor="#FFFFF0">     <td nowrap="">&nbsp;&nbsp;&nbsp;</td>    <td valign="middle"><br>      <img src="./Creating SAS Data Sets from Raw Data - input_files/cleardot.gif" width="411" height="1" alt=" "><br>
+	  
+	  <font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong><!-- InstanceBeginEditable name="TopicTitle" -->Writing 
+      a DATA Step Program<!-- InstanceEndEditable --></strong></font> <!-- InstanceBeginEditable name="continued" --><font color="#003399" size="3" face="Arial, Helvetica, sans-serif">(continued)</font><!-- InstanceEndEditable -->
+	  
+<script>writeinformationObjectTopNav2();</script></td>    <td><img src="./Creating SAS Data Sets from Raw Data - input_files/arch.gif" width="357" height="64" align="top" alt=" "></td>  </tr></tbody></table>
+<br>
+<center>
+  <!-- InstanceBeginEditable name="content" --> 
+  <table width="85%" border="0" cellpadding="0" cellspacing="0" align="center">
+    <tbody><tr valign="top"> 
+      <td> <p><strong>Describing the Data</strong> </p>
+        <p>The INPUT statement describes the fields of raw data to be read and 
+          placed into the SAS data set.</p></td>
+    </tr>
+  </tbody></table>
+  <center>
+    <br>
+  </center>
+  <table border="1" cellpadding="2" cellspacing="0" bgcolor="#FFFFFF" title="SAS statements" width="85%">
+    <thead>
+      <tr bgcolor="#F7F7DE"> 
+        <td width="157" align="LEFT"><strong>To do this... &nbsp; </strong></td>
+        <td width="158" align="LEFT" valign="top"><strong>Use this SAS statement...</strong></td>
+        <td width="278" align="LEFT" valign="top" nowrap=""><strong>Example</strong></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> 
+        <td>Reference a SAS library</td>
+        <td valign="top">LIBNAME statement</td>
+        <td valign="top" nowrap=""><font color="#003399"><code>libname <em>libref</em> 
+          '<em>SAS-data-library</em>';<nobr></nobr></code></font></td>
+      </tr>
+      <tr> 
+        <td>Reference an external file</td>
+        <td valign="top">FILENAME statement 
+        </td><td valign="top" nowrap=""><font color="#003399"><code><nobr>filename tests 
+          'c:\users\tmill.dat';</nobr></code></font></td>
+      </tr>
+      <tr> 
+        <td>Name a SAS data set</td>
+        <td valign="top">DATA statement</td>
+        <td valign="top" nowrap=""><font color="#003399"><code>data clinic.stress;</code></font></td>
+      </tr>
+      <tr> 
+        <td>Identify an external file</td>
+        <td valign="top"><font color="Black">INFILE statement &nbsp;</font></td>
+        <td valign="top" nowrap=""><font color="#003399"><code>infile tests obs=10;</code></font></td>
+      </tr>
+      <tr> 
+        <td>Describe data</td>
+        <td valign="top"><strong>INPUT statement</strong></td>
+        <td valign="top"><font color="#003399"><code><nobr>input ID 1-4 Name $ 
+          6-25 ...; </nobr></code></font></td>
+      </tr>
+      <tr> 
+        <td>Execute the DATA step</td>
+        <td valign="top"><strong>RUN statement</strong></td>
+        <td valign="top"><font color="#003399"><code>run;</code></font></td>
+      </tr>
+    </tbody>
+  </table>
+  <p align="center">
+  </p><p align="center"> <br>
+  </p><center>
+    <table border="1" cellspacing="0" cellpadding="10" width="85%" bgcolor="#F7F7DE" title="General form, INPUT statement using column input">
+      <tbody><tr> 
+        <td align="left"><strong>General form, INPUT statement using column input:</strong> 
+          <blockquote> <nobr> <font color="#003399"><strong>INPUT<i> </i></strong><i>variable</i><strong><i> 
+            &nbsp;</i></strong><i>&lt;</i><strong>$</strong>&gt;<strong> </strong><i>startcol-endcol 
+            </i>. . . <strong>;</strong></font> </nobr> </blockquote>
+          <p> where 
+          </p><ul>
+            <li> <font color="#003399"><em>variable </em></font>is the SAS name 
+              that you assign to the field 
+            </li><li> the dollar sign (<font color="#003399">$</font>)<font color="#003399"> 
+              </font>identifies the variable type as character (if the variable 
+              is numeric, then nothing appears here) 
+            </li><li> <font color="#003399"><i>startcol </i></font>represents the starting 
+              column for this variable 
+            </li><li> <font color="#003399"><em>endcol</em></font> represents the ending 
+              column for this variable. </li></ul></td>
+      </tr>
+    </tbody></table>
+  </center>
+  <p align="center"><br>
+  </p><center>
+    <table cellpadding="0" cellspacing="0" border="0" width="85%">
+      <tbody><tr> 
+        <td align="left">Look at the small data file shown below. For each field 
+          of raw data that you want to read into your SAS data set, you must specify 
+          the following information in the INPUT statement: 
+          <ul>
+            <li> a valid SAS variable name 
+            </li><li> a type (character or numeric) 
+            </li><li> a range (starting column and ending column). </li></ul></td>
+      </tr>
+    </tbody></table>
+  </center>
+  <p align="center"> Raw Data File Exercise 
+  </p><center>
+    <font face="Courier New, Courier" size="2" color="#000000"> 
+    <table border="1" cellspacing="0" cellpadding="0" rules="NONE" frame="BOX" bgcolor="#F7F7DE" title="Raw Data File">
+      <tbody>
+        <tr> 
+          <td align="CENTER" bgcolor="#F7F7DE"><font face="Courier New, Courier" size="2" color="#000000">1---+----10---+----20</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">2810&nbsp;61&nbsp;MOD&nbsp;&nbsp;F</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">2804&nbsp;38&nbsp;HIGH&nbsp;F&nbsp;</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">2807&nbsp;42&nbsp;LOW&nbsp;&nbsp;M&nbsp;</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">2816&nbsp;26&nbsp;HIGH&nbsp;M</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">2833&nbsp;32&nbsp;MOD&nbsp;&nbsp;F</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">2823&nbsp;29&nbsp;HIGH&nbsp;M&nbsp;</font></td>
+        </tr>
+      </tbody>
+    </table>
+    </font> 
+  </center>
+  <p align="center"><br>
+  </p><center>
+    <table cellpadding="0" cellspacing="0" border="0" width="85%">
+      <tbody><tr> 
+        <td align="left">The INPUT statement below assigns the character variable 
+          <code>ID</code> to the data in columns 1-4, the numeric variable <code>Age</code> 
+          to the data in columns 6-7, the character variable <code>ActLevel</code> 
+          to the data in columns 9-12, and the character variable <code>Sex</code> 
+          to the data in column 14. 
+          <pre><font color="#003399">     filename exer 'c:\users\exer.dat';
+     data exercise;
+&nbsp; &nbsp;     infile exer;
+        <strong>input ID $ 1-4 Age 6-7 ActLevel $ 9-12 Sex $ 14;</strong>
+     run;</font></pre> </td>
+      </tr>
+    </tbody></table>
+  </center>
+  <p align="center"> SAS Data Set Work.Exercise 
+  </p><center>
+    <font face="Verdana, Arial, Helvetica" size="2" color="#000000"> 
+    <table border="1" cellspacing="0" cellpadding="3" frame="BOX" bgcolor="#F7F7DE" title="SAS Data Set">
+      <thead>
+        <tr> 
+          <td align="CENTER" bgcolor="#F7F7DE"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>Obs</b></font></td>
+          <td align="CENTER" bgcolor="#F7F7DE"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>ID</b></font></td>
+          <td align="CENTER" bgcolor="#F7F7DE"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>Age</b></font></td>
+          <td align="CENTER" bgcolor="#F7F7DE"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>ActLevel</b></font></td>
+          <td align="CENTER" bgcolor="#F7F7DE"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>Sex</b></font></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr> 
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">1</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">2810</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">61</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">MOD</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">F</font></td>
+        </tr>
+        <tr> 
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">2</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">2804</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">38</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">HIGH</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">F</font></td>
+        </tr>
+        <tr> 
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">3</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">2807</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">42</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">LOW</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">M</font></td>
+        </tr>
+        <tr> 
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">4</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">2816</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">26</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">HIGH</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">M</font></td>
+        </tr>
+        <tr> 
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">5</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">2833</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">32</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">MOD</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">F</font></td>
+        </tr>
+        <tr> 
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">6</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">2823</font></td>
+          <td align="RIGHT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">29</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">HIGH</font></td>
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">M</font></td>
+        </tr>
+      </tbody>
+    </table>
+    </font> 
+  </center>
+  <p align="center"><br>
+  </p><center>
+    <table cellpadding="0" cellspacing="0" border="0" width="85%">
+      <tbody><tr> 
+        <td align="left">When you use column input, you can 
+          <ul>
+            <li> read any or all fields from the raw data file 
+            </li><li> read the fields in any order 
+            </li><li> specify only the starting column for values that occupy only 
+              one column. 
+          </li></ul>
+          <pre>     <font color="#003399">input ActLevel $ 9-12 Sex $ 14 Age 6-7;</font></pre> </td>
+      </tr>
+    </tbody></table>
+    <table cellspacing="0" cellpadding="2" width="85%">
+      <tbody><tr> 
+        <td valign="top" width="24"><img src="./Creating SAS Data Sets from Raw Data - input_files/note.gif" alt="NOTE:" width="20" height="20" hspace="10" border="0"></td>
+        <td>Remember that when you create a new variable, you must specify it 
+          in the exact case that you want it stored, for example <code>NewBalance</code>. 
+          Thereafter, you can specify the variable in lowercase. </td>
+      </tr>
+    </tbody></table>
+    <br>
+    <br>
+    <table cellpadding="0" cellspacing="0" border="0" width="85%">
+      <tbody><tr> 
+        <td align="left"><b>Specifying Variable Names</b> <p> Each variable has 
+            a name that conforms to SAS naming conventions. Variable names 
+          </p><ul>
+            <li> must be 1 to 32 characters in length 
+            </li><li> must begin with a letter (A-Z) or an underscore (_) 
+            </li><li> can continue with any combination of numbers, letters, or underscores. 
+          </li></ul>
+          Let's look at an INPUT statement that uses column input to read the 
+          three data fields in the raw data file below.</td>
+      </tr>
+    </tbody></table>
+  </center>
+  <p align="center"> 
+  </p><p align="center"> <br>
+    Raw Data File Admit 
+  </p><center>
+    <font face="Courier New, Courier" size="2" color="#000000"> 
+    <table border="1" cellspacing="0" cellpadding="0" rules="NONE" frame="BOX" bgcolor="#F7F7DE" title="Raw Data File">
+      <tbody>
+        <tr> 
+          <td align="LEFT" bgcolor="#F7F7DE"><font face="Courier New, Courier" size="2" color="#000000">1---+----10---+----20</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">58MOD&nbsp;M&nbsp;</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">29LOW&nbsp;F&nbsp;</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">34LOW&nbsp;M&nbsp;</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">41HIGHF&nbsp;</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">30MOD&nbsp;F&nbsp;</font></td>
+        </tr>
+        <tr> 
+          <td align="LEFT" bgcolor="#FFFFFF"><font face="Courier New, Courier" size="2" color="#000000">22HIGHM&nbsp;&nbsp;</font></td>
+        </tr>
+      </tbody>
+    </table>
+    </font> 
+  </center>
+  <p align="center"> <br>
+  </p><center>
+    <table cellpadding="0" cellspacing="0" border="0" width="85%">
+      <tbody><tr> 
+        <td align="left">The values for the variable that you are naming <code>Age</code> 
+          are located in columns 1-2. Because <code>Age</code> is a numeric variable, 
+          you do not specify a dollar sign ($) after the variable name. 
+          <pre>   <strong> </strong><font color="#003399">input <strong>Age 1-2</strong></font>
+</pre> 
+          <p> The values for the variable <code>ActLevel</code> are located in 
+            columns &nbsp;3-6. You specify a $ to indicate that &nbsp;<code>ActLevel</code> 
+            is a character variable. 
+          </p><pre>    <font color="#003399">input Age 1-2 <strong>ActLevel $ 3-6</strong></font>
+</pre> <p> The values 
+            for the character variable <code>Sex</code> are located in column 
+            7. Notice that you specify only a single column. 
+          </p><pre>    <font color="#003399">input Age 1-2 ActLevel $ 3-6 <strong>Sex $ 7</strong>;</font>
+</pre> </td>
+      </tr>
+    </tbody></table>
+    <br>
+  </center>
+  <!-- InstanceEndEditable --> 
+</center>
+<script>writeNav_regular_bottom();</script><!-- #BeginLibraryItem "/Library/nav_regular_bottom.lbi" --><table width="100%" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="14"><img src="./Creating SAS Data Sets from Raw Data - input_files/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="./Creating SAS Data Sets from Raw Data - input_files/linegray.gif" width="100%" height="7" alt=" "></td></tr>  <tr>    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">© 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back2&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back2&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Creating SAS Data Sets from Raw Data - input_files/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next2&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next2&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Creating SAS Data Sets from Raw Data - input_files/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr></tbody></table><p>&nbsp;</p><script>writeLessonDiv()</script><div id="dropmenu0" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:450;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) dropmenu0.style.padding="4px"; for (i=0;i<menu12.length;i++)document.write(beginLink+menu12[i][0]+middleLink+menu12[i][1]+endLink);</script><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_1.htm" target="SAS">&nbsp;Lesson Overview&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_2.htm" target="SAS">&nbsp;Raw Data Files&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_3.htm" target="SAS">&nbsp;Steps to Create a SAS Data Set&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_4.htm" target="SAS">&nbsp;Referencing a SAS Library&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_6.htm" target="SAS">&nbsp;Referencing a Raw Data File&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_11.htm" target="SAS">&nbsp;Writing a DATA Step Program&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_19.htm" target="SAS">&nbsp;Submitting the DATA Step Program&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_30.htm" target="SAS">&nbsp;Creating and Modifying Variables&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_35.htm" target="SAS">&nbsp;Subsetting Data&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_37.htm" target="SAS">&nbsp;Reading Instream Data&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_39.htm" target="SAS">&nbsp;Creating a Raw Data File&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_44.htm" target="SAS">&nbsp;Additional Features&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_46.htm" target="SAS">&nbsp;Lesson Summary&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_47.htm" target="SAS">&nbsp;Lesson Quiz&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_48.htm" target="SAS">&nbsp;End of Lesson&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.dropmenu0.captureEvents(Event.CLICK); document.dropmenu0.onclick=hidemenu}</script><script>writeHelpDiv()</script><div id="helpmenu" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:160;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) helpmenu.style.padding="4px"; for (i=0;i<menuHelp.length;i++) if (menuHelp[i] ==",") document.write(""); else document.write(beginHelpLink+menuHelp[i][0]+middleLink+menuHelp[i][1]+endLink); </script><a class="menulink" href="JavaScript: openOther(&#39;../setup.htm&#39;)" target="SAS">&nbsp;Before You Begin&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../trouble.htm&#39;)" target="SAS">&nbsp;Troubleshooting Tips&nbsp;</a><br><a class="menulink" href="JavaScript: openGlossary(&#39;../glossary.htm&#39;)" target="SAS">&nbsp;Glossary&nbsp;</a><br><a class="menulink" href="JavaScript: openDoc(&#39;../sasdoc.htm&#39;)" target="SAS">&nbsp;SAS Documentation&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)" target="SAS">&nbsp;Copyright&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.helpmenu.captureEvents(Event.CLICK); document.helpmenu.onclick=hidemenu}</script><!-- #EndLibraryItem -->
+
+<!-- InstanceEnd -->
+</body></html>

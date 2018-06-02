@@ -1,0 +1,342 @@
+.wrap1{
+}
+
+.wrap2{
+}
+
+#dropmenu0, #helpmenu{
+z-index:100;
+}
+
+a.menulink:visited{
+text-decoration:none}
+
+a.menulink:link{
+text-decoration:none}
+
+a.menulink:active{
+text-decoration:none}
+
+a.menulink:hover{
+text-decoration:none;font-weight:bold;color:white;background-color:#000099;}
+
+a.copyrightlink:visited{
+color:gray}
+
+a.copyrightlink:link{
+color:gray}
+
+a.copyrightlink:active{
+color:gray}
+
+a.copyrightlink:hover{
+color:gray}
+
+a.pathlink:visited{
+}
+
+a.pathlink:link{
+color:#003399;}
+
+a.pathlink:active{
+}
+
+a.pathlink:hover{
+color:blue;}
+
+a.splashlink:visited{
+text-decoration:none;font-size:12pt;font-weight:bold;color:white;}
+
+a.splashlink:link{
+text-decoration:none;font-size:12pt;font-weight:bold;color:white;}
+
+a.splashlink:active{
+text-decoration:none;font-size:12pt;font-weight:bold;color:white;}
+
+a.splashlink:hover{
+text-decoration:none;font-size:12pt;font-weight:bold;color:#ffcc33;}
+
+a.courselink:visited{
+text-decoration:none;color:#A6CAF0}
+
+a.courselink:link{
+text-decoration:none;color:#A6CAF0}
+
+a.courselink:active{
+text-decoration:none;color:#A6CAF0}
+
+a.courselink:hover{
+text-decoration:none;color:#ffcc33}
+
+a.lessonlink:visited{
+text-decoration:none;color:white}
+
+a.lessonlink:link{
+text-decoration:none;color:white}
+
+a.lessonlink:active{
+text-decoration:none;color:white}
+
+a.lessonlink:hover{
+text-decoration:none;font-weight:bold;color:#ffcc33}
+
+a.popuplink:visited{
+text-decoration:none;color:white;}
+
+a.popuplink:link{
+text-decoration:none;color:white;}
+
+a.popuplink:active{
+text-decoration:none;color:white;}
+
+a.popuplink:hover{
+text-decoration:none;color:#ffcc33;}
+
+div.wdsmenu {
+width:145;
+font-size:100%; 
+background-color:#6685C2; 
+margin-top:3px; 
+padding-bottom:5px; 
+padding-top:5px; 
+padding-left:10px; 
+padding-right:10px; 
+text-decoration:none; 
+color:white; 
+font-weight:bold;
+}
+
+div.wdssection {
+width: 95%;
+position: absolute;
+top: 50px;
+left: 170px;
+}
+
+div.wdssection_left {
+width: 95%;
+position: absolute;
+top: 50px;
+left: 150px;
+}
+
+
+a.wdsmenulink:visited{
+text-decoration:none;color:white;}
+
+a.wdsmenulink:link{
+text-decoration:none;color:white;}
+
+a.wdsmenulink:active{
+text-decoration:none;font-weight:bold;color:white;}
+
+a.wdsmenulink:hover{
+text-decoration:none;color:#ffcc33;}
+
+
+
+TD {font-family : Arial, Helvetica, sans-serif;
+font-size : 84%;}
+BODY {font-family : Arial, Helvetica, sans-serif; font-size : 84%; }
+PRE {font-family : Courier New, Courier, monospace;}
+CODE {font-family : Courier New, Courier, monospace; font-size : x-small;}
+H2 {font-family : Arial, Helvetica, sans-serif; font-size : 100%;font-weight:bold;}
+
+#mainMenu {
+  width: 400px;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
+
+span.key {
+  text-decoration: underline;
+}
+
+a.expander {
+  background-color: transparent;
+  color: #000;
+  font-size: 12px;
+  padding-left: 15px;
+  text-decoration: none;
+}
+
+a.expander:hover {
+  text-decoration: underline;
+}
+
+#menuList {
+  margin: 0px;
+  padding: 10px 0px 10px 15px;
+}
+
+.menu {
+  display: none;
+  margin-left: 15px;
+  padding: 0px;
+}
+
+.menu li {
+  background: url(linklib/images/square.gif) no-repeat 0em 0.3em;
+  list-style: none outside;
+}
+
+.menu li a {
+  background-color: transparent;
+  color: #000;
+  font-size: 12px;
+  padding-left: 15px;
+  text-decoration: none;
+}
+
+li.menubar {
+  background: url(linklib/images/cntplus.gif) no-repeat 0em 0.3em;
+  font-size: 12px;
+  line-height: 1.5em;
+  list-style: none outside;
+}
+
+.eg_div {
+  display: none;
+}
+
+.eg2 {
+	color: #003399;
+	display: none;
+	margin-left: -22;
+	list-style-type : square;
+}
+
+.le2 {
+  color: #003399;
+  display: none;
+}
+
+.eg3 {
+  color: #003399;
+  display: none;
+}
+
+.eg2_le2 {
+  color: #003399;
+  display: none;
+}
+
+.le2_eg2 {
+  color: #003399;
+  display: none;
+}
+
+.soln {
+  color: #003399;
+  display: none;
+}
+
+.solnstep {
+  color: #003399;
+  list-style-type : square;
+}
+
+.quizScenario {
+margin-left: -30;
+color: #003399;
+}
+
+.quizScenarioAnswers {
+color: #003399;
+}
+
+.pageBackgroundImage {
+  background-image: url(navimages/path_bg.gif) ;
+  background-repeat: no-repeat;
+}
+
+.yellowtable { background-color:#ffff66; cell-spacing:0; border:.3mm solid black; position: absolute; visibility: hidden; width:150; heigth:150; padding-bottom:5px; padding-top:5px; padding-left:5px; padding-right:5px; font-size:smaller;}
+
+.rightborderonly {
+  border-top: none; 
+  border-bottom: none; 
+  border-left: none;
+}
+
+.rightborder {
+  border-right: solid 1px #999999;
+}
+
+
+.leftborderonly {
+  border-top: none; 
+  border-bottom: none; 
+  border-right: none;
+}
+
+.topborderonly {
+  border-left: none; 
+  border-bottom: none; 
+  border-right: none;
+}
+
+.cellborder {
+  border: solid 1px #000000;
+}
+
+.noleftborder {border-left:none;}
+
+.norightborder {border-right:none;}
+
+.nobottomborder {border-bottom:none;}
+
+.notopborder {border-top:none;}
+
+.noborder {border:none;}
+
+td.animationFrame{
+padding-bottom:15px; 
+padding-top:20px; 
+padding-left:10px; 
+padding-right:10px; 
+color:#003399; 
+}
+
+.invisible{
+display: none;
+}
+
+.left25 {
+LEFT: 25px; POSITION: absolute; PADDING-RIGHT:20px; 
+}
+
+#Text01 {
+	Z-INDEX: 20; LEFT: 25px;  POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}
+#Text02 {
+	Z-INDEX: 22; LEFT: 25px;  POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}
+#Text03 {
+	Z-INDEX: 24; LEFT: 25px; POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}
+#Text04{
+	Z-INDEX: 26; LEFT: 25px;  POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}
+#Text05 {
+	Z-INDEX: 28; LEFT: 25px; POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}
+#Text06 {
+	Z-INDEX: 30; LEFT: 25px; POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}
+#Text07 {
+	Z-INDEX: 32; LEFT: 25px;  POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}
+#Text08 {
+	Z-INDEX: 34; LEFT: 25px; POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}
+#Text09 {
+	Z-INDEX: 36; LEFT: 25px;  POSITION: absolute; TOP: 185px;PADDING-RIGHT:20px; 
+}
+#Text10 {
+	Z-INDEX: 38; LEFT: 25px;  POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}
+#Text11 {
+	Z-INDEX: 40; LEFT: 25px; POSITION: absolute; TOP: 185px; PADDING-RIGHT:20px; 
+}

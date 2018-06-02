@@ -1,0 +1,362 @@
+
+<!-- saved from url=(0071)https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_30.htm -->
+<html><!-- InstanceBegin template="/Templates/informationObject.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script language="JavaScript" src="./logical operation_files/tut.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./logical operation_files/APIConstants.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./logical operation_files/Configuration.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./logical operation_files/UtilityFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./logical operation_files/SCORMFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./logical operation_files/NONEFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./logical operation_files/LMSAPI.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./logical operation_files/API.js.&#19979;&#36733;"></script><meta http-equiv="imagetoolbar" content="no">
+<script language="JavaScript" src="./logical operation_files/nav.js.&#19979;&#36733;"></script>
+<script language="JavaScript">
+ setPageTitle();
+ setCookie();
+  
+// Drop down menu link- © Dynamic Drive (www.dynamicdrive.com)
+// For full source code and 100's more DHTML scripts, visit http://www.dynamicdrive.com
+// Credit MUST stay intact for use -->
+
+</script><title>Creating SAS Data Sets from Raw Data - 30 of 48</title>
+
+<!-- InstanceBeginEditable name="extrascript" --> 
+<script language="JavaScript">
+</script>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="./logical operation_files/tut.css">
+
+
+
+</head>
+
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFF0">
+<script>writeinformationObjectTopNav1();</script><table width="100%" border="0" cellpadding="0" cellspacing="0" background="./logical operation_files/banner.gif">  <tbody><tr>     <td height="49" colspan="2" nowrap=""><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;      <script>setCourseTitle()</script>SAS OnlineTutor<sup><font size="-2">®</font></sup>: Basic and Intermediate SAS<sup><font size="-2">®</font></sup>      </font><br>      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;	  <script>setLessonTitle()</script>Creating SAS Data Sets from Raw Data      </font></strong>&nbsp;<img src="./logical operation_files/bullet.gif" width="8" height="8" alt=" ">&nbsp;<font color="#FFFFFF" size="2"><strong>&nbsp;<script>document.write(myPage+" of "+eval(myModule))</script>30 of 48</strong></font>&nbsp;&nbsp;</td>    <td width="357" rowspan="3" valign="bottom"><img src="./logical operation_files/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>  </tr>  <tr>     <td colspan="2" valign="bottom" nowrap=""><img src="./logical operation_files/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./logical operation_files/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./logical operation_files/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><script>writeLessonMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;dropmenu0&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuless.htm&#39;)" onclick="if (ns4) return dropit(event, &#39;document.dropmenu0&#39;)" onmouseover="rOver(&#39;contents&#39;);window.status=&#39;Display the lesson menu.&#39;;return true" onmouseout="rOut(&#39;contents&#39;);window.status=&#39;&#39;;return true" accesskey="m"><img src="./logical operation_files/contents.gif" width="122" height="19" border="0" alt="lesson menu" name="contents"></a></span></layer></ilayer><script>writePathOrExit()</script><a href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/paths.htm" target="SAS" onmouseover="rOver(&#39;path&#39;);window.status=&#39;Display the Learning Path.&#39;;return true" onmouseout="rOut(&#39;path&#39;);window.status=&#39;&#39;;return true" accesskey="p"><img src="./logical operation_files/path.gif" alt="Learning Path" width="48" height="19" border="0" name="path"></a><script>writeHelpMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;helpmenu&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuhelp.htm&#39;)" onclick="if(ns4) return dropit(event, &#39;document.helpmenu&#39;)" onmouseover="rOver(&#39;help&#39;);window.status=&#39;Display the help menu.&#39;;return true" onmouseout="rOut(&#39;help&#39;);window.status=&#39;&#39;;return true" accesskey="h"><img src="./logical operation_files/help.gif" width="48" height="19" border="0" alt="help menu" name="help"></a></span></layer></ilayer><img src="./logical operation_files/tabright.gif" width="28" height="19" alt=" "></td>  </tr>  <tr>     <td height="3" colspan="2" valign="bottom"><img src="./logical operation_files/border.gif" width="100%" height="3" alt=" "></td>  </tr>  <tr valign="top" bgcolor="#FFFFF0">     <td nowrap="">&nbsp;&nbsp;&nbsp;</td>    <td valign="middle"><br>      <img src="./logical operation_files/cleardot.gif" width="411" height="1" alt=" "><br>
+	  
+	  <font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong><!-- InstanceBeginEditable name="TopicTitle" -->Creating 
+      and Modifying Variables<!-- InstanceEndEditable --></strong></font> <!-- InstanceBeginEditable name="continued" --><!-- InstanceEndEditable -->
+	  
+<script>writeinformationObjectTopNav2();</script></td>    <td><img src="./logical operation_files/arch.gif" width="357" height="64" align="top" alt=" "></td>  </tr></tbody></table>
+<br>
+<center>
+  <!-- InstanceBeginEditable name="content" --> 
+<table width="85%" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tbody><tr valign="top"> 
+    <td>
+<p>So far in this lesson, you've read existing data. But sometimes existing 
+        data doesn't provide the information you need. To modify existing values 
+        or to create new variables, you can use an <strong>assignment statement</strong> 
+        in any DATA step.</p>
+    </td>
+  </tr>
+</tbody></table>
+<p align="center"> <br>
+</p><center>
+  <table border="1" cellspacing="0" cellpadding="10" width="85%" bgcolor="#F7F7DE" title="General form, assignment statement">
+    <tbody><tr> 
+      <td><strong>General form, assignment statement:</strong> 
+        <blockquote> <font color="#003399"><nobr><em>variable=expression</em></nobr><strong>;</strong></font> 
+        </blockquote>
+        <p> where 
+        </p><ul>
+          <li> <font color="#003399"><em>variable</em></font> names a new or existing 
+            variable 
+          </li><li> <font color="#003399"><em>expression</em></font> is any valid SAS 
+            expression. 
+        </li></ul>
+        <p> 
+        <table cellspacing="0" cellpadding="2">
+          <tbody><tr> 
+            <td valign="top" width="24"><img src="./logical operation_files/note.gif" alt="NOTE:" width="20" height="20" hspace="10" border="0"></td>
+            <td>The assignment statement is one of the few SAS statements that 
+              doesn't begin with a keyword.</td>
+          </tr>
+        </tbody></table>
+      </p></td>
+    </tr>
+  </tbody></table>
+  <br>
+  <br>
+  <table border="0" cellspacing="0" cellpadding="0" width="85%">
+    <tbody><tr> 
+      <td> 
+        <p>For example, here is an assignment statement that assigns the character 
+          value <em>Toby Witherspoon</em> to the variable <code>Name</code>: </p>
+        <pre><font color="#003399">     Name='Toby Witherspoon';</font></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><center>
+  <table border="0" cellspacing="0" cellpadding="0" width="85%">
+    <tbody><tr> 
+      <td> 
+        <p><strong><a name="express">SAS Expressions</a></strong></p>
+        <p>You use SAS expressions in assignment statements and many other SAS 
+          programming statements to </p>
+        <ul>
+          <li> transform variables 
+          </li><li> create new variables 
+          </li><li> conditionally process variables 
+          </li><li> calculate new values 
+          </li><li> assign new values. 
+        </li></ul>
+        <p>An expression is a sequence of operands and operators that form a set 
+          of instructions. The instructions are performed to produce a new value: 
+        </p>
+        <ul>
+          <li><strong>Operands</strong> are variable names or constants. They 
+            can be numeric, character, or both. <br>
+            <br>
+          </li>
+          <li><strong>Operators</strong> are special-character operators, grouping 
+            parentheses, or functions. You can learn about functions in the lesson 
+            <!--lesson reference-->
+            <strong><script>document.write(m30title);</script>Transforming Data with SAS Functions</strong>.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><center>
+  <table border="0" cellspacing="0" cellpadding="0" width="85%">
+    <tbody><tr> 
+      <td> 
+        <p><strong>Using Operators in SAS Expressions</strong></p>
+        <p>To perform a calculation, you use <strong>arithmetic operators</strong>. 
+          The table below lists arithmetic operators. </p>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"><br>
+</p><center>
+    <table cellspacing="0" cellpadding="2" width="450" bgcolor="#FFFFFF" border="1" title="arithmetic operators">
+      <tbody><tr valign="Baseline" bgcolor="#F7F7DE"> 
+        <td> <div align="center"><strong>Operator</strong> </div></td>
+        <td width="150"><div align="left"><strong>Action</strong></div></td>
+        <td><div align="left"><strong>Example</strong></div></td>
+        <td> <div align="center"><strong>Priority</strong> </div></td>
+      </tr>
+      <tr valign="Baseline"> 
+        <td> <center>
+            - </center></td>
+        <td width="150">&nbsp;negative prefix</td>
+        <td><pre><font color="#003399"> negative=-x;</font>
+</pre> </td>
+        <td> <center>
+            I </center></td>
+      </tr>
+      <tr valign="Baseline"> 
+        <td> <p align="center"> <strong>**</strong> </p></td>
+        <td width="150">&nbsp;exponentiation</td>
+        <td> <pre><font color="#003399"> raise=x**y;</font>
+</pre> </td>
+        <td> <center>
+            I </center></td>
+      </tr>
+      <tr valign="Baseline"> 
+        <td> <p align="center"> <strong>*</strong> </p></td>
+        <td>&nbsp;multiplication</td>
+        <td> <pre><font color="#003399"> mult=x*y;</font></pre> </td>
+        <td> <center>
+            II </center></td>
+      </tr>
+      <tr valign="Baseline"> 
+        <td> <p align="center"> <strong>/</strong> </p></td>
+        <td>&nbsp;division</td>
+        <td> <pre><font color="#003399"> divide=x/y;</font>
+</pre> </td>
+        <td> <center>
+            II </center></td>
+      </tr>
+      <tr valign="Baseline"> 
+        <td> <p align="center"> <strong>+</strong> </p></td>
+        <td><font color="#003399">&nbsp;</font>addition</td>
+        <td> <pre><font color="#003399"> sum=x+y;</font>
+</pre> </td>
+        <td> <center>
+            III </center></td>
+      </tr>
+      <tr valign="Baseline"> 
+        <td> <p align="center"> <strong>-</strong> </p></td>
+        <td>&nbsp;subtraction</td>
+        <td> <pre><font color="#003399"> diff=x-y;</font>
+</pre> </td>
+        <td> <center>
+            III </center></td>
+      </tr>
+    </tbody></table>
+</center>
+<p align="center">&nbsp; 
+</p><center>
+  <table border="0" cellspacing="0" cellpadding="0" width="85%">
+    <tbody><tr> 
+      <td> 
+        <p>When you use more than one arithmetic operator in an expression, </p>
+        <ul>
+          <li>operations of priority I are performed before operations of priority 
+            II, and so on</li>
+          <li>consecutive operations that have the same priority are performed</li>
+          <ul>
+            <li>from right to left within priority I</li>
+            <li>from left to right within priority II and III</li>
+          </ul>
+          <li>you can use parentheses to control the order of operations.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table border="0" cellpadding="2" cellspacing="0" width="85%">
+    <tbody> 
+    <tr> 
+      <td valign="top" width="41"><img alt="Alert!" border="0" height="32" hspace="10" src="./logical operation_files/alert.gif" width="37"></td>
+      <td>When a value that is used with an arithmetic operator is missing, the 
+        result of the expression is <strong>missing</strong>. The assignment statement 
+        assigns a <strong>missing value</strong> to a variable if the result of 
+        the expression is missing.</td>
+    </tr>
+    </tbody> 
+  </table>
+</center>
+<p align="center"><br>
+</p><center>
+  <table border="0" cellspacing="0" cellpadding="0" width="85%">
+    <tbody><tr> 
+      <td>You use the following <strong>comparison operators</strong> to express 
+        a condition.</td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"><br>
+</p><center>
+  <table cellspacing="0" cellpadding="2" width="450" bgcolor="#FFFFFF" border="1" title="comparison operators">
+    <tbody><tr valign="Baseline" bgcolor="#F7F7DE"> 
+      <td> 
+        <center>
+          <strong>Operator </strong> 
+        </center>
+      </td>
+      <td width="150"><strong>Meaning</strong></td>
+      <td><strong>Example</strong></td>
+    </tr>
+    <tr valign="Baseline"> 
+      <td> 
+        <center>
+          <strong>=</strong> or <strong>eq</strong> 
+        </center>
+      </td>
+      <td width="150">&nbsp;equal to</td>
+      <td> 
+        <pre><font color="#003399"> name='Jones, C.'</font>
+</pre>
+      </td>
+    </tr>
+    <tr valign="Baseline"> 
+      <td> 
+        <center>
+          <strong>^=</strong> or <strong>ne</strong> 
+        </center>
+      </td>
+      <td>&nbsp;not equal to</td>
+      <td> 
+        <pre><font color="#003399"> temp ne 212</font>
+</pre>
+      </td>
+    </tr>
+    <tr valign="Baseline"> 
+      <td> 
+        <center>
+          <strong>&gt;</strong> or <strong>gt</strong> 
+        </center>
+      </td>
+      <td>&nbsp;greater than</td>
+      <td> 
+        <pre><font color="#003399"> income&gt;20000</font>
+</pre>
+      </td>
+    </tr>
+    <tr valign="Baseline"> 
+      <td> 
+        <center>
+          <strong>&lt;</strong> or <strong>lt</strong> 
+        </center>
+      </td>
+      <td>&nbsp;less than</td>
+      <td> 
+        <pre><font color="#003399"> partno lt "BG05"</font>
+</pre>
+      </td>
+    </tr>
+    <tr valign="Baseline"> 
+      <td> 
+        <center>
+          <strong>&gt;=</strong> or <strong>ge</strong> 
+        </center>
+      </td>
+      <td>&nbsp;greater than or equal to</td>
+      <td> 
+        <pre><font color="#003399"> id&gt;='1543'</font>
+</pre>
+      </td>
+    </tr>
+    <tr valign="Baseline"> 
+      <td> 
+        <center>
+          <strong>&lt;=</strong> or <strong>le</strong> 
+        </center>
+      </td>
+      <td>&nbsp;less than or equal to</td>
+      <td> 
+        <pre><font color="#003399"> pulse le 85</font>
+</pre>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table border="0" cellspacing="0" cellpadding="0" width="85%">
+    <tbody><tr> 
+      <td>To link a sequence of expressions into compound expressions, you use 
+        <strong>logical operators</strong>, including the following:</td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><p align="center"><br>
+</p><center>
+  <table cellpadding="4" bgcolor="#FFFFFF" cellspacing="0" width="450" border="1" title="logical operators">
+    <tbody><tr valign="Top" bgcolor="#F7F7DE"> 
+      <td width="60"> 
+        <center>
+          <strong>Operator </strong> 
+        </center>
+      </td>
+      <td><strong>Meaning</strong></td>
+    </tr>
+    <tr valign="Top"> 
+      <td width="85" nowrap=""> 
+        <center>
+          <strong>AND </strong>or<strong> &amp;</strong> 
+        </center>
+      </td>
+      <td>and, both. If both expressions are true, then the compound expression 
+        is true.</td>
+    </tr>
+    <tr valign="Top"> 
+      <td> 
+        <center>
+          <strong>OR </strong>or <strong>|</strong> 
+        </center>
+      </td>
+      <td>or, either. If either expression is true, then the compound expression 
+        is true.</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <br>
+</center>
+<!-- InstanceEndEditable --> 
+</center>
+<script>writeNav_regular_bottom();</script><!-- #BeginLibraryItem "/Library/nav_regular_bottom.lbi" --><table width="100%" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="14"><img src="./logical operation_files/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="./logical operation_files/linegray.gif" width="100%" height="7" alt=" "></td></tr>  <tr>    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">© 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back2&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back2&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./logical operation_files/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next2&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next2&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./logical operation_files/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr></tbody></table><p>&nbsp;</p><script>writeLessonDiv()</script><div id="dropmenu0" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:450;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) dropmenu0.style.padding="4px"; for (i=0;i<menu12.length;i++)document.write(beginLink+menu12[i][0]+middleLink+menu12[i][1]+endLink);</script><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_1.htm" target="SAS">&nbsp;Lesson Overview&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_2.htm" target="SAS">&nbsp;Raw Data Files&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_3.htm" target="SAS">&nbsp;Steps to Create a SAS Data Set&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_4.htm" target="SAS">&nbsp;Referencing a SAS Library&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_6.htm" target="SAS">&nbsp;Referencing a Raw Data File&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_11.htm" target="SAS">&nbsp;Writing a DATA Step Program&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_19.htm" target="SAS">&nbsp;Submitting the DATA Step Program&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_30.htm" target="SAS">&nbsp;Creating and Modifying Variables&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_35.htm" target="SAS">&nbsp;Subsetting Data&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_37.htm" target="SAS">&nbsp;Reading Instream Data&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_39.htm" target="SAS">&nbsp;Creating a Raw Data File&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_44.htm" target="SAS">&nbsp;Additional Features&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_46.htm" target="SAS">&nbsp;Lesson Summary&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_47.htm" target="SAS">&nbsp;Lesson Quiz&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_48.htm" target="SAS">&nbsp;End of Lesson&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.dropmenu0.captureEvents(Event.CLICK); document.dropmenu0.onclick=hidemenu}</script><script>writeHelpDiv()</script><div id="helpmenu" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:160;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) helpmenu.style.padding="4px"; for (i=0;i<menuHelp.length;i++) if (menuHelp[i] ==",") document.write(""); else document.write(beginHelpLink+menuHelp[i][0]+middleLink+menuHelp[i][1]+endLink); </script><a class="menulink" href="JavaScript: openOther(&#39;../setup.htm&#39;)" target="SAS">&nbsp;Before You Begin&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../trouble.htm&#39;)" target="SAS">&nbsp;Troubleshooting Tips&nbsp;</a><br><a class="menulink" href="JavaScript: openGlossary(&#39;../glossary.htm&#39;)" target="SAS">&nbsp;Glossary&nbsp;</a><br><a class="menulink" href="JavaScript: openDoc(&#39;../sasdoc.htm&#39;)" target="SAS">&nbsp;SAS Documentation&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)" target="SAS">&nbsp;Copyright&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.helpmenu.captureEvents(Event.CLICK); document.helpmenu.onclick=hidemenu}</script><!-- #EndLibraryItem -->
+
+<!-- InstanceEnd -->
+</body></html>

@@ -1,0 +1,286 @@
+/* Copyright © 2003-2004 Rustici Software, LLC  All Rights Reserved. */
+
+function GetQueryStringValue(strElement, strQueryString){
+		
+	var aryPairs;
+	var i;
+	var intEqualPos;
+	var strArg = "";
+	var strValue = "";
+	
+	WriteToDebug("In GetQueryStringValue strElement=" + strElement + ", strQueryString=" + strQueryString);
+	
+	//get rid of the leading "?"
+	strQueryString = strQueryString.substring(1);
+		
+	//split into name/value pairs
+	aryPairs = strQueryString.split("&");
+	
+	strElement = strElement.toLowerCase();
+	
+	//search each querystring value and return the first match
+	for (i=0; i < aryPairs.length; i++){
+		
+		WriteToDebug("Looking at element-" + aryPairs[i]);
+		
+		intEqualPos = aryPairs[i].indexOf('=');
+		
+		if (intEqualPos != -1){
+		
+			strArg = aryPairs[i].substring(0,intEqualPos);
+			
+			WriteToDebug("Arg=" + strArg);
+			
+			if (EqualsIgnoreCase(strArg, strElement)){
+			
+				WriteToDebug("Found Match");
+				strValue = aryPairs[i].substring(intEqualPos+1);
+				
+				WriteToDebug("Decoding value-" + strValue);	
+				
+				strValue = new String(strValue)
+				
+				strValue = strValue.replace(/\+/g, "%20")
+				strValue = unescape(strValue);
+
+				WriteToDebug("Returning value-" + strValue);	
+				
+				return new String(strValue);
+			}
+		}
+	} 
+	
+	//if we didn't find a match, return an empty string
+	WriteToDebug("No Match Found, returning empty string");
+	return "";
+}
+
+
+function ConvertStringToBoolean(str){
+	        
+	var intTemp;
+	
+	WriteToDebug("In ConvertStringToBoolean");
+	        
+	if (EqualsIgnoreCase(str, "true") || EqualsIgnoreCase(str, "t")){
+		WriteToDebug("Found alpha true");
+		return true;   
+	}
+	else{
+		intTemp = parseInt(str);
+		if (intTemp == 1 || intTemp==-1){
+			WriteToDebug("Found numeric true");
+		     return true;
+		}
+		else{
+			WriteToDebug("Returning false");
+		    return false;
+		}
+	}
+}
+
+
+
+function EqualsIgnoreCase(str1, str2){
+	
+	WriteToDebug("In EqualsIgnoreCase str1=" + str1 + ", str2=" + str2);
+	
+	var blnReturn;
+	
+	str1 = new String(str1);
+	str2 = new String(str2);
+	
+	blnReturn = (str1.toLowerCase() == str2.toLowerCase())
+	
+	WriteToDebug("Returning " + blnReturn);
+	
+	return blnReturn;
+}
+
+
+function ValidInteger(intNum){
+	
+	WriteToDebug("In ValidInteger intNum=" + intNum);
+	
+	var str = new String(intNum);
+	 
+	if (str.indexOf("-", 0) == 0){
+		str = str.substring(1, str.length - 1);
+	}
+	  
+	var regValidChars= new RegExp("[^0-9]"); 
+	  
+	if (str.search(regValidChars) == -1){
+		WriteToDebug("Returning true");
+		return true; 
+	}
+	  
+	WriteToDebug("Returning false");
+	return false;
+}
+
+
+//---------------------------------------------------------------------------------
+//Time Manipulation Functions
+function ConvertCMITimeSpanToMS(strTime){
+		
+	var aryParts;
+	var intHours;
+	var intMinutes;
+	var intSeconds;
+	
+	var intTotalMilliSeconds;
+	
+	WriteToDebug("In ConvertCMITimeSpanToMS strTime-" + strTime);
+	
+	aryParts = strTime.split(":");
+	
+	intHours   = aryParts[0];
+	intMinutes = aryParts[1];
+	intSeconds = aryParts[2];	//don't need to worry about milliseconds b/c they are expressed as fractions of a second
+	
+	WriteToDebug("intHours=" + intHours + ", intMinutes=" + intMinutes + ", intSeconds=" + intSeconds);
+	
+	intTotalMilliSeconds = (intHours * 3600000) + (intMinutes * 60000) + (intSeconds * 1000);
+	
+	WriteToDebug("Returning " + intTotalMilliSeconds);
+	
+	return intTotalMilliSeconds;
+}
+
+
+function IsValidCMITimeSpan(strValue){
+	
+	WriteToDebug("In ISValidCMITimeSpan strValue=" + strValue);
+		
+	//note that the spec does not say that minutes or seconds have to be < 60
+	
+	var regValid = /^\d?\d?\d?\d:\d?\d:\d?\d(.\d\d?)?$/;	
+
+	if (strValue.search(regValid) > -1){
+		WriteToDebug("Returning True");
+		return true;
+	}
+	else{
+		WriteToDebug("Returning False");
+		return false;
+	}
+}
+
+
+
+function ConvertMilliSecondsToSCORMTime(intTime){
+		
+	var intHours;
+	var intMinutes;
+	var inSeconds;
+	var intMilliSeconds;
+	var strReturn;
+	
+	WriteToDebug("In ConvertMilliSecondsToSCORMTime intTime=" + intTime);
+	
+	intHours = Math.floor(intTime / 3600000);
+	intTime = intTime % 3600000;
+	
+	WriteToDebug("intHours=" + intHours + ", intTime=" + intTime);
+	
+	intMinutes = Math.floor(intTime / 60000);
+	intTime = intTime % 60000;
+	
+	WriteToDebug("intMinutes=" + intMinutes + ", intTime=" + intTime);
+	
+	intSeconds = Math.floor(intTime / 1000);
+	intTime = intTime % 1000;
+	
+	WriteToDebug("intSeconds=" + intSeconds + ", intTime=" + intTime);
+	
+	intMilliSeconds = intTime;
+		
+	strReturn = ZeroPad(intHours, 4) + ":" + ZeroPad(intMinutes, 2) + ":" + ZeroPad(intSeconds, 2) + "." + ZeroPad(intMilliSeconds, 2);
+	
+	if (intHours > 9999){		//check for max date
+		strReturn = "9999:99:99.99"
+	}
+	
+	WriteToDebug("Returning " + strReturn);
+	
+	return strReturn;
+}
+
+function ZeroPad(intNum, intNumDigits){
+		
+	var strTemp;
+	var intLen;
+	var i;
+	
+	WriteToDebug("In ZeroPad intNum=" + intNum + ", intNumDigits=" + intNumDigits);
+	
+	strTemp = new String(intNum);
+	intLen = strTemp.length;
+	
+	if (intLen > intNumDigits){
+		strTemp = strTemp.substr(0,intNumDigits);
+	}
+	else{
+		for (i=intLen; i<intNumDigits; i++){
+			strTemp = "0" + strTemp;
+		}
+	}
+	
+	WriteToDebug("Returning " + strTemp);
+	
+	return strTemp;
+}
+
+
+
+
+function IsValidDecimal(strValue){
+	
+	WriteToDebug("In IsValidDecimal, strValue=" + strValue);
+	
+	strValue = new String(strValue);
+	
+	//check for characters "0-9", ".", and "-" only
+	if (strValue.search(/[^.\d-]/) > -1){
+		WriteToDebug("Returning False - character other than a digit, dash or period found");
+		return false;
+	}
+	
+	//if contains a dash, ensure it is first and that there is only 1
+	if (strValue.search("-") > -1){
+		if (strValue.indexOf("-", 1) > -1){
+			WriteToDebug("Returning False - dash found in the middle of the string");
+			return false;
+		}
+	}
+	
+	//ensure only 1 decimal point
+	if (strValue.indexOf(".") != strValue.lastIndexOf(".")){
+		WriteToDebug("Returning False - more than one decimal point found");
+		return false;
+	}
+	
+	//ensure there is at least 1 digit
+	if (strValue.search(/\d/) < 0){
+		WriteToDebug("Returning False - no digits found");
+		return false;
+	}
+	
+	WriteToDebug("Returning True");
+	return true;
+	
+}
+
+
+function IsAlphaNumeric(strValue){
+	WriteToDebug("In IsAlphaNumeric");
+	if (strValue.search(/\w/) < 0){
+		WriteToDebug("Returning false");
+		return false;
+	}
+	else{
+		WriteToDebug("Returning true");
+		return true;
+	}
+}

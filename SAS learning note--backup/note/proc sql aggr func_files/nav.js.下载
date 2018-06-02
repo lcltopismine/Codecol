@@ -1,0 +1,751 @@
+<!-- specify text for overview pages -->
+var overviewTitle="Overview";
+var overviewIntroduction="Introduction";
+var overviewTimeToComplete="Time to Complete";
+var overviewTimeIntro="This lesson contains <script>document.write(eval(myModule))</script> pages and takes approximately ";
+var overviewTimeEnd=" to complete.";
+var overviewObjectives="Objectives";
+var overviewPrerequisites="Prerequisites";
+var overviewPrerequisitesIntro="Before taking this lesson, you should ";
+
+<!-- specify text for summary pages -->
+var summaryTitle="Lesson Summary";
+var summaryPageContains="This page contains ";
+var summaryPageDirections="To go to the page where a task, programming feature, or concept was presented, select a link.";
+var summaryPageTextSummaryTitle="Text Summary";
+var summaryPageTextSyntaxTitle="Syntax";
+var summaryPageSyntaxDirections="To go to the page where a statement or option was presented, select a link.";
+var summaryPageSampleProgramTitle="Sample Program";
+var summaryPagePointsToRememberTitle="Points to Remember";
+
+<!-- specify text for quiz pages -->
+var quizTitle="Lesson Quiz";
+var quizDirections="Select the best answer for each question and click Score My Quiz.";
+var quiz50Directions="Select the best answer for each question and click Score My Practice Exam.";
+var quizResultsTitle="<TITLE>Quiz Results for " + eval(moduleTitle) + "</TITLE>";
+var quiz50ResultsTitle="<TITLE>Quiz Results for Certification Practice Exam</TITLE>";
+if (myName == "certquiz") {
+var quiz50IntroNote='You should read the <a href="Javascript: openOther(\'../linklib/exam1byb.htm\')">introductory material</a> before you take this practice exam.';
+}
+else {
+var quiz50IntroNote='You should read the <a href="Javascript: openOther(\'../linklib/exambyb.htm\')">introductory material</a> before you take this practice exam.';
+}
+var quizScoreTitle="Quiz Score:";
+var quizResultsDirections="You answered <STRONG><SCRIPT>document.write(score + ' out of ' + numQues)</SCRIPT></STRONG> questions correctly. To see any answer, scroll down or click a question in the grid below. When you select links on this page, the information appears in the original browser window.";
+var quizQuestionNumber="Question #";
+var quizCorrectIncorrect='Correct</FONT></STRONG><STRONG>&nbsp;&nbsp;/<BR>&nbsp;<FONT COLOR="Red" face="Arial, Helvetica, Sans Serif">Incorrect';
+var quizCorrectAnswerLabel="Correct&nbsp;answer:&nbsp;&nbsp;";
+var quizYourAnswerLabel="Your&nbsp;answer:&nbsp;&nbsp;";
+
+<!-- specify text for end of lesson pages -->
+var endTitle="End of Lesson";
+var endLessonCertificateTitle="Lesson Certificate";
+var endGeneralResourcesTitle="General Resources";
+
+<!-- specify text for lesson menu pages -->
+var lessonMenuTitle="Learning Path";
+var lessonMenuDirections="This Learning Path is a menu of the topics in this lesson. Be sure to take topics in the order shown below.";
+var lessonMenuTopicsTitle="Lesson Topics";
+
+<!-- specify text for animation description pages -->
+var animationTextIntro="This animation shows ";
+
+<!-- specify text for optimizing pages -->
+var generalRecommendationsTitle="General Recommendations";
+
+<!-- informationObject: top half of navigation and topic title table -->
+var informationObjectTopNav1="";
+informationObjectTopNav1+='<table width="100%" border="0" cellpadding="0" cellspacing="0" background="../navimages/banner.gif">';
+informationObjectTopNav1+='  <tr> ';
+informationObjectTopNav1+='    <td height="49" colspan="2" nowrap><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;';
+informationObjectTopNav1+='      <SCRIPT>setCourseTitle()</SCRIPT>';
+informationObjectTopNav1+='      </font><br>';
+informationObjectTopNav1+='      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;';
+informationObjectTopNav1+='	  <SCRIPT>setLessonTitle()</SCRIPT>';
+informationObjectTopNav1+='      </FONT></STRONG>&nbsp;<img src="../navimages/bullet.gif" width="8" height="8" alt=" ">&nbsp;<FONT color="#FFFFFF" size="2"><STRONG>';
+informationObjectTopNav1+='&nbsp;<script>document.write(myPage+" of "+eval(myModule))</script></STRONG></FONT>&nbsp;&nbsp;</td>';
+informationObjectTopNav1+='    <td width="357" rowspan="3" valign="bottom"><img src="../navimages/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>';
+informationObjectTopNav1+='  </tr>';
+informationObjectTopNav1+='  <tr> ';
+informationObjectTopNav1+='    <td colspan="2" valign="bottom" nowrap><img src="../navimages/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onMouseOver="rOver(\'back\');window.status=\'Display the previous page.\';return true" onMouseOut="rOut(\'back\');window.status=\'\';return true" accesskey="b"><img src="../navimages/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onMouseOver="rOver(\'next\');window.status=\'Display the next page.\';return true" onMouseOut="rOut(\'next\');window.status=\'\';return true" accesskey="n"><img src="../navimages/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><SCRIPT>writeLessonMenu()</SCRIPT><SCRIPT>writePathOrExit()</SCRIPT><SCRIPT>writeHelpMenu()</SCRIPT><img src="../navimages/tabright.gif" width="28" height="19" alt=" "></td>';
+informationObjectTopNav1+='  </tr>';
+informationObjectTopNav1+='  <tr> ';
+informationObjectTopNav1+='    <td height="3" colspan="2" valign="bottom"><img src="../navimages/border.gif" width="100%" height="3" alt=" "></td>';
+informationObjectTopNav1+='  </tr>';
+informationObjectTopNav1+='  <tr valign="top" bgcolor="#FFFFF0"> ';
+informationObjectTopNav1+='    <td nowrap>&nbsp;&nbsp;&nbsp;</td>';
+informationObjectTopNav1+='    <td valign="middle"><br>';
+informationObjectTopNav1+='      <img src="../navimages/cleardot.gif" width="411" height="1" alt=" "><br>';
+
+function writeinformationObjectTopNav1() {
+   document.write(informationObjectTopNav1);
+}
+
+<!-- informationObject: bottom half of navigation and topic title table -->
+var informationObjectTopNav2="";
+informationObjectTopNav2+='</td>';
+informationObjectTopNav2+='    <td><img src="../navimages/arch.gif" width="357" height="64" align="top" alt=" "></td>';
+informationObjectTopNav2+='  </tr>';
+informationObjectTopNav2+='</table>';
+
+function writeinformationObjectTopNav2() {
+   document.write(informationObjectTopNav2);
+}
+
+function writeeg_informationObjectTopNav1() {
+   document.write(informationObjectTopNav1);
+}
+
+function writeeg_informationObjectTopNav2() {
+   document.write(informationObjectTopNav2);
+}
+
+<!--  stepByStep: top half of navigation and topic title table -->
+function writestepByStepTopNav1() {
+   document.write(informationObjectTopNav1);
+}
+
+var stepByStepTopNav2="";
+stepByStepTopNav2+='	  </td>';
+stepByStepTopNav2+='    <td><img src="../navimages/arch.gif" width="357" height="64" align="top" alt=" "></td>';
+stepByStepTopNav2+='  </tr>';
+stepByStepTopNav2+='</table>';
+stepByStepTopNav2+='<br>';
+stepByStepTopNav2+='<table cellpadding=0 cellspacing=0 border=0 width="85%" align="center">';
+stepByStepTopNav2+='  <tr valign="Top"> ';
+stepByStepTopNav2+='    <td width="92"><img src="../navimages/stepstep.gif" alt="Step by Step" width="92" height="33"></td>';
+stepByStepTopNav2+='    <td align="left" valign="Top"><strong>';
+
+function writestepByStepTopNav2() {
+   document.write(stepByStepTopNav2);
+}
+
+var stepByStepTopNav2sim="";
+stepByStepTopNav2sim+='	  </td>';
+stepByStepTopNav2sim+='    <td><img src="../navimages/arch.gif" width="357" height="64" align="top" alt=" "></td>';
+stepByStepTopNav2sim+='  </tr>';
+stepByStepTopNav2sim+='</table>';
+stepByStepTopNav2sim+='<DIV id="taskdesc"><table width="95%" cellpadding="3" cellspacing=0 border="0" class="left25">';
+stepByStepTopNav2sim+='  <tr valign="top"> ';
+stepByStepTopNav2sim+='    <td width="26"><img src="../navimages/simulation.gif" width="20" height="22" alt="Try a Simulation"></td>';
+stepByStepTopNav2sim+='    <td align="left" valign="bottom"><strong>';
+
+function writestepByStepTopNav2sim() {
+   document.write(stepByStepTopNav2sim);
+}
+
+
+var stepByStepTopNav3="";
+stepByStepTopNav3+='			</strong></td>';
+stepByStepTopNav3+='  </tr>';
+stepByStepTopNav3+='</table>';
+
+var stepByStepTopNav3sim="";
+stepByStepTopNav3sim+='			</strong><span id="pageLink"></span></td>';
+stepByStepTopNav3sim+='  </tr>';
+stepByStepTopNav3sim+='</table></DIV>';
+
+
+function writestepByStepTopNav3() {
+   document.write(stepByStepTopNav3);
+}
+
+function writestepByStepTopNav3sim() {
+   document.write(stepByStepTopNav3sim);
+}
+
+function writeeg_stepByStepTopNav1() {
+   document.write(informationObjectTopNav1);
+}
+
+function writeeg_stepByStepTopNav2() {
+   document.write(stepByStepTopNav2);
+}
+
+function writeeg_stepByStepTopNav3() {
+   document.write(stepByStepTopNav3);
+}
+
+var quiz50TopNav="";
+quiz50TopNav+='<table width="100%" border="0" cellpadding="0" cellspacing="0" background="../navimages/banner.gif">';
+quiz50TopNav+='  <tr>';
+quiz50TopNav+='    <td height="49" colspan="2" nowrap>';
+quiz50TopNav+='	<font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;';
+quiz50TopNav+='      <SCRIPT>document.write(courseTitleFirstLine)</SCRIPT>';
+quiz50TopNav+='      </font><br>';
+quiz50TopNav+='      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;';
+quiz50TopNav+='	  <SCRIPT>document.write(courseTitleSecondLine)</SCRIPT>';
+quiz50TopNav+='      </FONT></STRONG>';
+quiz50TopNav+='	</td>';
+quiz50TopNav+='    <td width="357" rowspan="3" valign="bottom"><img src="../navimages/logo_pe.gif" width="357" height="72" alt=" " align="bottom"></td>';
+quiz50TopNav+='  </tr>';
+quiz50TopNav+='  <tr> ';
+quiz50TopNav+='    <td colspan="2" valign="bottom" nowrap><img src="../navimages/tableft.gif" width="9" height="19" alt=" "><script>writeHomeOrExit()</script><img src="../navimages/tabright.gif" width="28" height="19" alt=" "></td>';
+quiz50TopNav+='  </tr>';
+quiz50TopNav+='  <tr> ';
+quiz50TopNav+='    <td height="3" colspan="2" valign="bottom"><img src="../navimages/border.gif" width="100%" height="3" alt=" "></td>';
+quiz50TopNav+='  </tr>';
+quiz50TopNav+='  <tr valign="top" bgcolor="#FFFFF0"> ';
+quiz50TopNav+='    <td nowrap>&nbsp;&nbsp;&nbsp;</td>';
+quiz50TopNav+='    <td valign="middle"><br> <img src="../navimages/cleardot.gif" width="411" height="1" alt=" "><br>';
+quiz50TopNav+='      <font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong>';
+quiz50TopNav+='Certification Practice Exam</strong></font></td>';
+quiz50TopNav+='    <td><img src="../navimages/arch_pe.gif" width="357" height="64" align="top" alt=" "></td>';
+quiz50TopNav+='  </tr>';
+quiz50TopNav+='</table>';
+
+function writequiz50TopNav() {
+   document.write(quiz50TopNav);
+}
+
+var tourTopNav1="";
+tourTopNav1+='<table width="100%" border="0" cellpadding="0" cellspacing="0" background="../navimages/banner.gif">';
+tourTopNav1+='  <tr> ';
+tourTopNav1+='    <td height="49" colspan="2" nowrap><strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp; ';
+tourTopNav1+='      <SCRIPT>setLessonTitle()</SCRIPT>';
+tourTopNav1+='      </FONT></STRONG>&nbsp;<img src="../navimages/bullet.gif"  alt=" " width="8" height="8">&nbsp;<FONT color="#FFFFFF" size="2"><STRONG> ';
+tourTopNav1+='      <script>document.write(myPage+" of "+eval(myModule))</script>';
+tourTopNav1+='      </STRONG></FONT>&nbsp;&nbsp;</td>';
+tourTopNav1+='  </tr>';
+tourTopNav1+='  <tr bgcolor="#CCCC99"> ';
+tourTopNav1+='    <td colspan="2" valign="bottom" nowrap><img src="../navimages/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onMouseOver="rOver(\'back\');window.status=\'Display the previous page.\';return true" onMouseOut="rOut(\'back\');window.status=\'\';return true" accesskey="b"><img src="../navimages/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onMouseOver="rOver(\'next\');window.status=\'Display the next page.\';return true" onMouseOut="rOut(\'next\');window.status=\'\';return true" accesskey="n"><SCRIPT>setNextGray()</SCRIPT></a><a href="m0_paths.htm" onMouseOver="rOver(\'tour\');window.status=\'Display the Tour Menu.\';return true" onMouseOut="rOut(\'tour\');window.status=\'\';return true" accesskey="p"><SCRIPT>writeTourMenu()</SCRIPT></a></td>';
+tourTopNav1+='  </tr>';
+tourTopNav1+='  <tr> ';
+tourTopNav1+='    <td height="3" colspan="2" valign="bottom"><img src="../navimages/border.gif" width="100%" height="3" alt=" "></td>';
+tourTopNav1+='  </tr>';
+tourTopNav1+='  <tr valign="top" bgcolor="#FFFFF0"> ';
+tourTopNav1+='    <td nowrap>&nbsp;&nbsp;&nbsp;</td>';
+tourTopNav1+='    <td valign="middle"><br> <img src="../navimages/cleardot.gif" width="411" height="1" alt=" "><br>';
+
+function writetourTopNav1() {
+   document.write(tourTopNav1);
+}
+
+var tourGuiTopNav1="";
+tourGuiTopNav1+='<table width="100%" border="0" cellpadding="0" cellspacing="0" background="../navimages/banner.gif">';
+tourGuiTopNav1+='  <tr> ';
+tourGuiTopNav1+='    <td height="49" colspan="2" nowrap><strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp; ';
+tourGuiTopNav1+='      <SCRIPT>setLessonTitle()</SCRIPT>';
+tourGuiTopNav1+='      </FONT></STRONG>&nbsp;<img src="../navimages/bullet.gif"  alt=" " width="8" height="8">&nbsp;<FONT color="#FFFFFF" size="2"><STRONG> ';
+tourGuiTopNav1+='      <script>document.write(myPage+" of "+eval(myModule))</script>';
+tourGuiTopNav1+='      </STRONG></FONT>&nbsp;&nbsp;</td>';
+tourGuiTopNav1+='  </tr>';
+tourGuiTopNav1+='  <tr bgcolor="#CCCC99"> ';
+tourGuiTopNav1+='    <td colspan="2" valign="bottom" nowrap><img src="../navimages/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onMouseOver="rOver(\'back\');window.status=\'Display the previous page.\';return true" onMouseOut="rOut(\'back\');window.status=\'\';return true" accesskey="b"><img src="../navimages/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onMouseOver="rOver(\'next\');window.status=\'Display the next page.\';return true" onMouseOut="rOut(\'next\');window.status=\'\';return true" accesskey="n"><SCRIPT>setNextGray()</SCRIPT></a><a href="m000_paths.htm" onMouseOver="rOver(\'tour\');window.status=\'Display the Tour Menu.\';return true" onMouseOut="rOut(\'tour\');window.status=\'\';return true" accesskey="p"><SCRIPT>writeGuiTourMenu()</SCRIPT></a></td>';
+tourGuiTopNav1+='  </tr>';
+tourGuiTopNav1+='  <tr> ';
+tourGuiTopNav1+='    <td height="3" colspan="2" valign="bottom"><img src="../navimages/border.gif" width="100%" height="3" alt=" "></td>';
+tourGuiTopNav1+='  </tr>';
+tourGuiTopNav1+='  <tr valign="top" bgcolor="#FFFFF0"> ';
+tourGuiTopNav1+='    <td nowrap>&nbsp;&nbsp;&nbsp;</td>';
+tourGuiTopNav1+='    <td valign="middle"><br> <img src="../navimages/cleardot.gif" width="411" height="1" alt=" "><br>';
+
+function writetourGuiTopNav1() {
+   document.write(tourGuiTopNav1);
+}
+
+var tourTopNav2="";
+tourTopNav2+='</td></tr></table>'; 
+
+function writetourTopNav2() {
+   document.write(tourTopNav2);
+}
+
+var lessonMenuTopNav="";
+lessonMenuTopNav+='<table width="100%" border="0" cellpadding="0" cellspacing="0" background="navimages/banner.gif">';
+lessonMenuTopNav+='  <tr> ';
+lessonMenuTopNav+='    <td height="49" colspan="2" nowrap><br>';
+lessonMenuTopNav+='	<font color="#FFFFFF" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;';
+if (courseOrLesson=="lesson") lessonMenuTopNav+='	<strong><SCRIPT>document.write(lessonTitle)</SCRIPT></strong>';
+else lessonMenuTopNav+='	<strong><SCRIPT>document.write(courseTitle)</SCRIPT></strong>';
+lessonMenuTopNav+='	</font><br>';
+lessonMenuTopNav+='      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;<a class="lessonlink" href="paths.htm" accesskey="p" onMouseOver="window.status=\'Display the learning path.\';return true" onMouseOut="window.status=\'\';return true"></a></FONT></STRONG></td>';
+lessonMenuTopNav+='    <td width="357" rowspan="3" valign="bottom"><img src="navimages/logotop2.gif" alt=" " width="357" height="72" align="bottom"></td>';
+lessonMenuTopNav+='  </tr>';
+lessonMenuTopNav+='  <tr> ';
+lessonMenuTopNav+='    <td colspan="2" valign="bottom" nowrap><img src="navimages/tableft.gif" alt=" " width="9" height="19"><a href="index.htm" onMouseOver="rOver(\'home\');window.status=\'Return to the home page.\';return true" onMouseOut="rOut(\'home\');window.status=\'\';return true" accesskey="m"><img src="navimages/home.gif" alt="Return to the home page" name="home" width="46" height="19" border="0" id="home"></a><a href="JavaScript: openOther(\'setup.htm\')" onMouseOver="rOver(\'byb\');window.status=\'Display the Before You Begin page.\';return true" onMouseOut="rOut(\'byb\');window.status=\'\';return true" accesskey="s"><img src="navimages/byb.gif" width="113" height="19" border="0" alt="Display the Before You Begin page" name="byb"></a><a href="JavaScript: resumeTopic()" onMouseOver="rOver(\'resume\');window.status=\'Resume the previous topic.\';return true" onMouseOut="rOut(\'resume\');window.status=\'\';return true" accesskey="r"><img src="navimages/resume.gif" width="59" height="19" border="0" alt="Resume the previous topic" name="resume"></a><img src="navimages/tabright.gif" width="28" height="19" alt="Resume the previous topic"></td>';
+lessonMenuTopNav+='  </tr>';
+lessonMenuTopNav+='  <tr> ';
+lessonMenuTopNav+='    <td height="3" colspan="2" valign="bottom"><img src="navimages/border2.gif" alt=" " width="100%" height="14"></td>';
+lessonMenuTopNav+='  </tr>';
+lessonMenuTopNav+='  <tr valign="top" bgcolor="#FFFFF0"> ';
+lessonMenuTopNav+='    <td nowrap>&nbsp;&nbsp;&nbsp;</td>';
+lessonMenuTopNav+='    <td valign="middle"><img src="navimages/cleardot.gif" alt=" " width="411" height="8"><br>';
+lessonMenuTopNav+='      <img src="navimages/block_1.gif" alt=" " width="13" height="13"><font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong>&nbsp;&nbsp;<script>document.write(lessonMenuTitle);</script></strong></font></td>';
+lessonMenuTopNav+='    <td><img src="navimages/arch2.gif" alt=" " width="357" height="64" align="top"></td>';
+lessonMenuTopNav+='  </tr>';
+lessonMenuTopNav+='</table>';
+
+function writelessonMenuTopNav() {
+   document.write(lessonMenuTopNav);
+}
+
+var copyriteTopNav="";
+copyriteTopNav+=' <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#003399">';
+copyriteTopNav+='   <tr> ';
+copyriteTopNav+='     <td colspan="2" nowrap><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif"><br>';
+copyriteTopNav+='       <strong>&nbsp;&nbsp; ';
+copyriteTopNav+='       <SCRIPT>setCourseTitle()</SCRIPT>';
+copyriteTopNav+='       </strong></font></td>';
+copyriteTopNav+='     <td width="357" rowspan="3" valign="bottom"><img src="navimages/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>';
+copyriteTopNav+='   </tr>';
+copyriteTopNav+='   <tr> ';
+copyriteTopNav+='     <td height="1" colspan="2" valign="bottom" nowrap>&nbsp;</td>';
+copyriteTopNav+='   </tr>';
+copyriteTopNav+='   <tr> ';
+copyriteTopNav+='     <td height="3" colspan="2" valign="bottom"><img src="navimages/border.gif" width="100%" height="3" align="bottom" alt=" "></td>';
+copyriteTopNav+='   </tr>';
+copyriteTopNav+='   <tr valign="top" bgcolor="#FFFFF0"> ';
+copyriteTopNav+='     <td nowrap>&nbsp;&nbsp;&nbsp;</td>';
+copyriteTopNav+='     <td valign="middle" nowrap> <img src="navimages/block_1.gif" width="13" height="13" alt=" "><font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong>&nbsp;&nbsp;Copyright</strong></font></td>';
+copyriteTopNav+='     <td><img src="navimages/arch.gif" width="357" height="64" align="top" alt=" "></td>';
+copyriteTopNav+='   </tr>';
+copyriteTopNav+=' </table>';
+
+function writecopyriteTopNav() {
+   document.write(copyriteTopNav);
+}
+
+var lessonMenuCertificateText="";
+lessonMenuCertificateText+='<td width="220" rowspan="30" valign="top"><p><strong><font color="#003399">Ready to graduate?</font></strong></p>';
+lessonMenuCertificateText+='        <p>If you scored 80% or higher on the quiz, you can print a <strong>certificate of completion</strong> for the lesson!<br></p>';
+lessonMenuCertificateText+='        <center>';
+lessonMenuCertificateText+='          <p><a href="JavaScript: downloadCertificate()"><img src="navimages/diplomas.gif" width="207" height="163" border="0" alt="Certificate"></a><br>';
+lessonMenuCertificateText+='            <em><font color="#003399" size="-1">Click the image to print a certificate.</font></em></p>';
+lessonMenuCertificateText+='        </center></td>';
+
+function writelessonMenuCertificateText() {
+   document.write(lessonMenuCertificateText);
+}
+
+<!-- bottom navigation and copyright table -->
+var nav_regular_bottom="";
+nav_regular_bottom+='<!-- #BeginLibraryItem "/Library/nav_regular_bottom.lbi" -->';
+nav_regular_bottom+='<table width="100%" cellspacing="0" cellpadding="0">';
+nav_regular_bottom+='  <tr>';
+nav_regular_bottom+='    <td width="14"><img src="../navimages/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="../navimages/linegray.gif" width="100%" height="7" alt=" "></td></tr>';
+nav_regular_bottom+='  <tr>';
+nav_regular_bottom+='    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(\'../copyrite.htm\')"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">&copy; 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onMouseOver="rOver(\'back2\');window.status=\'Display the previous page.\';return true" onMouseOut="rOut(\'back2\');window.status=\'\';return true" accesskey="b"><img src="../navimages/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onMouseOver="rOver(\'next2\');window.status=\'Display the next page.\';return true" onMouseOut="rOut(\'next2\');window.status=\'\';return true" accesskey="n"><img src="../navimages/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr>';
+nav_regular_bottom+='</table><p>&nbsp;</p><script>writeLessonDiv()</script>';
+nav_regular_bottom+='<script>writeHelpDiv()</script>';
+nav_regular_bottom+='<!-- #EndLibraryItem -->';
+
+function writeNav_regular_bottom() {
+   document.write(nav_regular_bottom);
+}
+
+function writeNav_regular_bottom_sim() {
+<!-- bottom navigation and copyright table for simulation pages -->
+
+var simFirstImage = document.getElementById("Image01"); 
+var simImageHeight = simFirstImage.style.height;
+simImageHeight = Number(simImageHeight.substring(0, simImageHeight.indexOf('px'))) + 35;
+
+var nav_regular_bottom_sim="";
+nav_regular_bottom_sim+='<div style="Z-INDEX: 99; LEFT: 0px; TOP: ' + simImageHeight + 'px; POSITION: absolute;">';
+nav_regular_bottom_sim+='<table width="100%" cellspacing="0" cellpadding="0">';
+nav_regular_bottom_sim+='  <tr>';
+nav_regular_bottom_sim+='    <td width="14"><img src="../navimages/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="../navimages/linegray.gif" width="100%" height="7" alt=" "></td></tr>';
+nav_regular_bottom_sim+='  <tr>';
+nav_regular_bottom_sim+='    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(\'../copyrite.htm\')"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">&copy; 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onMouseOver="rOver(\'back2\');window.status=\'Display the previous page.\';return true" onMouseOut="rOut(\'back2\');window.status=\'\';return true" accesskey="b"><img src="../navimages/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onMouseOver="rOver(\'next2\');window.status=\'Display the next page.\';return true" onMouseOut="rOut(\'next2\');window.status=\'\';return true" accesskey="n"><img src="../navimages/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr>';
+nav_regular_bottom_sim+='</table><p>&nbsp;</p><script>writeLessonDiv()</script>';
+nav_regular_bottom_sim+='<script>writeHelpDiv()</script>';
+nav_regular_bottom_sim+='</div>';
+
+   document.write(nav_regular_bottom_sim);
+}
+
+<!-- bottom navigation and copyright table -->
+var nav_quiz50_bottom="";
+nav_quiz50_bottom+='<table width="100%" cellspacing="0" cellpadding="0">';
+nav_quiz50_bottom+='  <tr>';
+nav_quiz50_bottom+='    <td width="14"><img src="../navimages/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="../navimages/linegray.gif" width="100%" height="7" alt=" "></td></tr>';
+nav_quiz50_bottom+='  <tr>';
+nav_quiz50_bottom+='    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(\'../copyrite.htm\')"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">&copy; 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"></td></tr>';
+nav_quiz50_bottom+='</table>';
+
+function writeNav_quiz50_bottom() {
+   document.write(nav_quiz50_bottom);
+}
+
+var nav_tour_bottom="";
+nav_tour_bottom+='<!-- #BeginLibraryItem "/Library/nav_tour_bottom.lbi" -->';
+nav_tour_bottom+='<table width="100%" cellspacing="0" cellpadding="0">';
+nav_tour_bottom+='  <tr> ';
+nav_tour_bottom+='    <td width="14"><img src="../navimages/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="../navimages/linegray.gif" width="100%" height="7" alt=" "></td></tr>';
+nav_tour_bottom+='  <tr> ';
+nav_tour_bottom+='    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a ';
+nav_tour_bottom+='	  class="copyrightlink" href="JavaScript: openOther(\'../copyrite.htm\')"><font face="Arial, Helvetica, sans-serif">Copyright</font></a> ';
+nav_tour_bottom+='      <font face="Arial, Helvetica, sans-serif">&copy; 2005 SAS Institute Inc., ';
+nav_tour_bottom+='      Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br>';
+nav_tour_bottom+='        <font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms ';
+nav_tour_bottom+='        of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy ';
+nav_tour_bottom+='        Statement</a></font>';
+nav_tour_bottom+='      </font></td><td width="60"> ';
+nav_tour_bottom+='      <div align="right"><a href="JavaScript: prevPage()" onMouseOver="rOver(\'back2\');window.status=\'Display the previous page.\';return true" onMouseOut="rOut(\'back2\');window.status=\'\';return true" accesskey="b"><img src="../navimages/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onMouseOver="rOver(\'next2\');window.status=\'Display the next page.\';return true" onMouseOut="rOut(\'next2\');window.status=\'\';return true" accesskey="n"><SCRIPT>setNextGray2()</SCRIPT></a></div></td></tr>';
+nav_tour_bottom+='</table><p>&nbsp;</p><!-- #EndLibraryItem --> ';
+
+function writeNav_tour_bottom() {
+   document.write(nav_tour_bottom);
+}
+
+<!-- bottom navigation and copyright table for popups -->
+var nav_popup_bottom="";
+nav_popup_bottom+='<!-- #BeginLibraryItem "/Library/nav_popup_bottom.lbi" --><center><table width="100%" cellspacing="0" cellpadding="0">';
+nav_popup_bottom+='      <tr> ';
+nav_popup_bottom+='        <td width="14"><img src="../navimages/linebox.gif" width="14" height="7" alt=" "></td>';
+nav_popup_bottom+='        <td><img src="../navimages/linegray.gif" width="100%" height="7" alt=" "></td>';
+nav_popup_bottom+='      </tr>';
+nav_popup_bottom+='      <tr> ';
+nav_popup_bottom+='        <td>&nbsp;</td>';
+nav_popup_bottom+='        <td valign="top"> <center>';
+nav_popup_bottom+='          <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(\'../copyrite.htm\')"><font face="Arial, Helvetica, sans-serif">Copyright</font></a>';
+nav_popup_bottom+='          <font face="Arial, Helvetica, sans-serif">&copy; 2005 SAS Institute ';
+nav_popup_bottom+='          Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br>';
+nav_popup_bottom+='            <font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font> </font>';
+nav_popup_bottom+='          </center>';
+nav_popup_bottom+='          </td>';
+nav_popup_bottom+='      </tr>';
+nav_popup_bottom+='    </table></center>';
+nav_popup_bottom+='    <p>&nbsp;</p>';
+nav_popup_bottom+='<!-- #EndLibraryItem -->';
+
+function writeNav_popup_bottom() {
+   document.write(nav_popup_bottom);
+}
+
+<!-- bottom navigation and copyright table for top-level popups -->
+var nav_bottom_highlevel="";
+nav_bottom_highlevel+='<!-- #BeginLibraryItem "/Library/nav_bottom_highlevel.lbi" --><center><table width="100%" cellspacing="0" cellpadding="0">';
+nav_bottom_highlevel+='      <tr> ';
+// alert(document.bgColor);
+if (document.bgColor == "#003399") {
+   nav_bottom_highlevel+='        <td colspan="2"><hr size="1"></td>';
+}
+else {
+   nav_bottom_highlevel+='        <td width="14"><img src="navimages/linebox.gif" width="14" height="7" alt=" "></td>';
+   nav_bottom_highlevel+='        <td><img src="navimages/linegray.gif" width="100%" height="7" alt=" "></td>';
+}
+nav_bottom_highlevel+='      </tr>';
+nav_bottom_highlevel+='      <tr> ';
+nav_bottom_highlevel+='        <td>&nbsp;</td>';
+nav_bottom_highlevel+='        <td valign="top">';
+nav_bottom_highlevel+='          <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(\'copyrite.htm\')"><font face="Arial, Helvetica, sans-serif">Copyright</font></a>';
+nav_bottom_highlevel+='          <font face="Arial, Helvetica, sans-serif">&copy; 2005 SAS Institute ';
+nav_bottom_highlevel+='          Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br>';
+nav_bottom_highlevel+='            <font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font> </font>';
+nav_bottom_highlevel+='          </td>';
+nav_bottom_highlevel+='      </tr>';
+nav_bottom_highlevel+='    </table></center>';
+nav_bottom_highlevel+='    <p>&nbsp;</p>';
+nav_bottom_highlevel+='<!-- #EndLibraryItem -->';
+
+function writeNav_bottom_highlevel() {
+   document.write(nav_bottom_highlevel);
+}
+
+<!-- bottom navigation and copyright table for top-level popups -->
+var nav_popup_bottom_highlevel="";
+nav_popup_bottom_highlevel+='<!-- #BeginLibraryItem "/Library/nav_popup_bottom_highlevel.lbi" --><center><table width="100%" cellspacing="0" cellpadding="0">';
+nav_popup_bottom_highlevel+='      <tr> ';
+// alert(document.bgColor);
+if (document.bgColor == "#003399") {
+   nav_popup_bottom_highlevel+='        <td colspan="2"><hr size="1"></td>';
+}
+else {
+   nav_popup_bottom_highlevel+='        <td width="14"><img src="navimages/linebox.gif" width="14" height="7" alt=" "></td>';
+   nav_popup_bottom_highlevel+='        <td><img src="navimages/linegray.gif" width="100%" height="7" alt=" "></td>';
+}
+nav_popup_bottom_highlevel+='      </tr>';
+nav_popup_bottom_highlevel+='      <tr> ';
+nav_popup_bottom_highlevel+='        <td>&nbsp;</td>';
+nav_popup_bottom_highlevel+='        <td valign="top"> <center>';
+nav_popup_bottom_highlevel+='          <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(\'copyrite.htm\')"><font face="Arial, Helvetica, sans-serif">Copyright</font></a>';
+nav_popup_bottom_highlevel+='          <font face="Arial, Helvetica, sans-serif">&copy; 2005 SAS Institute ';
+nav_popup_bottom_highlevel+='          Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br>';
+nav_popup_bottom_highlevel+='            <font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font> </font>';
+nav_popup_bottom_highlevel+='          </center>';
+nav_popup_bottom_highlevel+='          </td>';
+nav_popup_bottom_highlevel+='      </tr>';
+nav_popup_bottom_highlevel+='    </table></center>';
+nav_popup_bottom_highlevel+='    <p>&nbsp;</p>';
+nav_popup_bottom_highlevel+='<!-- #EndLibraryItem -->';
+
+function writeNav_popup_bottom_highlevel() {
+   document.write(nav_popup_bottom_highlevel);
+}
+
+var nav_exitMore_bottom="";
+nav_exitMore_bottom+='<!-- #BeginLibraryItem "/Library/nav_exitMore_bottom.lbi" -->';
+nav_exitMore_bottom+='<table width="100%" cellspacing="0" cellpadding="0">';
+nav_exitMore_bottom+='  <tr> ';
+nav_exitMore_bottom+='    <td width="14"><img src="../navimages/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="../navimages/linegray.gif" width="100%" height="7" alt=" "></td></tr>';
+nav_exitMore_bottom+='  <tr> ';
+nav_exitMore_bottom+='    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a ';
+nav_exitMore_bottom+='	  class="copyrightlink" href="JavaScript: openOther(\'../copyrite.htm\')"><font face="Arial, Helvetica, sans-serif">Copyright</font></a> ';
+nav_exitMore_bottom+='      <font face="Arial, Helvetica, sans-serif">&copy; 2005 SAS Institute Inc., ';
+nav_exitMore_bottom+='      Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br>';
+nav_exitMore_bottom+='        <font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms ';
+nav_exitMore_bottom+='        of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy ';
+nav_exitMore_bottom+='        Statement</a></font>';
+nav_exitMore_bottom+='      </font></td><td width="60"> ';
+nav_exitMore_bottom+='      <div align="right"><a href="JavaScript: prevPage()" onMouseOver="rOver(\'back2\');window.status=\'Display the previous page.\';return true" onMouseOut="rOut(\'back2\');window.status=\'\';return true" accesskey="b"><img src="../navimages/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><img src="../navimages/next2_g.gif" alt="end of lesson" width="30" height="19" border="0" name="next2"></div></td></tr>';
+nav_exitMore_bottom+='</table><p>&nbsp;</p><script>writeLessonDiv()</script>';
+nav_exitMore_bottom+='<script>writeHelpDiv()</script>';
+nav_exitMore_bottom+='<!-- #EndLibraryItem --> ';
+
+function writeNav_exitMore_bottom() {
+   document.write(nav_exitMore_bottom);
+}
+
+var nav_copyriteonly_bottom="";
+nav_copyriteonly_bottom+='<!-- #BeginLibraryItem "/Library/nav_copyriteonly_bottom.lbi" -->';
+nav_copyriteonly_bottom+='<table width="100%" cellspacing="0" cellpadding="0">';
+nav_copyriteonly_bottom+='  <tr> ';
+nav_copyriteonly_bottom+='    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a ';
+nav_copyriteonly_bottom+='	  class="copyrightlink" ';
+if ((myModule) && (myModule.substring(0,1) == "m")) nav_copyriteonly_bottom+='	  href="JavaScript: openOther(\'../copyrite.htm\')">';
+else nav_copyriteonly_bottom+='	  href="JavaScript: openOther(\'copyrite.htm\')">';
+nav_copyriteonly_bottom+='	  <font face="Arial, Helvetica, sans-serif">Copyright</font></a> ';
+nav_copyriteonly_bottom+='      <font face="Arial, Helvetica, sans-serif">&copy; 2005 SAS Institute Inc., ';
+nav_copyriteonly_bottom+='      Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br>';
+nav_copyriteonly_bottom+='      <font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms ';
+nav_copyriteonly_bottom+='      of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy ';
+nav_copyriteonly_bottom+='      Statement</a></font> </font></td></tr>';
+nav_copyriteonly_bottom+='</table><p>&nbsp;</p><!-- #EndLibraryItem -->';
+
+function writeNav_copyriteonly_bottom() {
+   document.write(nav_copyriteonly_bottom);
+}
+
+var closeButton="";
+closeButton+='<form name="form1" method="post" action=""><input type="button" name="Button" value="Close" onClick="JavaScript: self.close()"></form>';
+
+function writecloseButton() {
+   document.write(closeButton);
+}
+
+var quizSubmitButtons="";
+quizSubmitButtons+='<INPUT TYPE="button" NAME="checkans" value=" Score My Quiz " onClick="setAnswer(this.form); openResults(resultsWindow);"> <INPUT type="reset" value=" Clear Answers " onClick="window.location.reload()">';
+
+function writequizSubmitButtons() {
+   document.write(quizSubmitButtons);
+}
+
+var quiz50SubmitButtons="";
+quiz50SubmitButtons+='<INPUT TYPE="button" NAME="checkans" value=" Score My Practice Exam " onClick="setAnswer(this.form); openResults(resultsWindow);"> <INPUT type="reset" value=" Clear Answers " onClick="window.location.reload()">';
+
+function writequiz50SubmitButtons() {
+   document.write(quiz50SubmitButtons);
+}
+
+var returnToQuizButton="";
+returnToQuizButton+='<FORM onSubmit="askCheck();closeQuizResults();return false"><P><center><INPUT TYPE=submit VALUE=" Return to Quiz "></center></FORM>';
+
+function writereturnToQuizButton() {
+   document.write(returnToQuizButton);
+}
+
+var resetButton="";
+resetButton+='<div id="resetbtn"><a href="JavaScript: openJumpMenu(\'sasvers.htm\')" onMouseOver="rOver(\'reset\');window.status=\'Reset your SAS version.\';return true" onMouseOut="rOut(\'reset\');window.status=\'\';return true" accesskey="x"><img src="navimages/reset.gif" width="168" height="28" border="0" alt="Reset your SAS version" name="reset"></a></div>';
+
+function writeresetButton() {
+   document.write(resetButton);
+}
+
+var topofpageButton="";
+topofpageButton+='<IMG SRC="../navimages/button.gif" WIDTH="15" HEIGHT="14" ALT="Return to top" BORDER="0">';
+
+function writetopofpageButton() {
+   document.write(topofpageButton);
+}
+
+var showCorrectAnswerButton="";
+showCorrectAnswerButton+='<center>';
+showCorrectAnswerButton+='            <hr>';
+showCorrectAnswerButton+='            <input type="button" name="showans" value=" Show Correct Answer " onClick="document.form1.answer[correctButton].checked = true;openAnswer(message + correct)">';
+showCorrectAnswerButton+='            <hr>';
+showCorrectAnswerButton+='          </center>';
+
+function writeshowCorrectAnswerButton() {
+   document.write(showCorrectAnswerButton);
+}
+
+var practiceTopNav1="";
+practiceTopNav1+='<table width="100%" border="0" cellpadding="0" cellspacing="0" background="../navimages/banner.gif">';
+practiceTopNav1+='  <tr> ';
+practiceTopNav1+='    <td height="49" colspan="2" nowrap><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;';
+practiceTopNav1+='      <script>setCourseTitle()</script>';
+practiceTopNav1+='      </font><br>';
+practiceTopNav1+='      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;';
+practiceTopNav1+='      <script>setLessonTitle()</script>';
+practiceTopNav1+='      </font></strong>&nbsp;<img src="../navimages/bullet.gif" width="8" height="8" alt=" ">&nbsp;<font color="#FFFFFF" size="2"><strong>';
+practiceTopNav1+='      <script>document.write(myPage+" of "+eval(myModule))</script>';
+practiceTopNav1+='      </strong></font>&nbsp;&nbsp;</td>';
+practiceTopNav1+='    <script>writeHoop();</script>';
+practiceTopNav1+='  </tr>';
+practiceTopNav1+='  <tr> ';
+practiceTopNav1+='    <td colspan="2" valign="bottom" nowrap><img src="../navimages/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onMouseOver="rOver(\'back\');window.status=\'Display the previous page.\';return true" onMouseOut="rOut(\'back\');window.status=\'\';return true" accesskey="b"><img src="../navimages/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onMouseOver="rOver(\'next\');window.status=\'Display the next page.\';return true" onMouseOut="rOut(\'next\');window.status=\'\';return true" accesskey="n"><img src="../navimages/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><script>writeLessonMenu()</script><SCRIPT>writePathOrExit()</SCRIPT><script>writeHelpMenu()</script><img src="../navimages/tabright.gif" width="28" height="19" alt=" "></td>';
+practiceTopNav1+='  </tr>';
+practiceTopNav1+='  <tr> ';
+practiceTopNav1+='    <td height="3" colspan="2" valign="bottom"><img src="../navimages/border.gif" width="100%" height="3" alt=" "></td>';
+practiceTopNav1+='  </tr>';
+practiceTopNav1+='  <tr valign="top" bgcolor="#FFFFF0"> ';
+practiceTopNav1+='    <td nowrap>&nbsp;&nbsp;&nbsp;</td>';
+practiceTopNav1+='    <td valign="middle"><br> <br> <table cellpadding=0 cellspacing=0 border=0 width="411" align="center">';
+practiceTopNav1+='        <tr valign="Top"> ';
+practiceTopNav1+='          <td width="115"><img src="../navimages/tryit.gif" alt="Try It!" width="100" height="50"></td>';
+practiceTopNav1+='          <td align="left" valign="Top"><strong>';
+
+function writepracticeTopNav1() {
+   document.write(practiceTopNav1);
+}
+
+var practiceTopNav2="";
+practiceTopNav2+='			</strong></td>';
+practiceTopNav2+='        </tr>';
+practiceTopNav2+='      </table></td>';
+practiceTopNav2+='    <td valign="top" align="right"><script>writeArch()</script></td>';
+practiceTopNav2+='  </tr>';
+practiceTopNav2+='  <tr valign="top" bgcolor="#FFFFF0">';
+practiceTopNav2+='    <td nowrap>&nbsp;</td>';
+practiceTopNav2+='    <td valign="middle">&nbsp;</td>';
+practiceTopNav2+='    <td valign="top" align="right">&nbsp;</td>';
+practiceTopNav2+='  </tr>';
+practiceTopNav2+='</table>';
+
+function writepracticeTopNav2() {
+   document.write(practiceTopNav2);
+}
+
+function writeeg_practiceTopNav1() {
+   document.write(practiceTopNav1);
+}
+
+function writeeg_practiceTopNav2() {
+   document.write(practiceTopNav2);
+}
+
+var practiceSolutionLink="";
+practiceSolutionLink+='<A HREF="JavaScript:openSolution(solutionTitle+solutionText)" onMouseOver="window.status=\'Display the solution to the practice.\';return true" onMouseOut="window.status=\'\';return true"><IMG SRC="../navimages/bulby.gif" ALT="Solution" WIDTH="60" HEIGHT="60" border="0"></A> <br><br>';
+
+function writepracticeSolutionLink() {
+   document.write(practiceSolutionLink);
+}
+
+var inlinePracticeSolutionLink="";
+inlinePracticeSolutionLink+='<A HREF="JavaScript: showSolutionInline()" onMouseOver="window.status=\'Display the solution to the practice.\';return true" onMouseOut="window.status=\'\';return true"><IMG SRC="../navimages/bulby_s.gif" ALT="Solution" name="solution_gif" WIDTH="60" HEIGHT="60" border="0" id="solution_gif"></A><br><br>';
+
+function writeinlinePracticeSolutionLink() {
+   document.write(inlinePracticeSolutionLink);
+}
+//BETH TEST BUTTON FOR NEW PRACTICE PAGES
+var onpagePracticeSolutionLink="";
+onpagePracticeSolutionLink+='<A HREF="JavaScript: showSolutionOnPage()" onMouseOver="window.status=\'Display the solution to the practice.\';return true" onMouseOut="window.status=\'\';return true"><IMG SRC="../navimages/bulby_s.gif" ALT="Solution" name="solution_gif" WIDTH="60" HEIGHT="60" border="0" id="solution_gif"></A><br><br>';
+
+function writeonpagePracticeSolutionLink() {
+   document.write(onpagePracticeSolutionLink);
+}
+//END BETH TEST BUTTON
+var oldstylePracticeSolutionLink="";
+oldstylePracticeSolutionLink+='<A HREF="JavaScript: showEGSolutionOldstyle()" onMouseOver="window.status=\'Display the solution to the practice.\';return true" onMouseOut="window.status=\'\';return true"><IMG SRC="../navimages/bulby.gif" ALT="Solution" WIDTH="60" HEIGHT="60" border="0"></A> <br><br>';
+
+function writeoldstylePracticeSolutionLink() {
+   document.write(oldstylePracticeSolutionLink);
+}
+
+var fillInQuestionForm="";
+fillInQuestionForm+='<CENTER>';
+fillInQuestionForm+='	      <HR>';
+fillInQuestionForm+='	   <INPUT TYPE="button" NAME="checkans" value=" Check My Answer " onClick="setFeedback(checkKeyword,checkSemicolon,useParens);return false">';
+fillInQuestionForm+='	    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;';
+fillInQuestionForm+='	    <INPUT TYPE="button" NAME="showans" value=" Show Correct Answer " onClick="showAnswer()">';
+fillInQuestionForm+='	      <HR>';
+fillInQuestionForm+='	  </CENTER>';
+
+function writefillInQuestionForm() {
+   document.write(fillInQuestionForm);
+}
+
+var endCertificateText="";
+endCertificateText+='<p><br>Congratulations! You\'ve completed <strong><SCRIPT>setLessonTitle()</SCRIPT></strong>. If you scored 80% or higher on the quiz, you can <a href="JavaScript: downloadCertificate()">print your lesson certificate</a>.</p>';
+
+function writeendCertificateText() {
+   document.write(endCertificateText);
+}
+
+var endResourcesText="";
+endResourcesText+='<p><br>';
+endResourcesText+='        You can access a wide range of support services and information at the ';
+endResourcesText+='        Customer Support Center <a href="http://support.sas.com" target="_blank">support.sas.com</a>. ';
+endResourcesText+='      <p>Or you can access the following support directly:</p>';
+endResourcesText+='      <ul>';
+endResourcesText+='        <li>training <a href="http://support.sas.com/training" target="_blank">support.sas.com/training</a></li>';
+endResourcesText+='        <li> online documentation <a href="http://support.sas.com/documentation" target="_blank">support.sas.com/documentation</a></li>';
+endResourcesText+='        <li> books <a href="http://support.sas.com/pubs" target="_blank">support.sas.com/pubs</a></li>';
+endResourcesText+='        <li> SAS sample programs <a href="http://support.sas.com/sassamples" target="_blank">support.sas.com/sassamples</a></li>';
+endResourcesText+='      </ul>';
+endResourcesText+='      <p>For additional information about accessing online help and documentation, ';
+endResourcesText+='        select <strong>Help<img src="../navimages/arrow.gif" alt="arrow" width="14" height="10">';
+endResourcesText+='SAS Documentation</strong> from the top of this page or from any other ';
+endResourcesText+='        lesson page.</p>';
+
+function writeendResourcesText() {
+   document.write(endResourcesText);
+}
+
+var endCertificateLink="";
+endCertificateLink+='<br><a href="JavaScript: downloadCertificate()"><br><img src="../navimages/diplomas.gif" width="207" height="163" border="0" alt="Certificate"></a><br><br><br>';
+
+function writeendCertificateLink() {
+   document.write(endCertificateLink);
+}
+
+var reference="";
+function writeFeedbackLink() {
+   reference="feedback for " + myModule + ": " + eval(moduleTitle); 
+   document.write('<p><br><table width="85%" border="0" cellpadding="3" cellspacing="0" align="center"><tr bgcolor="#F7F7DE"><td><strong> Comments </strong></td></tr><tr valign="top"><td><br>Comments? Fill out our <a href="JavaScript: openFeedbackForm()">feedback form</a>.</td></tr></table><p><br>');
+}
+
+var newFeedbackWindow="";
+function openFeedbackForm() {
+   newFeedbackWindow = window.open('http://support.sas.com/training/elearn/catalog/lesson_feedback.html#'+reference,'SASFeedback','top=0,left=0,width=700,height=800,resizable=1,scrollbars=yes');
+      if (alreadyopen) {
+         alreadyopen = false;
+      }
+   alreadyopen = true;
+}
+
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            oldonload();
+            func();
+        }
+    }
+}
+
+addLoadEvent(function() {
+    for (i=0; i<document.all.length; i++) {
+	    this_tag_name = document.all(i).tagName;
+		if (this_tag_name == "HTML") {
+
+		<!-- specify text to check for and change(s) -->
+		   if (document.images) {
+              for (i=0; i<document.images.length; i++) {
+			     myDateString=getDateStr();
+			     if ( (document.images[i].src.indexOf("navimages/logo_top.gif") !=-1) && (myDateString.indexOf("December") != -1) && (myPubcode != "60476") && (myPubcode != "60477") && (myName.indexOf("_") !=-1) ) {
+				    document.images[i].src = "../navimages/snowflakes.gif";
+			     }
+			  }
+		   }
+		<!-- end of change(s) -->
+
+        }
+   }
+}
+)
+

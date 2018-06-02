@@ -1,0 +1,1376 @@
+/* Copyright © 2003-2004 Rustici Software, LLC  All Rights Reserved. */
+
+//API functions - each function validates inputs, then passes call to Standard function
+
+//global status variables
+var blnCalledFinish = false;
+var blnStandAlone = false;
+var blnLoaded = false;
+var blnReachedEnd = false;
+var blnStatusWasSet = false;
+
+//time tracking variables
+var dtmStart = null;
+var dtmEnd = null;
+var intAccumulatedMS = 0;
+var blnOverrodeTime = false;
+var intTimeOverrideMS = null;
+
+//debug info
+var aryDebug = new Array();
+var strDebug = "";
+var winDebug;
+
+var intError = NO_ERROR;
+var strErrorDesc = "";
+
+var objLMS = null;
+
+//public
+function Start(){
+
+	var strStandAlone;
+	var strShowInteractiveDebug;
+	var objTempAPI = null;
+	var strTemp = "";
+	
+	WriteToDebug("In Start - Version: " + VERSION + "  Last Modified=" + window.document.lastModified);
+	WriteToDebug("Browser Info (" + navigator.appName + " " + navigator.appVersion + ")");
+	WriteToDebug("URL: " + window.document.location.href);
+		
+	ClearErrorInfo();
+	
+	strStandAlone           = GetQueryStringValue("StandAlone", window.location.search);
+	strShowInteractiveDebug = GetQueryStringValue("ShowDebug", window.location.search);
+	
+	WriteToDebug("strStandAlone=" + strStandAlone + "  strShowInteractiveDebug=" + strShowInteractiveDebug);
+	
+	if (ConvertStringToBoolean(strStandAlone)){
+		WriteToDebug("Entering Stand Alone Mode");
+		blnStandAlone = true;
+	}	
+	
+	if (blnStandAlone){
+		WriteToDebug("Using NONE Standard");
+		objLMS = new LMSStandardAPI("NONE");
+	}
+	else{
+		WriteToDebug("Standard From Configuration File - " + strLMSStandard);
+		
+		if (strLMSStandard.toUpperCase() == "AUTO"){
+			
+			WriteToDebug("Auto-detecting standard - Searching for SCORM API");
+			objTempAPI = SCORM_GrabAPI();
+
+			if (! (typeof(objTempAPI) == "undefined" || objTempAPI == null)){
+				WriteToDebug("Found SCORM API, using SCORM");
+				strLMSStandard = "SCORM";
+				objLMS = new LMSStandardAPI("SCORM");
+			}
+			else{
+				//search for AICC receptor page
+				WriteToDebug("Searching for AICC querystring parameters");
+				strTemp = GetQueryStringValue("AICC_URL", document.location.search);
+				
+				if(strTemp != ""){
+					WriteToDebug("Found AICC querystring parameters, using AICC");
+					strLMSStandard = "AICC";
+					objLMS = new LMSStandardAPI("AICC");
+				}
+				else{
+					WriteToDebug("Could not determine standard, defaulting to Stand Alone");				
+					strLMSStandard = "NONE";
+					objLMS = new LMSStandardAPI("NONE");
+				}
+			}
+			
+			
+			
+		}else{
+			WriteToDebug("Using Standard From Configuration File - " + strLMSStandard);
+			objLMS = new LMSStandardAPI(strLMSStandard);
+		}
+	}
+	
+	if (ConvertStringToBoolean(strShowInteractiveDebug)){
+		WriteToDebug("Showing Interactive Debug Windows");
+		ShowDebugWindow();
+	}
+	
+	WriteToDebug("Calling Standard Initialize");
+	
+	objLMS.Initialize();
+	
+	return;
+}
+	
+
+
+function InitializeExecuted(blnSuccess, strErrorMessage){
+	
+	WriteToDebug("In InitializeExecuted, blnSuccess=" + blnSuccess + ", strErrorMessage=" + strErrorMessage);
+	
+	if (!blnSuccess){
+		WriteToDebug("ERROR - LMS Initialize Failed");
+		if (strErrorMessage == ""){
+			strErrorMessage = "An Error Has Occurred";
+		}
+		DisplayError(strErrorMessage);
+		return;
+	}
+
+	blnLoaded = true;
+	dtmStart = new Date();
+		
+	LoadContent();
+	
+	return;
+}
+
+
+//private - no need to call this directly, use "Finish", "Suspend" or "Timeout"
+function ExecFinish(ExitType){
+	
+	WriteToDebug("In ExecFinish, ExiType=" + ExitType);
+	
+	ClearErrorInfo();
+	
+	if (blnLoaded && ! blnCalledFinish ){
+		
+		WriteToDebug("Haven't called finish before, finishing");
+		
+		blnCalledFinish = true;
+
+		if (blnReachedEnd){
+			WriteToDebug("Reached End, overiding exit type to FINISH");
+			ExitType = EXIT_TYPE_FINISH;
+		}
+		
+		
+		if (blnOverrodeTime){
+			WriteToDebug("Overrode Time");
+			objLMS.SaveTime(intTimeOverrideMS);
+		}
+		else{
+			WriteToDebug("Did not override time");
+			dtmEnd = new Date();
+			AccumulateTime();
+			objLMS.SaveTime(intAccumulatedMS);
+		}
+		
+		blnLoaded = false;
+		
+		WriteToDebug("Calling LMS Finish");
+		return objLMS.Finish(ExitType, blnStatusWasSet);
+		
+	}
+	
+	return true;
+}
+
+
+//Utilities
+
+//public
+//tells child frames when the API is ready
+function IsLoaded(){
+	WriteToDebug("In IsLoaded, returning -" + blnLoaded);
+	return blnLoaded;
+}
+
+
+//public
+function WriteToDebug(strInfo){
+	
+	if (blnDebug){
+	
+		var dtm = new Date();
+		var strLine;
+		
+		strLine = aryDebug.length + ":" + dtm.toString() + " - " + strInfo;
+				
+		aryDebug[aryDebug.length] = strLine;
+		
+		if (winDebug && !winDebug.closed){
+			winDebug.document.write(strLine + "<br>\n");
+		}
+
+	}
+	return;
+}
+
+//public
+function ShowDebugWindow(){
+
+	if (winDebug && !winDebug.closed){
+		winDebug.close();
+	}
+	
+	winDebug = window.open("blank.htm", "Debug", "width=600,height=300,resizable,scrollbars");
+	
+	winDebug.document.write(aryDebug.join("<br>\n"));
+	
+	winDebug.document.close();
+	
+	winDebug.focus();
+	
+	return;
+}
+
+//public
+function DisplayError(strMessage){
+	
+	var blnShowDebug;
+	
+	WriteToDebug("In DisplayError, strMessage=" + strMessage);
+	
+	blnShowDebug = confirm("An error has occured:\n\n" + strMessage + "\n\nPress 'OK' to view debug information to send to technical support.");
+	
+	if (blnShowDebug){
+		ShowDebugWindow();
+	}
+	
+}
+
+
+//public
+//combines API error information with Standard's error information
+function GetLastError(){
+	
+	WriteToDebug("In GetLastError, intError=" + intError);
+	
+	if (intError != NO_ERROR){
+		WriteToDebug("Returning API Error");
+		return intError;
+	}
+	else if (IsLoaded() && objLMS.GetLastError() != NO_ERROR){
+		WriteToDebug("Returning LMS Error");
+		return ERROR_LMS;
+	}
+	
+	WriteToDebug("Returning No Error");
+	return NO_ERROR;
+}
+
+//public
+function GetLastErrorDesc(){
+	WriteToDebug("In GetLastErrorDesc");
+	
+	if (intError != NO_ERROR){
+		WriteToDebug("Returning API Error - " + strErrorDesc);
+		return strErrorDesc;
+	}
+	else if (IsLoaded() && objLMS.GetLastError() != NO_ERROR){
+		WriteToDebug("returning LMS Error");
+		return objLMS.GetLastErrorDesc;
+	}
+	
+	WriteToDebug("Returning No Error");
+	return "";
+}
+
+//private
+function SetErrorInfo(intErrorNumToSet, strErrorDescToSet){
+
+
+	WriteToDebug("In SetErrorInfo - Num=" + intErrorNumToSet + " Desc=" + strErrorDescToSet);
+	
+	intError = intErrorNumToSet;
+	strErrorDesc = strErrorDescToSet;
+}
+
+//private
+function ClearErrorInfo(){
+	WriteToDebug("In ClearErrorInfo");
+	
+	var intError = NO_ERROR;
+	var strErrorDesc = "";
+}
+
+
+//public
+function CommitData(){
+	WriteToDebug("In CommitData");
+	
+	ClearErrorInfo();
+	
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+	
+	return objLMS.CommitData();
+}
+
+
+//Finish functions
+
+//public
+function Suspend(){
+	WriteToDebug("In Suspend");
+	ClearErrorInfo();	
+	
+	return ExecFinish(EXIT_TYPE_SUSPEND);
+}
+
+//public
+function Finish(){
+	WriteToDebug("In Finish");
+	ClearErrorInfo();
+		
+	return ExecFinish(EXIT_TYPE_FINISH);
+}
+
+//public
+function TimeOut(){
+	WriteToDebug("In TimeOut");
+	ClearErrorInfo();
+		
+	return ExecFinish(EXIT_TYPE_TIMEOUT);
+}
+
+//public
+function Unload(){
+	WriteToDebug("In Unload");
+	ClearErrorInfo();
+		
+	return ExecFinish(DEFAULT_EXIT_TYPE);
+}
+
+//public
+function SetReachedEnd(){
+	WriteToDebug("In SetReachedEnd");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	blnReachedEnd = true;
+	
+	return true;
+}
+
+//public
+function ConcedeControl()
+{
+	WriteToDebug("Conceding control with type: " + EXIT_BEHAVIOR);
+	ClearErrorInfo();
+	switch (EXIT_BEHAVIOR)
+	{
+		case "SCORM_RECOMMENDED":
+			if (window.parent==window.top)
+			{
+				Suspend();				
+				parent.window.close();
+			}  
+			else
+			{
+				Suspend();
+				//parent.location.href=EXIT_TARGET;
+			}
+			break;
+		case "ALWAYS_CLOSE":
+			Suspend();
+			window.close();
+			break;
+		case "ALWAYS_CLOSE_TOP":
+			Suspend();
+			window.top.close();
+			break;
+		case "NOTHING":
+			Suspend();
+			break;
+		case "REDIR_CONTENT_FRAME":
+			Suspend();
+			parent.location.href=EXIT_TARGET;
+			break;	
+	}
+
+	return true;
+
+}
+
+
+//Storing and retrieving data
+
+//public
+function GetStudentID(){
+	WriteToDebug("In GetStudentID");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return "";
+	}
+		
+	return objLMS.GetStudentID();
+
+}
+
+//public
+function GetStudentName(){
+	WriteToDebug("In GetStudentName");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return "";
+	}
+		
+	return objLMS.GetStudentName();
+}
+
+//public
+function GetBookmark(){
+	WriteToDebug("In GetBookmark");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return "";
+	}
+		
+	return objLMS.GetBookmark();
+
+}
+
+//public
+function SetBookmark(strBookmark){
+	WriteToDebug("In SetBookmark - strBookmark=" + strBookmark);
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	return objLMS.SetBookmark(strBookmark);
+	
+}
+
+//public
+function GetDataChunk(){
+	WriteToDebug("In GetDataChunk");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return "";
+	}
+		
+	return objLMS.GetDataChunk();
+}
+
+//public
+function SetDataChunk(strData){
+	WriteToDebug("In SetDataChunk strData=" + strData);
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	return objLMS.SetDataChunk(strData);
+}
+
+//public
+function GetLaunchData(){
+	WriteToDebug("In GetLaunchData");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return "";
+	}
+		
+	return objLMS.GetLaunchData();
+}
+
+//public
+function GetComments(){
+
+	var strCommentString;
+	var aryComments;
+	var i;
+	
+	WriteToDebug("In GetComments");
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return null;
+	}
+		
+	strCommentString = objLMS.GetComments();
+	
+	WriteToDebug("strCommentString=" + strCommentString);
+	
+	strCommentString = new String(strCommentString);
+	
+	if (strCommentString != ""){
+	
+		aryComments = strCommentString.split(" | ");
+		
+		for (i=0; i < aryComments.length; i++){
+			WriteToDebug("Returning Comment #" + i);
+			aryComments[i] = new String(aryComments[i]);
+			aryComments[i] = aryComments[i].replace(/\|\|/g, "|");
+			WriteToDebug("Comment #" + i + "=" + aryComments[i]);
+		}
+	}
+	else{
+		aryComments = new Array(0);
+	}
+	
+	return aryComments;
+}
+
+//public
+function WriteComment(strComment){	
+
+	var strExistingCommentString;
+	
+	WriteToDebug("In WriteComment strComment=" + strComment);
+	
+	ClearErrorInfo();
+	
+	strComment = new String(strComment);
+	
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	strComment = strComment.replace(/\|/g, "||");
+
+	strExistingCommentString = objLMS.GetComments();
+	
+	if (strExistingCommentString != ""){
+		strComment = " | " + strComment;
+	}
+	
+	strComment = strComment;
+	
+	return objLMS.WriteComment(strComment);
+}
+
+
+//public
+function GetLMSComments(){
+	WriteToDebug("In GetLMSComments");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return "";
+	}
+		
+	return objLMS.GetLMSComments();
+}
+
+
+//Preferences
+
+//public
+function GetAudioPlayPreference(){
+	WriteToDebug("In GetAudioPlayPreference");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return PREFERENCE_DEFAULT;
+	}
+		
+	return objLMS.GetAudioPlayPreference();	
+}
+
+//public
+//returns int 1-100
+function GetAudioVolumePreference(){
+	WriteToDebug("GetAudioVolumePreference");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return 100;
+	}
+		
+	return objLMS.GetAudioVolumePreference();
+}
+
+//public
+//percent is int 1-100
+//PlayPreference is On/Off
+function SetAudioPreference(PlayPreference, intPercentOfMaxVolume){
+	
+	WriteToDebug("In SetAudioPreference PlayPreference=" + PlayPreference + " intPercentOfMaxVolume=" + intPercentOfMaxVolume);
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+			
+	if (PlayPreference != PREFERENCE_OFF &&
+		PlayPreference != PREFERENCE_ON){
+		
+		WriteToDebug("Error Invalid PlayPreference");
+		
+		SetErrorInfo(ERROR_INVALID_PREFERENCE, "Invalid PlayPreference passed to SetAudioPreference, PlayPreference=" + PlayPreference);
+		
+		return false;	
+	}
+	
+	if ( ! ValidInteger(intPercentOfMaxVolume) ){
+		WriteToDebug("Error Invalid PercentOfMaxVolume - not an integer");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid PercentOfMaxVolume passed to SetAudioPreference (not an integer), intPercentOfMaxVolume=" + intPercentOfMaxVolume);
+		return false;
+	}
+	
+	intPercentOfMaxVolume = parseInt(intPercentOfMaxVolume);
+	
+	if (intPercentOfMaxVolume < 1 || intPercentOfMaxVolume > 100){
+		WriteToDebug("Error Invalid PercentOfMaxVolume - out of range");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid PercentOfMaxVolume passed to SetAudioPreference (must be between 1 and 100), intPercentOfMaxVolume=" + intPercentOfMaxVolume);
+		return false;
+	}
+	
+	WriteToDebug("Calling to LMS");
+	return objLMS.SetAudioPreference(PlayPreference, intPercentOfMaxVolume);
+
+}
+
+//public
+function GetLanguagePreference(){
+	WriteToDebug("In GetLanguagePreference");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return "";
+	}
+		
+	return objLMS.GetLanguagePreference();
+}
+
+//public
+function SetLanguagePreference(strLanguage){
+	WriteToDebug("In SetLanguagePreference strLanguage=" + strLanguage);
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	return objLMS.SetLanguagePreference(strLanguage);
+
+}
+
+//public
+function GetSpeedPreference(){
+	WriteToDebug("In GetSpeedPreference");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return 100;
+	}
+		
+	return objLMS.GetSpeedPreference();
+}
+
+
+//public
+function SetSpeedPreference(intPercentOfMax){
+	WriteToDebug("In SetSpeedPreference intPercentOfMax=" + intPercentOfMax);
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	if ( ! ValidInteger(intPercentOfMax) ){
+		WriteToDebug("ERROR Invalid Percent of MaxSpeed, not an integer");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid PercentOfMaxSpeed passed to SetSpeedPreference (not an integer), intPercentOfMax=" + intPercentOfMax);
+		return false;
+	}
+	
+	intPercentOfMax = parseInt(intPercentOfMax);
+	
+	if (intPercentOfMax < 0 || intPercentOfMax > 100){
+		WriteToDebug("ERROR Invalid Percent of MaxSpeed, out of range");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid PercentOfMaxSpeed passed to SetSpeedPreference (must be between 1 and 100), intPercentOfMax=" + intPercentOfMax);
+		return false;
+	}
+	
+	WriteToDebug("Calling to LMS");
+	return objLMS.SetSpeedPreference(intPercentOfMax);
+
+}
+
+//public
+function GetTextPreference(){
+	WriteToDebug("In GetTextPreference");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	return objLMS.GetTextPreference();
+}
+
+//public
+function SetTextPreference(intPreference){
+	WriteToDebug("In SetTextPreference intPreference=" + intPreference);
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	if (intPreference != PREFERENCE_DEFAULT &&
+		intPreference != PREFERENCE_OFF &&
+		intPreference != PREFERENCE_ON){
+		WriteToDebug("Error - Invalid Preference");
+		SetErrorInfo(ERROR_INVALID_PREFERENCE, "Invalid Preference passed to SetTextPreference, intPreference=" + intPreference);
+		
+		return false;	
+	}	
+	
+	return objLMS.SetTextPreference(intPreference);
+
+}
+
+
+
+
+//Timing
+
+//public
+function GetPreviouslyAccumulatedTime(){
+	WriteToDebug("In GetPreviouslyAccumulatedTime");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return 0;
+	}
+		
+	return objLMS.GetPreviouslyAccumulatedTime();
+}
+
+
+
+//private
+function AccumulateTime(){
+	WriteToDebug("In AccumulateTime dtmStart=" + dtmStart + " dtmEnd=" + dtmEnd + " intAccumulatedMS=" + intAccumulatedMS);
+	if (dtmEnd != null && dtmStart != null){
+		WriteToDebug("Accumulating Time");
+		intAccumulatedMS += (dtmEnd.getTime() - dtmStart.getTime());
+		WriteToDebug("intAccumulatedMS=" + intAccumulatedMS);
+	}
+	
+}
+
+
+
+//public
+function GetSessionAccumulatedTime(){
+	
+	WriteToDebug("In GetSessionAccumulatedTime");
+	
+	ClearErrorInfo();
+	
+	WriteToDebug("Setting dtmEnd to now");
+	
+	dtmEnd = new Date();
+	
+	WriteToDebug("Accumulating Time");
+	
+	AccumulateTime();
+	
+	if (dtmStart != null){
+		WriteToDebug("Resetting dtmStart");
+		dtmStart = new Date();
+	}
+	
+	WriteToDebug("Setting dtmEnd to null");
+	dtmEnd = null;
+	
+	WriteToDebug("Returning " + intAccumulatedMS);
+	
+	return intAccumulatedMS;
+}
+
+
+//public
+function SetSessionTime(intMilliseconds){
+	
+	WriteToDebug("In SetSessionTime");
+	
+	ClearErrorInfo();
+	
+	if ( ! ValidInteger(intMilliseconds)){
+		WriteToDebug("ERROR parameter is not an integer");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid intMilliseconds passed to SetSessionTime (not an integer), intMilliseconds=" + intMilliseconds);
+		return false;
+	}
+	
+	intMilliseconds = parseInt(intMilliseconds);
+	
+	if (intMilliseconds < 0){
+		WriteToDebug("Error, parameter is less than 0");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid intMilliseconds passed to SetSessionTime (must be greater than 0), intMilliseconds=" + intMilliseconds);
+		return false;
+	}
+	
+	blnOverrodeTime = true;
+	intTimeOverrideMS = intMilliseconds;
+	
+	return true;
+}
+
+//public
+function PauseTimeTracking(){
+	
+	WriteToDebug("In PauseTimeTracking");
+	
+	ClearErrorInfo();
+	
+	WriteToDebug("Setting dtmEnd to now");
+	dtmEnd = new Date();
+	
+	WriteToDebug("Accumulating Time");
+	AccumulateTime();
+	
+	WriteToDebug("Setting Start and End times to null");
+	dtmStart = null;
+	dtmEnd = null;
+	
+	return true;
+}
+
+//public
+//note in docs - can be used to start tracking at a point other than beginning
+function ResumeTimeTracking(){
+	
+	WriteToDebug("In ResumeTimeTracking");
+	
+	ClearErrorInfo();
+	
+	WriteToDebug("Setting dtmStart to now");
+	
+	dtmStart = new Date();
+	
+	return true;
+	
+}
+
+
+//public
+function GetMaxTimeAllowed(){
+	
+	WriteToDebug("In GetMaxTimeAllowed");
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return MAX_CMI_TIME;
+	}
+		
+	return objLMS.GetMaxTimeAllowed();
+
+}
+
+
+//public
+function DisplayMessageOnTimeout(){
+	
+	WriteToDebug("In DisplayMessageOnTimeOut");
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	return objLMS.DisplayMessageOnTimeout();
+
+}
+
+//public
+function ExitOnTimeout(){
+	
+	WriteToDebug("In ExitOnTimeOut");
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	return objLMS.ExitOnTimeout();
+
+}
+
+
+//Testing
+
+//public
+function GetPassingScore(){
+	WriteToDebug("In GetPassingScore");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return 0;
+	}
+		
+	return objLMS.GetPassingScore();
+	
+}
+
+//public
+function GetScore(){
+
+	WriteToDebug("In GetScore");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return 0;
+	}
+		
+	return objLMS.GetScore();
+
+}
+
+//public
+function SetScore(intScore, intMaxScore, intMinScore){
+	
+	WriteToDebug("In SetScore, intScore=" + intScore + ", intMaxScore=" + intMaxScore + ", intMinScore=" + intMinScore);
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	if (! IsValidDecimal(intScore)){
+		WriteToDebug("ERROR - intScore not a valid decimal");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Score passed to SetScore (not a valid decimal), intScore=" + intScore);
+		return false;
+	}
+
+	if (! IsValidDecimal(intMaxScore)){
+		WriteToDebug("ERROR - intMaxScore not a valid decimal");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Max Score passed to SetScore (not a valid decimal), intMaxScore=" + intMaxScore);
+		return false;
+	}
+	
+	if (! IsValidDecimal(intMinScore)){
+		WriteToDebug("ERROR - intMinScore not a valid decimal");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Min Score passed to SetScore (not a valid decimal), intMinScore=" + intMinScore);
+		return false;
+	}
+	
+	WriteToDebug("Converting SCORES to floats");
+	intScore = parseFloat(intScore);
+	intMaxScore = parseFloat(intMaxScore);
+	intMinScore = parseFloat(intMinScore);
+
+	if (intScore < 0 || intScore > 100){
+		WriteToDebug("ERROR - intScore out of range");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Score passed to SetScore (must be between 0-100), intScore=" + intScore);
+		return false;
+	}
+
+	if (intMaxScore < 0 || intMaxScore > 100){
+		WriteToDebug("ERROR - intMaxScore out of range");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Max Score passed to SetScore (must be between 0-100), intMaxScore=" + intMaxScore);
+		return false;
+	}
+
+	if (intMinScore < 0 || intMinScore > 100){
+		WriteToDebug("ERROR - intMinScore out of range");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Min Score passed to SetScore (must be between 0-100), intMinScore=" + intMinScore);
+		return false;
+	}	
+	
+	WriteToDebug("Calling to LMS");
+	return objLMS.SetScore(intScore, intMaxScore, intMinScore);	
+
+}
+
+
+//public
+function RecordMultipleChoiceInteraction(strID, strResponse, blnCorrect, strCorrectResponse){
+	
+	WriteToDebug("In RecordMultipleChoiceInteraction strID=" + strID + ", strResponse=" + strResponse + ", blnCorrect=" + blnCorrect + ", strCorrectResponse=" + strCorrectResponse);
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	strID = new String(strID);
+	if (strID.replace(" ", "") == ""){
+		WriteToDebug("ERROR - ID is empty");
+		SetErrorInfo(ERROR_INVALID_ID, "Invalid ID passed to RecordMultipleChoiceInteraction (must have a value), strID=" + strID);
+		return false;
+	}
+	
+	strResponse = new String(strResponse);
+	strCorrectResponse = new String(strCorrectResponse);
+	
+	if (strResponse.length != 1){
+		WriteToDebug("ERROR - Response not 1 character");
+		SetErrorInfo(ERROR_INVALID_RESPONSE, "Invalid Response passed to RecordMultipleChoiceInteraction (must be exactly 1 character), strResponse=" + strResponse);
+		return false;
+	}
+
+	if (strCorrectResponse.length != 1){
+		WriteToDebug("ERROR - Correct response not 1 character");
+		SetErrorInfo(ERROR_INVALID_RESPONSE, "Invalid Correct Response passed to RecordMultipleChoiceInteraction (must be exactly 1 character), strCorrectResponse=" + strCorrectResponse);
+		return false;
+	}
+	
+	if ( ! IsAlphaNumeric(strResponse) ){
+		WriteToDebug("ERROR - Response not alpha numeric");
+		SetErrorInfo(ERROR_INVALID_RESPONSE, "Invalid Response passed to RecordMultipleChoiceInteraction (must be a letter or number), strResponse=" + strResponse);
+		return false;
+	}
+
+	if ( ! IsAlphaNumeric(strCorrectResponse) ){
+		WriteToDebug("ERROR - Correct Response not alpha numeric");
+		SetErrorInfo(ERROR_INVALID_RESPONSE, "Invalid Correct Response passed to RecordMultipleChoiceInteraction (must be a letter or number), strCorrectResponse=" + strCorrectResponse);
+		return false;
+	}	
+	
+	WriteToDebug("Calling to LMS");
+	return objLMS.RecordMultipleChoiceInteraction(strID, strResponse, blnCorrect, strCorrectResponse);
+
+}
+
+
+
+//public
+function RecordFillInInteraction(strID, strResponse, blnCorrect, strCorrectResponse){
+	
+	WriteToDebug("In RecordFillInInteraction strID=" + strID + ", strResponse=" + strResponse + ", blnCorrect=" + blnCorrect + ", strCorrectResponse=" + strCorrectResponse);
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	strID = new String(strID);
+	if (strID.replace(" ", "") == ""){
+		WriteToDebug("ERROR - ID is empty");
+		SetErrorInfo(ERROR_INVALID_ID, "Invalid ID passed to RecordFillInInteraction (must have a value), strID=" + strID);
+		return false;
+	}
+	
+	strResponse = new String(strResponse);
+	strCorrectResponse = new String(strCorrectResponse);
+	
+	if (strResponse.length > 255){
+		WriteToDebug("ERROR - Response greater than 255 characters");
+		SetErrorInfo(ERROR_INVALID_RESPONSE, "Invalid Response passed to RecordFillInInteraction (must be 255 characters or less), strResponse=" + strResponse);
+		return false;
+	}
+
+	if (strCorrectResponse.length > 255){
+		WriteToDebug("ERROR - Correct Response greater than 255 characters");
+		SetErrorInfo(ERROR_INVALID_RESPONSE, "Invalid Correct Response passed to RecordFillInInteraction (must be 255 characters or less), strCorrectResponse=" + strCorrectResponse);
+		return false;
+	}
+		
+	
+	WriteToDebug("Calling to LMS");
+	return objLMS.RecordFillInInteraction(strID, strResponse, blnCorrect, strCorrectResponse);
+
+}
+
+
+
+
+
+
+//State Functions
+
+//public
+function GetStatus(){
+
+	WriteToDebug("In GetStatus");
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return LESSON_STATUS_INCOMPLETE;
+	}
+		
+	return objLMS.GetStatus();
+
+}
+
+//public
+function ResetStatus(){	
+	WriteToDebug("In ResetStatus");
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+	WriteToDebug("Setting blnStatusWasSet to false");
+	
+	blnStatusWasSet = false;	
+	
+	return objLMS.ResetStatus();	
+}
+
+//public
+//optional to call
+function SetPassed(){
+	WriteToDebug("In SetPassed");
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+			
+	WriteToDebug("Setting blnStatusWasSet to true");
+	
+	blnStatusWasSet = true;	
+	
+	return objLMS.SetPassed();
+	
+}
+
+//public
+function SetFailed(){
+	WriteToDebug("In SetFailed");
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+			
+	WriteToDebug("Setting blnStatusWasSet to true");
+	
+	blnStatusWasSet = true;
+	
+	return objLMS.SetFailed();
+	
+}
+
+
+//public
+function GetEntryMode(){
+	WriteToDebug("In GetEntryMode");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return ENTRY_FIRST_TIME;
+	}
+			
+	return objLMS.GetEntryMode();
+
+}
+
+//public
+function GetLessonMode(){
+	WriteToDebug("In GetLessonMode");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return MODE_NORMAL;
+	}
+			
+	return objLMS.GetLessonMode();
+	
+}
+
+//public
+function GetTakingForCredit(){
+	WriteToDebug("In GetTakingForCredit");
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+			
+	return objLMS.GetTakingForCredit();
+	
+}
+
+
+//Objectives	
+
+//public
+function SetObjectiveScore(strObjectiveID, intScore, intMaxScore, intMinScore){
+	
+	WriteToDebug("In SetObjectiveScore, intObjectiveID=" + strObjectiveID + ", intScore=" + intScore + ", intMaxScore=" + intMaxScore + ", intMinScore=" + intMinScore);
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+			
+	strObjectiveID = new String(strObjectiveID);
+	if (strObjectiveID.replace(" ", "") == ""){
+		WriteToDebug("ERROR - Invalid ObjectiveID, empty string");
+		SetErrorInfo(ERROR_INVALID_ID, "Invalid ObjectiveID passed to SetObjectiveScore (must have a value), strObjectiveID=" + strObjectiveID);
+		return false;
+	}
+
+	if (! IsValidDecimal(intScore)){
+		WriteToDebug("ERROR - Invalid Score, not a valid decmial");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Score passed to SetObjectiveScore (not a valid decimal), intScore=" + intScore);
+		return false;
+	}
+
+	if (! IsValidDecimal(intMaxScore)){
+		WriteToDebug("ERROR - Invalid Max Score, not a valid decmial");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Max Score passed to SetObjectiveScore (not a valid decimal), intMaxScore=" + intMaxScore);
+		return false;
+	}
+	
+	if (! IsValidDecimal(intMinScore)){
+		WriteToDebug("ERROR - Invalid Min Score, not a valid decmial");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Min Score passed to SetObjectiveScore (not a valid decimal), intMinScore=" + intMinScore);
+		return false;
+	}
+	
+	WriteToDebug("Converting Scores to floats");
+	intScore = parseFloat(intScore);
+	intMaxScore = parseFloat(intMaxScore);
+	intMinScore = parseFloat(intMinScore);
+	
+	if (intScore < 0 || intScore > 100){
+		WriteToDebug("ERROR - Invalid Score, out of range");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Score passed to SetObjectiveScore (must be between 0-100), intScore=" + intScore);
+		return false;
+	}
+
+	if (intMaxScore < 0 || intMaxScore > 100){
+		WriteToDebug("ERROR - Invalid Max Score, out of range");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Max Score passed to SetObjectiveScore (must be between 0-100), intMaxScore=" + intMaxScore);
+		return false;
+	}
+
+	if (intMinScore < 0 || intMinScore > 100){
+		WriteToDebug("ERROR - Invalid Min Score, out of range");
+		SetErrorInfo(ERROR_INVALID_NUMBER, "Invalid Min Score passed to SetObjectiveScore (must be between 0-100), intMinScore=" + intMinScore);
+		return false;
+	}	
+
+	WriteToDebug("Calling To LMS");
+	return objLMS.SetObjectiveScore(strObjectiveID, intScore, intMaxScore, intMinScore);
+
+}
+
+//public
+function SetObjectiveStatus(strObjectiveID, Lesson_Status){	
+	
+	WriteToDebug("In SetObjectiveStatus strObjectiveID=" + strObjectiveID + ", Lesson_Status=" + Lesson_Status);
+	
+	ClearErrorInfo();
+
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+		
+
+	strObjectiveID = new String(strObjectiveID);
+	if (strObjectiveID.replace(" ", "") == ""){
+		WriteToDebug("ERROR - Invalid ObjectiveID, empty string");
+		SetErrorInfo(ERROR_INVALID_ID, "Invalid ObjectiveID passed to SetObjectiveStatus (must have a value), strObjectiveID=" + strObjectiveID);
+		return false;
+	}
+	
+	if (
+	   (Lesson_Status != LESSON_STATUS_PASSED) &&
+	   (Lesson_Status != LESSON_STATUS_COMPLETED) &&
+	   (Lesson_Status != LESSON_STATUS_FAILED) &&
+	   (Lesson_Status != LESSON_STATUS_INCOMPLETE) &&
+	   (Lesson_Status != LESSON_STATUS_BROWSED) &&
+	   (Lesson_Status != LESSON_STATUS_NOT_ATTEMPTED)
+	   ){
+		WriteToDebug("ERROR - Invalid Status");
+		SetErrorInfo(ERROR_INVALID_STATUS, "Invalid status passed to SetObjectiveStatus, Lesson_Status=" + Lesson_Status);
+		return false;
+
+	}	
+	
+	WriteToDebug("Calling To LMS");
+	return objLMS.SetObjectiveStatus(strObjectiveID, Lesson_Status);
+
+	
+}
+
+
+//public
+function GetObjectiveStatus(strObjectiveID){
+
+	WriteToDebug("In GetObjectiveStatus, strObjectiveID=" + strObjectiveID);
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+			
+	return objLMS.GetObjectiveStatus(strObjectiveID);
+}
+
+
+//public
+function GetObjectiveScore(strObjectiveID){
+
+	WriteToDebug("In GetObjectiveScore, strObjectiveID=" + strObjectiveID);
+	
+	ClearErrorInfo();
+
+	if (! IsLoaded()){
+		SetErrorInfo(ERROR_NOT_LOADED, "Cannot make calls to the LMS before calling Start");
+		return false;
+	}
+			
+	return objLMS.GetObjectiveScore(strObjectiveID);
+}
+
