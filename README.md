@@ -1,3 +1,3 @@
 # Codecol
 
-A collection of self-practise code 
+A collection of self-practice code 
