@@ -1,0 +1,61 @@
+     data hrd.nov99;
+        set hrd.temp;
+        if year(startdate)=1999 and month(startdate)=11;
+	format startdate enddate date9.;
+     run;
+	
+     data hrd.newtemp(drop=month day year);
+        set hrd.temp;
+        Date=mdy(month,day,year);
+     run;     
+
+     proc print data=hrd.newtemp;
+        format date date9.;
+     run;
+
+     data hrd.newtemp;
+        set hrd.temp;
+        EditDate=date();
+     run;
+
+EditDate==date()/Today();
+Years=intck('year','15jun1999'd,'15jun2001'd);
+Months=intck('month','15jun1999'd,'15jun2001'd);
+Years=intck('year','01jan2002'd,'31dec2002'd);
+DaysHeld = intck('day',DateIn,DateOut);
+QtrsElapsed=intck('qtr',rephired,lasthired);
+*intnx for fulldate January 1, 1997.;
+TargetYear=intnx('year','05feb94'd,3);
+TargetMonth=intnx('semiyear','01jan2001'd,1);
+
+MonthX=intnx('month','01jan95'd,5,'b');
+12935  (June 1, 1995)
+MonthX=intnx('month','01jan95'd,5,'m');
+12949  (June 15, 1995)
+MonthX=intnx('month','01jan95'd,5,'e');
+12964  (June 30, 1995)
+
+*scan use length to safeguard;
+length LastName FirstName MiddleName $ 10;
+LastName=scan(name,1);
+
+*substr change original order;
+     data work.newtemp(drop=middlename);
+        set hrd.newtemp;
+        MiddleInitial=substr(middlename,1,1);
+     run;
+substr(test,4,2)='92';
+substr(region,1,3)='NNW';
+
+*clear blank;
+NewAddress=address||', '||city||', '||zip;
+trim(address)
+
+     data temp;
+        set hrd.temp;
+        length Street $ 20;
+        Street=trim(address);
+     run;
+
+
+
