@@ -1,0 +1,4 @@
+This is a model solution of machine learning sample from a contest of Kaggle, the score 
+will be counted as final.
+
+Feel free to check the code for your consult.
