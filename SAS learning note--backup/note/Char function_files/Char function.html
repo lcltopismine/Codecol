@@ -1,0 +1,193 @@
+
+<!-- saved from url=(0071)https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_55.htm -->
+<html><!-- InstanceBegin template="/Templates/informationObject.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script language="JavaScript" src="./Char function_files/tut.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Char function_files/APIConstants.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Char function_files/Configuration.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Char function_files/UtilityFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Char function_files/SCORMFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Char function_files/NONEFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Char function_files/LMSAPI.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Char function_files/API.js.&#19979;&#36733;"></script><meta http-equiv="imagetoolbar" content="no">
+<script language="JavaScript" src="./Char function_files/nav.js.&#19979;&#36733;"></script>
+<script language="JavaScript">
+ setPageTitle();
+ setCookie();
+  
+// Drop down menu link- © Dynamic Drive (www.dynamicdrive.com)
+// For full source code and 100's more DHTML scripts, visit http://www.dynamicdrive.com
+// Credit MUST stay intact for use -->
+
+</script><title>Transforming Data with SAS Functions - 55 of 95</title>
+
+<!-- InstanceBeginEditable name="extrascript" -->
+<script language="JavaScript">
+</script>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="./Char function_files/tut.css">
+
+
+
+</head>
+
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFF0">
+<script>writeinformationObjectTopNav1();</script><table width="100%" border="0" cellpadding="0" cellspacing="0" background="./Char function_files/banner.gif">  <tbody><tr>     <td height="49" colspan="2" nowrap=""><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;      <script>setCourseTitle()</script>SAS OnlineTutor<sup><font size="-2">®</font></sup>: Basic and Intermediate SAS<sup><font size="-2">®</font></sup>      </font><br>      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;	  <script>setLessonTitle()</script>Transforming Data with SAS Functions      </font></strong>&nbsp;<img src="./Char function_files/bullet.gif" width="8" height="8" alt=" ">&nbsp;<font color="#FFFFFF" size="2"><strong>&nbsp;<script>document.write(myPage+" of "+eval(myModule))</script>55 of 95</strong></font>&nbsp;&nbsp;</td>    <td width="357" rowspan="3" valign="bottom"><img src="./Char function_files/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>  </tr>  <tr>     <td colspan="2" valign="bottom" nowrap=""><img src="./Char function_files/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Char function_files/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Char function_files/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><script>writeLessonMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;dropmenu0&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuless.htm&#39;)" onclick="if (ns4) return dropit(event, &#39;document.dropmenu0&#39;)" onmouseover="rOver(&#39;contents&#39;);window.status=&#39;Display the lesson menu.&#39;;return true" onmouseout="rOut(&#39;contents&#39;);window.status=&#39;&#39;;return true" accesskey="m"><img src="./Char function_files/contents.gif" width="122" height="19" border="0" alt="lesson menu" name="contents"></a></span></layer></ilayer><script>writePathOrExit()</script><a href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/paths.htm" target="SAS" onmouseover="rOver(&#39;path&#39;);window.status=&#39;Display the Learning Path.&#39;;return true" onmouseout="rOut(&#39;path&#39;);window.status=&#39;&#39;;return true" accesskey="p"><img src="./Char function_files/path.gif" alt="Learning Path" width="48" height="19" border="0" name="path"></a><script>writeHelpMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;helpmenu&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuhelp.htm&#39;)" onclick="if(ns4) return dropit(event, &#39;document.helpmenu&#39;)" onmouseover="rOver(&#39;help&#39;);window.status=&#39;Display the help menu.&#39;;return true" onmouseout="rOut(&#39;help&#39;);window.status=&#39;&#39;;return true" accesskey="h"><img src="./Char function_files/help.gif" width="48" height="19" border="0" alt="help menu" name="help"></a></span></layer></ilayer><img src="./Char function_files/tabright.gif" width="28" height="19" alt=" "></td>  </tr>  <tr>     <td height="3" colspan="2" valign="bottom"><img src="./Char function_files/border.gif" width="100%" height="3" alt=" "></td>  </tr>  <tr valign="top" bgcolor="#FFFFF0">     <td nowrap="">&nbsp;&nbsp;&nbsp;</td>    <td valign="middle"><br>      <img src="./Char function_files/cleardot.gif" width="411" height="1" alt=" "><br>
+	  
+	  <font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong><!-- InstanceBeginEditable name="TopicTitle" -->Modifying 
+      Character Values with Functions<!-- InstanceEndEditable --></strong></font> <!-- InstanceBeginEditable name="continued" --><!-- InstanceEndEditable -->
+	  
+<script>writeinformationObjectTopNav2();</script></td>    <td><img src="./Char function_files/arch.gif" width="357" height="64" align="top" alt=" "></td>  </tr></tbody></table>
+<br>
+<center>
+  <!-- InstanceBeginEditable name="content" --> 
+<table width="85%" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tbody><tr valign="top"> 
+      <td><strong></strong> 
+        <p><strong>Introduction to Modifying Character 
+        Values</strong> </p>
+      <p> This section teaches you how to use SAS functions to manipulate the 
+        values of character variables. After completing this section, you will 
+        be able to<br>
+      </p><ul>
+        <li> replace the contents of a character value 
+        </li><li> trim trailing blanks from a character value 
+        </li><li> search a character value and extract a portion of the value 
+        </li><li> convert a character value to uppercase or lowercase. 
+      </li></ul>
+      <p> To begin, let's look at some of the modifications that need to be made 
+        to the character variables in <strong>Hrd.Temp</strong>. These modifications 
+        include<br>
+      </p><ul>
+        <li> separating the values of one variable into multiple variables </li></ul></td>
+  </tr>
+</tbody></table>
+<p align="center"> SAS Data 
+</p><center>
+  <table align="center" bgcolor="#CCCCCC" border="1" cellpadding="3" cellspacing="0" frame="box" title="SAS Data Set">
+    <thead>
+      <tr valign="top" bgcolor="#F7F7DE"> 
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>Name</b></font></td>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>LastName</b></font></td>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>FirstName</b></font></td>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>MiddleName</b></font></td>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+        <td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">CICHOCK, 
+          ELIZABETH MARIE</font> <img src="./Char function_files/arrow.gif" border="0" height="10" width="14" alt="--&gt;"></td>
+<td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">CICHOCK</font></td>
+<td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">ELIZABETH</font></td>
+<td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">MARIE</font></td>
+</tr><tr valign="top">
+        <td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">BENINCASA, 
+          HANNAH LEE</font> <img src="./Char function_files/arrow.gif" border="0" height="10" width="14" alt="--&gt;"></td>
+<td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">BENINCASA</font></td>
+<td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">HANNAH</font></td>
+<td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">LEE</font></td>
+</tr>
+</tbody>
+</table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td><ul>
+          <li> replacing a portion of a character variable's values </li></ul></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> SAS Data 
+</p><center>
+  <table align="center" bgcolor="#CCCCCC" border="1" cellpadding="3" cellspacing="0" frame="box" title="SAS Data Set">
+    <thead>
+      <tr valign="top" bgcolor="#F7F7DE"> 
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>Phone</b></font></td>
+        <td align="center"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>Phone</b></font></td>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+        <td nowrap="" align="right" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">6224549</font> 
+          <img src="./Char function_files/arrow.gif" border="0" height="10" width="14" alt="--&gt;"></td>
+        <td nowrap="" align="right" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><strong>433</strong>4549</font></td>
+</tr><tr valign="top">
+        <td nowrap="" align="right" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">6223251</font> 
+          <img src="./Char function_files/arrow.gif" border="0" height="10" width="14" alt="--&gt;"></td>
+        <td nowrap="" align="right" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><strong>433</strong>3251</font></td>
+</tr>
+</tbody>
+</table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td><ul>
+          <li> searching for a specific string within a variable's values. </li></ul></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> SAS Data 
+</p><center>
+  <table align="center" bgcolor="#CCCCCC" border="1" cellpadding="3" cellspacing="0" frame="box" title="SAS data">
+<thead>
+<tr valign="top">
+        <td align="center" bgcolor="#F7F7DE"><font face="Verdana, Arial, Helvetica" size="2" color="#000000"><b>Job</b></font></td>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">filing, administrative duties</font></td>
+</tr><tr valign="top">
+<td nowrap="" bgcolor="#FFFFFF"><font face="Verdana, Arial, Helvetica" size="2" color="#000000">bookkeeping, word processing, accounting</font></td>
+</tr>
+</tbody>
+</table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td><strong>Character Functions</strong> <p> The character functions listed 
+          below can help you complete these tasks. You will learn about these 
+          functions as you continue this lesson.</p></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table width="450" border="1" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF" title="SAS character functions">
+    <tbody><tr bgcolor="#F7F7DE" valign="top"> 
+      <td><strong>Function</strong></td>
+      <td><strong>Purpose</strong></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>SCAN</strong></td>
+      <td>returns a specified word from a character value.</td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>SUBSTR</strong></td>
+      <td>extracts a substring or replaces character values.</td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>TRIM</strong></td>
+      <td>trims trailing blanks from character values.</td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>INDEX</strong></td>
+      <td>searches a character value for a specific string.</td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>UPCASE</strong></td>
+      <td>converts all letters in a value to uppercase.</td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>LOWCASE</strong></td>
+      <td>converts all letters in a value to lowercase.</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <br>
+</center>
+<!-- InstanceEndEditable --> 
+</center>
+<script>writeNav_regular_bottom();</script><!-- #BeginLibraryItem "/Library/nav_regular_bottom.lbi" --><table width="100%" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="14"><img src="./Char function_files/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="./Char function_files/linegray.gif" width="100%" height="7" alt=" "></td></tr>  <tr>    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">© 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back2&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back2&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Char function_files/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next2&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next2&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Char function_files/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr></tbody></table><p>&nbsp;</p><script>writeLessonDiv()</script><div id="dropmenu0" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:450;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) dropmenu0.style.padding="4px"; for (i=0;i<menu30.length;i++)document.write(beginLink+menu30[i][0]+middleLink+menu30[i][1]+endLink);</script><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_1.htm" target="SAS">&nbsp;Lesson Overview&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_2.htm" target="SAS">&nbsp;Understanding SAS Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_4.htm" target="SAS">&nbsp;General Form of SAS Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_8.htm" target="SAS">&nbsp;Converting Data with Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_8.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduction to Converting Data with Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_9.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Automatic Character-to-Numeric Conversion&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_10.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restriction for WHERE Expressions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_11.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explicit Character-to-Numeric Conversion (INPUT)&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_17.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Automatic Numeric-to-Character Conversion&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_19.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explicit Numeric-to-Character Conversion (PUT)&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_25.htm" target="SAS">&nbsp;Manipulating SAS Date Values with Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_25.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAS Date and Time Values&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_27.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAS Date Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_28.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YEAR, QTR, MONTH, and DAY Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_40.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WEEKDAY Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_42.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MDY Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_46.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATE and TODAY Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_48.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTCK Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_52.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTNX Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_55.htm" target="SAS">&nbsp;Modifying Character Values with Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_55.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduction to Modifying Character Values&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_56.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SCAN Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_63.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SCAN versus SUBSTR&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_65.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUBSTR Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_75.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRIM Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_78.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDEX Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_83.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UPCASE Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_85.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOWCASE Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_87.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRANWRD Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_89.htm" target="SAS">&nbsp;Modifying Numeric Values with Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_89.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduction to Modifying Numeric Values&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_89.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INT Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_90.htm" target="SAS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ROUND Function&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_92.htm" target="SAS">&nbsp;Nesting SAS Functions&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_93.htm" target="SAS">&nbsp;Lesson Summary&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_94.htm" target="SAS">&nbsp;Lesson Quiz&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m30/m30_95.htm" target="SAS">&nbsp;End of Lesson&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.dropmenu0.captureEvents(Event.CLICK); document.dropmenu0.onclick=hidemenu}</script><script>writeHelpDiv()</script><div id="helpmenu" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:160;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) helpmenu.style.padding="4px"; for (i=0;i<menuHelp.length;i++) if (menuHelp[i] ==",") document.write(""); else document.write(beginHelpLink+menuHelp[i][0]+middleLink+menuHelp[i][1]+endLink); </script><a class="menulink" href="JavaScript: openOther(&#39;../setup.htm&#39;)" target="SAS">&nbsp;Before You Begin&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../trouble.htm&#39;)" target="SAS">&nbsp;Troubleshooting Tips&nbsp;</a><br><a class="menulink" href="JavaScript: openGlossary(&#39;../glossary.htm&#39;)" target="SAS">&nbsp;Glossary&nbsp;</a><br><a class="menulink" href="JavaScript: openDoc(&#39;../sasdoc.htm&#39;)" target="SAS">&nbsp;SAS Documentation&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)" target="SAS">&nbsp;Copyright&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.helpmenu.captureEvents(Event.CLICK); document.helpmenu.onclick=hidemenu}</script><!-- #EndLibraryItem -->
+
+<!-- InstanceEnd -->
+</body></html>

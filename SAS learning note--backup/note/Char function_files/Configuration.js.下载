@@ -1,0 +1,34 @@
+/* Copyright © 2003-2004 Rustici Software, LLC  All Rights Reserved. */
+
+//Configuration Parameters
+var blnDebug = true;						//set this to false if you don't want the overhead of recording debug information
+
+var strLMSStandard = "AUTO";				//used in versions that support multiple standards, set to "NONE" to default
+											//to StandAlone mode. Possible values = "NONE", "SCORM", "AICC", "AUTO"
+											//AUTO mode will automatically determine the best standard to use (it first tries SCORM, then AICC, then NONE)
+
+var DEFAULT_EXIT_TYPE = EXIT_TYPE_SUSPEND;	//When the content is unloaded without an API function indicating the type of exit, 
+											//what default behavior do you want to assume.  Use EXIT_TYPE_SUSPEND if you plan to
+											//call Finish when the content is complete.  Use EXIT_TYPE_FINISH if you do not plan
+											//to call Finish.
+
+
+var AICC_LESSON_ID = "1";					//if recording question answers in AICC in an LMS that supports interactions,
+											//this field need to match the system_id on line in the .DES file that describes
+											//this course, the default is 1
+											
+var EXIT_BEHAVIOR = "SCORM_RECOMMENDED";		//used to control window closing behavior on call of ConcedeControl
+							//Possible Values: SCORM_RECOMMENDED, ALWAYS_CLOSE, ALWAY_CLOSE_TOP, NOTHING, REDIR_CONTENT_FRAME
+
+var EXIT_TARGET = "../goodbye.htm";			//Used in conjunction with EXIT_BEHAVIOR, only with REDIR_CONTENT_FRAME
+
+var CONTENT_SETS_STATUS = true;				//Used to determine if we want to automatically complete the content
+
+/*
+These variables control how long the API should wait on an AICC form submission before timing out
+AICC_RE_CHECK_LOADED_INTERVAL = Number of milliseconds the API waits between checks to see if the form is loaded
+AICC_RE_CHECK_ATTEMPTS_BEFORE_TIMEOUT = Number of times the API checks to see if the form is loaded
+AICC_RE_CHECK_LOADED_INTERVAL * AICC_RE_CHECK_ATTEMPTS_BEFORE_TIMEOUT = Desired time out in milliseconds
+*/
+var AICC_RE_CHECK_LOADED_INTERVAL = 250;
+var AICC_RE_CHECK_ATTEMPTS_BEFORE_TIMEOUT = 240;

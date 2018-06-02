@@ -1,0 +1,435 @@
+
+<!-- saved from url=(0069)https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_47.htm -->
+<html><!-- InstanceBegin template="/Templates/informationObject.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script language="JavaScript" src="./Formatting Data Values_files/tut.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Formatting Data Values_files/APIConstants.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Formatting Data Values_files/Configuration.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Formatting Data Values_files/UtilityFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Formatting Data Values_files/SCORMFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Formatting Data Values_files/NONEFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Formatting Data Values_files/LMSAPI.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Formatting Data Values_files/API.js.&#19979;&#36733;"></script><meta http-equiv="imagetoolbar" content="no">
+<script language="JavaScript" src="./Formatting Data Values_files/nav.js.&#19979;&#36733;"></script>
+<script language="JavaScript">
+ setPageTitle();
+ setCookie();
+  
+// Drop down menu link- © Dynamic Drive (www.dynamicdrive.com)
+// For full source code and 100's more DHTML scripts, visit http://www.dynamicdrive.com
+// Credit MUST stay intact for use -->
+
+</script><title>Creating List Reports - 47 of 55</title>
+
+<!-- InstanceBeginEditable name="extrascript" --> 
+<script language="JavaScript">
+</script>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="./Formatting Data Values_files/tut.css">
+
+
+
+</head>
+
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFF0">
+<script>writeinformationObjectTopNav1();</script><table width="100%" border="0" cellpadding="0" cellspacing="0" background="./Formatting Data Values_files/banner.gif">  <tbody><tr>     <td height="49" colspan="2" nowrap=""><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;      <script>setCourseTitle()</script>SAS OnlineTutor<sup><font size="-2">®</font></sup>: Basic and Intermediate SAS<sup><font size="-2">®</font></sup>      </font><br>      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;	  <script>setLessonTitle()</script>Creating List Reports      </font></strong>&nbsp;<img src="./Formatting Data Values_files/bullet.gif" width="8" height="8" alt=" ">&nbsp;<font color="#FFFFFF" size="2"><strong>&nbsp;<script>document.write(myPage+" of "+eval(myModule))</script>47 of 55</strong></font>&nbsp;&nbsp;</td>    <td width="357" rowspan="3" valign="bottom"><img src="./Formatting Data Values_files/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>  </tr>  <tr>     <td colspan="2" valign="bottom" nowrap=""><img src="./Formatting Data Values_files/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Formatting Data Values_files/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Formatting Data Values_files/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><script>writeLessonMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;dropmenu0&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuless.htm&#39;)" onclick="if (ns4) return dropit(event, &#39;document.dropmenu0&#39;)" onmouseover="rOver(&#39;contents&#39;);window.status=&#39;Display the lesson menu.&#39;;return true" onmouseout="rOut(&#39;contents&#39;);window.status=&#39;&#39;;return true" accesskey="m"><img src="./Formatting Data Values_files/contents.gif" width="122" height="19" border="0" alt="lesson menu" name="contents"></a></span></layer></ilayer><script>writePathOrExit()</script><a href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/paths.htm" target="SAS" onmouseover="rOver(&#39;path&#39;);window.status=&#39;Display the Learning Path.&#39;;return true" onmouseout="rOut(&#39;path&#39;);window.status=&#39;&#39;;return true" accesskey="p"><img src="./Formatting Data Values_files/path.gif" alt="Learning Path" width="48" height="19" border="0" name="path"></a><script>writeHelpMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;helpmenu&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuhelp.htm&#39;)" onclick="if(ns4) return dropit(event, &#39;document.helpmenu&#39;)" onmouseover="rOver(&#39;help&#39;);window.status=&#39;Display the help menu.&#39;;return true" onmouseout="rOut(&#39;help&#39;);window.status=&#39;&#39;;return true" accesskey="h"><img src="./Formatting Data Values_files/help.gif" width="48" height="19" border="0" alt="help menu" name="help"></a></span></layer></ilayer><img src="./Formatting Data Values_files/tabright.gif" width="28" height="19" alt=" "></td>  </tr>  <tr>     <td height="3" colspan="2" valign="bottom"><img src="./Formatting Data Values_files/border.gif" width="100%" height="3" alt=" "></td>  </tr>  <tr valign="top" bgcolor="#FFFFF0">     <td nowrap="">&nbsp;&nbsp;&nbsp;</td>    <td valign="middle"><br>      <img src="./Formatting Data Values_files/cleardot.gif" width="411" height="1" alt=" "><br>
+	  
+	  <font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong><!-- InstanceBeginEditable name="TopicTitle" -->Formatting 
+      Data Values<!-- InstanceEndEditable --></strong></font> <!-- InstanceBeginEditable name="continued" --><font color="#003399" size="3" face="Arial, Helvetica, sans-serif">(continued)</font><!-- InstanceEndEditable -->
+	  
+<script>writeinformationObjectTopNav2();</script></td>    <td><img src="./Formatting Data Values_files/arch.gif" width="357" height="64" align="top" alt=" "></td>  </tr></tbody></table>
+<br>
+<center>
+  <!-- InstanceBeginEditable name="content" --> 
+<table width="85%" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tbody><tr valign="top"> 
+    <td>
+<p><strong>Specifying SAS Formats</strong> </p>
+      <p> The table below describes some SAS formats that are commonly used in 
+        reports.
+    </p></td>
+  </tr>
+</tbody></table>
+<p align="center"> <br>
+</p><center>
+    <table cellpadding="3" cellspacing="0" border="1" bgcolor="#FFFFFF" width="85%" title="common SAS formats">
+      <tbody><tr valign="Top" bgcolor="#F7F7DE"> 
+        <th><font size="-1"><strong>Format</strong></font></th>
+        <th width="250"><font size="-1"><strong>Specifies values ...</strong></font></th>
+        <th width="100"><font size="-1"><strong>Example</strong></font></th>
+      </tr>
+      <tr valign="Top"> 
+        <td><strong>COMMA<em>w.d</em></strong></td>
+        <td width="250">that contain commas and decimal places</td>
+        <td width="100"> <pre><font color="#003399">comma8.2</font>
+</pre> </td>
+      </tr>
+      <tr valign="Top"> 
+        <td><strong>DOLLAR<em>w.d</em></strong></td>
+        <td>that contain dollar signs and commas</td>
+        <td> <pre><font color="#003399">dollar6.2</font>
+</pre> </td>
+      </tr>
+      <tr valign="Top"> 
+        <td><strong>MMDDYY<em>w.</em></strong></td>
+        <td>as date values of the form 09/12/97 (MMDDYY8.) or 09/12/1997 (MMDDYY10.)</td>
+        <td> <pre><font color="#003399">mmddyy10.</font>
+</pre> </td>
+      </tr>
+      <tr valign="Top"> 
+        <td><strong><em>w.</em></strong></td>
+        <td>rounded to the nearest integer in <em>w </em>spaces</td>
+        <td> <pre><font color="#003399">7.</font>
+</pre> </td>
+      </tr>
+      <tr valign="Top"> 
+        <td><strong><em>w.d</em></strong></td>
+        <td>rounded to <em>d</em> decimal places in <em>w </em>spaces</td>
+        <td> <pre><font color="#003399">8.2</font>
+</pre> </td>
+      </tr>
+      <tr valign="Top"> 
+        <td><strong><em>$w.</em></strong></td>
+        <td>as character values in <em>w </em>spaces</td>
+        <td> <pre><font color="#003399">$12.</font>
+</pre> </td>
+      </tr>
+      <tr valign="Top"> 
+        <td><strong>DATE<em>w.</em></strong></td>
+        <td>as date values of the form 16OCT99 (DATE7.) or 16OCT1999 (DATE9.)</td>
+        <td> <pre><font color="#003399">date9.</font>
+</pre> </td>
+      </tr>
+    </tbody></table>
+  <br>
+  <br>
+  <br>
+</center>
+<center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td align="left"><strong>Field Widths</strong> 
+        <p> All SAS formats specify the total field width (<strong><em>w</em></strong>) 
+          that is used for displaying the values in the output. For example, suppose 
+          the longest value for the variable <code>Net</code> is a four-digit 
+          number, such as <em>5400</em>. To specify the COMMA<em>w.d</em> format 
+          for <code>Net</code>, you specify a field width of 5 or more. You must 
+          count the comma, because it occupies a position in the output. 
+      </p></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><center>
+  <table cellspacing="0" cellpadding="2" width="85%">
+    <tbody><tr valign="Top"> 
+      <td width="41"><img src="./Formatting Data Values_files/alert.gif" alt="CAUTION:" width="37" height="32" border="0" hspace="10"></td>
+      <td>When you use a SAS format, be sure to specify a field width (<em>w</em>) 
+        that is wide enough for the largest possible value. Otherwise, values 
+        might not be displayed properly. </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table border="1" cellpadding="2" cellspacing="0" bgcolor="#FFFFFF" title="SAS format example">
+    <tbody><tr> 
+      <td> 
+        <center>
+          <table bgcolor="#FFFFFF">
+            <tbody><tr> 
+              <td colspan="5"> 
+                <p align="Center"> <font color="#003399"><strong>format net comma5.0;</strong></font>
+              </p></td>
+            </tr>
+            <tr> 
+              <td> 
+                <p align="Center"> <font color="#003399">5</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">,</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">4</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">0</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">0</font>
+              </p></td>
+            </tr>
+            <tr> 
+              <td> 
+                <p align="Center"> <sub><small>1</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>2</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>3</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>4</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>5</small></sub>
+              </p></td>
+            </tr>
+          </tbody></table>
+        </center>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td align="left"><strong>Decimal Places</strong> 
+        <p> For numeric variables you can also specify the number of decimal places 
+          (<strong><em>d</em></strong>), if any, to be displayed in the output. 
+          Numbers are rounded to the specified number of decimal places. In the 
+          example above, no decimal places are displayed. 
+        </p><p> Writing the whole number <em>2030</em> as 2,030.00 requires eight 
+          print positions, including two decimal places and the decimal point.
+      </p></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table border="1" cellpadding="2" cellspacing="0" bgcolor="#FFFFFF" title="SAS format example">
+    <tbody><tr> 
+      <td> 
+        <center>
+          <table bgcolor="#FFFFFF">
+            <tbody><tr> 
+              <td colspan="8"> 
+                <p align="Center"> <font color="#003399"><strong>format qtr3tax 
+                  comma8.2;</strong></font>
+              </p></td>
+            </tr>
+            <tr> 
+              <td> 
+                <p align="Center"> <font color="#003399">2</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">,</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">0</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">3</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">0</font>
+              </p></td>
+              <td> 
+                <p align="Center"> .
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">0</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">0</font>
+              </p></td>
+            </tr>
+            <tr> 
+              <td> 
+                <p align="Center"> <sub><small>1</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>2</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>3</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>4</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>5</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>6</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>7</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>8</small></sub>
+              </p></td>
+            </tr>
+          </tbody></table>
+        </center>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td align="left">Formatting <em>15374</em> with a dollar sign, commas, and 
+        two decimal places requires ten print positions.</td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> <br>
+</p><center>
+  <table border="1" cellpadding="2" cellspacing="0" bgcolor="#FFFFFF" title="SAS format example">
+    <tbody><tr> 
+      <td> 
+        <center>
+          <table bgcolor="#FFFFFF">
+            <tbody><tr> 
+              <td colspan="10"> 
+                <p align="Center"> <font color="#003399"><strong>format totsales 
+                  dollar10.2;</strong></font>
+              </p></td>
+            </tr>
+            <tr> 
+              <td> 
+                <p align="Center"> <font color="#003399">$</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">1</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">5</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">,</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">3</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">7</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">4</font>
+              </p></td>
+              <td> 
+                <p align="Center"> <font color="#003399">.</font>
+              </p></td>
+              <td><font color="#003399">0</font></td>
+              <td> 
+                <p align="Center"> <font color="#003399">0</font>
+              </p></td>
+            </tr>
+            <tr> 
+              <td> 
+                <p align="Center"> <sub><small>1</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>2</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>3</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>4</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>5</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>6</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>7</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>8</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>9</small></sub>
+              </p></td>
+              <td> 
+                <p align="Center"> <sub><small>10</small></sub>
+              </p></td>
+            </tr>
+          </tbody></table>
+        </center>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"><br> 
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td><strong>Examples</strong> 
+        <p> This table shows you how data values are displayed when different 
+          format, field width, and decimal place specifications are used. 
+      </p></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"><br>
+</p><center>
+    <table cellpadding="2" cellspacing="0" border="1" width="450" bgcolor="#FFFFFF" title="SAS format examples">
+      <tbody><tr> 
+        <th bgcolor="#F7F7DE"><font size="-1">Stored Value</font></th>
+        <th bgcolor="#F7F7DE"><font size="-1">Format</font></th>
+        <th bgcolor="#F7F7DE"><font size="-1">Displayed Value</font></th>
+      </tr>
+      <tr> 
+        <td> <div align="right">38245.3975&nbsp;</div></td>
+        <td>&nbsp;&nbsp;COMMA12.2</td>
+        <td> <div align="right">38,245.40</div></td>
+      </tr>
+      <tr> 
+        <td> <div align="right">38245.3975&nbsp;</div></td>
+        <td>&nbsp;&nbsp;12.2</td>
+        <td> <div align="right">38245.40</div></td>
+      </tr>
+      <tr> 
+        <td> <div align="right">38245.3975&nbsp;</div></td>
+        <td>&nbsp;&nbsp;DOLLAR12.2</td>
+        <td> <div align="right">$38,245.40</div></td>
+      </tr>
+      <tr> 
+        <td> <div align="right">38245.3975&nbsp;</div></td>
+        <td>&nbsp;&nbsp;DOLLAR9.2</td>
+        <td> <div align="right">$38245.40</div></td>
+      </tr>
+      <tr> 
+        <td> <div align="right">38245.3975&nbsp;</div></td>
+        <td>&nbsp;&nbsp;DOLLAR8.2</td>
+        <td> <div align="right">38245.40</div></td>
+      </tr>
+      <tr> 
+        <td> <div align="right">0&nbsp;</div></td>
+        <td>&nbsp;&nbsp;MMDDYY8.</td>
+        <td> <div align="right">01/01/60</div></td>
+      </tr>
+      <tr> 
+        <td> <div align="right">0&nbsp;</div></td>
+        <td>&nbsp;&nbsp;MMDDYY10.</td>
+        <td> <div align="right">01/01/1960</div></td>
+      </tr>
+      <tr> 
+        <td> <div align="right">0&nbsp;</div></td>
+        <td>&nbsp;&nbsp;DATE7.</td>
+        <td> <div align="right">01JAN60</div></td>
+      </tr>
+      <tr> 
+        <td> <div align="right">0&nbsp;</div></td>
+        <td>&nbsp;&nbsp;DATE9.</td>
+        <td> <div align="right">01JAN1960</div></td>
+      </tr>
+    </tbody></table>
+  <p><br>
+    <table width="85%" border="0" cellpadding="2" cellspacing="0">
+      <tbody><tr> 
+        <td valign="top" width="24"><img src="./Formatting Data Values_files/note.gif" width="20" height="20" alt="Note"></td>
+        <td valign="top">If a format is too small, the following message is written 
+          to the SAS log: "NOTE: At least one W.D format was too small for 
+          the number to be printed. The decimal may be shifted by the 'BEST' format."</td>
+      </tr>
+    </tbody></table>
+    </p><p><br>
+</p></center>
+<!-- InstanceEndEditable --> 
+</center>
+<script>writeNav_regular_bottom();</script><!-- #BeginLibraryItem "/Library/nav_regular_bottom.lbi" --><table width="100%" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="14"><img src="./Formatting Data Values_files/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="./Formatting Data Values_files/linegray.gif" width="100%" height="7" alt=" "></td></tr>  <tr>    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">© 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back2&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back2&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Formatting Data Values_files/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next2&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next2&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Formatting Data Values_files/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr></tbody></table><p>&nbsp;</p><script>writeLessonDiv()</script><div id="dropmenu0" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:450;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) dropmenu0.style.padding="4px"; for (i=0;i<menu4.length;i++)document.write(beginLink+menu4[i][0]+middleLink+menu4[i][1]+endLink);</script><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_1.htm" target="SAS">&nbsp;Lesson Overview&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_2.htm" target="SAS">&nbsp;Creating a Basic Report&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_6.htm" target="SAS">&nbsp;Selecting Variables&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_9.htm" target="SAS">&nbsp;Identifying Observations&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_11.htm" target="SAS">&nbsp;Selecting Observations&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_16.htm" target="SAS">&nbsp;Sorting Data&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_20.htm" target="SAS">&nbsp;Generating Column Totals&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_30.htm" target="SAS">&nbsp;Double Spacing Listing Output&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_32.htm" target="SAS">&nbsp;Specifying Titles and Footnotes&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_41.htm" target="SAS">&nbsp;Assigning Descriptive Labels&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_45.htm" target="SAS">&nbsp;Formatting Data Values&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_51.htm" target="SAS">&nbsp;Using Permanently Assigned Labels and Formats&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_52.htm" target="SAS">&nbsp;Additional Features&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_53.htm" target="SAS">&nbsp;Lesson Summary&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_54.htm" target="SAS">&nbsp;Lesson Quiz&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m4/m4_55.htm" target="SAS">&nbsp;End of Lesson&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.dropmenu0.captureEvents(Event.CLICK); document.dropmenu0.onclick=hidemenu}</script><script>writeHelpDiv()</script><div id="helpmenu" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:160;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) helpmenu.style.padding="4px"; for (i=0;i<menuHelp.length;i++) if (menuHelp[i] ==",") document.write(""); else document.write(beginHelpLink+menuHelp[i][0]+middleLink+menuHelp[i][1]+endLink); </script><a class="menulink" href="JavaScript: openOther(&#39;../setup.htm&#39;)" target="SAS">&nbsp;Before You Begin&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../trouble.htm&#39;)" target="SAS">&nbsp;Troubleshooting Tips&nbsp;</a><br><a class="menulink" href="JavaScript: openGlossary(&#39;../glossary.htm&#39;)" target="SAS">&nbsp;Glossary&nbsp;</a><br><a class="menulink" href="JavaScript: openDoc(&#39;../sasdoc.htm&#39;)" target="SAS">&nbsp;SAS Documentation&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)" target="SAS">&nbsp;Copyright&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.helpmenu.captureEvents(Event.CLICK); document.helpmenu.onclick=hidemenu}</script><!-- #EndLibraryItem -->
+
+<!-- InstanceEnd -->
+</body></html>
