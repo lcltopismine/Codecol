@@ -1,0 +1,213 @@
+
+<!-- saved from url=(0070)https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_8.htm -->
+<html><!-- InstanceBegin template="/Templates/informationObject.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script language="JavaScript" src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/tut.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/APIConstants.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/Configuration.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/UtilityFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/SCORMFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/NONEFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/LMSAPI.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/API.js.&#19979;&#36733;"></script><meta http-equiv="imagetoolbar" content="no">
+<script language="JavaScript" src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/nav.js.&#19979;&#36733;"></script>
+<script language="JavaScript">
+ setPageTitle();
+ setCookie();
+  
+// Drop down menu link- © Dynamic Drive (www.dynamicdrive.com)
+// For full source code and 100's more DHTML scripts, visit http://www.dynamicdrive.com
+// Credit MUST stay intact for use -->
+
+</script><title>Performing Advanced Queries Using PROC SQL - 8 of 62</title>
+
+<!-- InstanceBeginEditable name="extrascript" -->
+<script language="JavaScript">
+</script>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/tut.css">
+
+
+
+</head>
+
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFF0">
+<script>writeinformationObjectTopNav1();</script><table width="100%" border="0" cellpadding="0" cellspacing="0" background="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/banner.gif">  <tbody><tr>     <td height="49" colspan="2" nowrap=""><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;      <script>setCourseTitle()</script>SAS OnlineTutor<sup><font size="-2">®</font></sup>: Advanced SAS<sup><font size="-2">®</font></sup>      </font><br>      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;	  <script>setLessonTitle()</script>Performing Advanced Queries Using PROC SQL      </font></strong>&nbsp;<img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/bullet.gif" width="8" height="8" alt=" ">&nbsp;<font color="#FFFFFF" size="2"><strong>&nbsp;<script>document.write(myPage+" of "+eval(myModule))</script>8 of 62</strong></font>&nbsp;&nbsp;</td>    <td width="357" rowspan="3" valign="bottom"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>  </tr>  <tr>     <td colspan="2" valign="bottom" nowrap=""><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><script>writeLessonMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;dropmenu0&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuless.htm&#39;)" onclick="if (ns4) return dropit(event, &#39;document.dropmenu0&#39;)" onmouseover="rOver(&#39;contents&#39;);window.status=&#39;Display the lesson menu.&#39;;return true" onmouseout="rOut(&#39;contents&#39;);window.status=&#39;&#39;;return true" accesskey="m"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/contents.gif" width="122" height="19" border="0" alt="lesson menu" name="contents"></a></span></layer></ilayer><script>writePathOrExit()</script><a href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/paths.htm" target="SAS" onmouseover="rOver(&#39;path&#39;);window.status=&#39;Display the Learning Path.&#39;;return true" onmouseout="rOut(&#39;path&#39;);window.status=&#39;&#39;;return true" accesskey="p"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/path.gif" alt="Learning Path" width="48" height="19" border="0" name="path"></a><script>writeHelpMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;helpmenu&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuhelp.htm&#39;)" onclick="if(ns4) return dropit(event, &#39;document.helpmenu&#39;)" onmouseover="rOver(&#39;help&#39;);window.status=&#39;Display the help menu.&#39;;return true" onmouseout="rOut(&#39;help&#39;);window.status=&#39;&#39;;return true" accesskey="h"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/help.gif" width="48" height="19" border="0" alt="help menu" name="help"></a></span></layer></ilayer><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/tabright.gif" width="28" height="19" alt=" "></td>  </tr>  <tr>     <td height="3" colspan="2" valign="bottom"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/border.gif" width="100%" height="3" alt=" "></td>  </tr>  <tr valign="top" bgcolor="#FFFFF0">     <td nowrap="">&nbsp;&nbsp;&nbsp;</td>    <td valign="middle"><br>      <img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/cleardot.gif" width="411" height="1" alt=" "><br>
+	  
+	  <font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong><!-- InstanceBeginEditable name="TopicTitle" -->Subsetting 
+      Rows by Using Conditional Operators<!-- InstanceEndEditable --></strong></font> <!-- InstanceBeginEditable name="continued" --><!-- InstanceEndEditable -->
+	  
+<script>writeinformationObjectTopNav2();</script></td>    <td><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/arch.gif" width="357" height="64" align="top" alt=" "></td>  </tr></tbody></table>
+<br>
+<center>
+  <!-- InstanceBeginEditable name="content" --> 
+  <table width="85%" border="0" cellpadding="0" cellspacing="0" align="center">
+    <tbody><tr valign="top"> 
+      <td> 
+        <p>In the WHERE clause of a PROC SQL query, you can specify 
+          any valid SAS expression to subset or restrict the data that is displayed 
+          in output. The expression may contain any of various types of operators, 
+          such as the following.</p></td>
+    </tr>
+  </tbody></table>
+  <p><br>
+  <table border="1" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF" title="Types of Operators">
+    <tbody><tr valign="top" bgcolor="#F7F7DE"> 
+      <th><font size="-1">Type of Operator</font></th>
+      <th><font size="-1">Example</font></th>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>comparison</strong><em></em></td>
+      <td><font color="#003399"> 
+        <pre>where membertype<font color="red"><strong>=</strong></font>'GOLD'</pre>
+        </font></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>logical</strong><em></em></td>
+      <td><font color="#003399"> 
+        <pre>where visits&lt;=3 <strong><font color="red">or</font></strong> status='new'</pre>
+        </font></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>concatenation</strong><em></em></td>
+      <td><font color="#003399"> 
+        <pre>where name=trim(last)<font color="red"><strong>||</strong></font>', '<font color="red"><strong>||</strong></font>first</pre>
+        </font></td>
+    </tr>
+  </tbody></table>
+  <br>
+  <br>
+  <table width="85%" border="0" align="center" cellpadding="2" cellspacing="0">
+    <tbody><tr> 
+      <td width="24" valign="top"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/note.gif" width="20" height="20" alt="Note"></td>
+      <td valign="top">For a complete list of operators that can be used in SAS 
+        expressions, see the 
+        <!--doc reference-->
+        SAS documentation.</td>
+    </tr>
+  </tbody></table>
+  </p><p><br>
+  <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tbody><tr> 
+      <td><h2>Using Operators in PROC SQL</h2>
+        <p>Comparison, logical, and concatenation operators are used in PROC SQL 
+          as they are used in other SAS procedures. For example, the following 
+          WHERE clause contains 
+        </p><ul>
+          <li> the logical operator <strong>AND</strong>, which joins multiple 
+            conditions </li>
+          <li>two comparison operators: an equal sign (<strong>=</strong>) and 
+            a greater than symbol (<strong>&gt;</strong>).</li>
+        </ul>
+        <p></p></td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tbody><tr> 
+      <td> <pre><font color="#003399">     proc sql;
+        select ffid, name, state, pointsused
+           from sasuser.frequentflyers
+           <strong>where membertype<font color="red">=</font>'GOLD' <font color="red">and</font> pointsused<font color="red">&gt;</font>0</strong>
+           order by pointsused;</font></pre></td>
+    </tr>
+  </tbody></table>
+  <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tbody><tr> 
+      <td><p>In PROC SQL queries, you can also use the following <strong>conditional 
+          operators</strong>. All of these operators except for ANY, ALL, and 
+          EXISTS, can also be used in other SAS procedures.</p></td>
+    </tr>
+  </tbody></table>
+  </p><p> <br>
+  <table width="85%" border="1" align="center" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF" title="Conditional Operators">
+    <tbody><tr align="left" valign="top"> 
+      <th bgcolor="#F7F7DE"><font size="-1">Conditional Operator</font></th>
+      <th bgcolor="#F7F7DE"><font size="-1">Tests for ...</font></th>
+      <th bgcolor="#F7F7DE"><font size="-1">Example</font></th>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>BETWEEN-AND</strong></td>
+      <td> values that occur within an inclusive range</td>
+      <td><font color="#003399"> 
+        <pre>where salary <strong>between</strong> 70000 <br>             <strong>and</strong> 80000</pre>
+        </font></td>
+    </tr>
+    <tr valign="top"> 
+      <td height="46"><strong>CONTAINS</strong> or <strong>?</strong></td>
+      <td> values that contain a specified string</td>
+      <td><font color="#003399"> 
+        <pre>where name <strong>contains</strong> 'ER'</pre>
+        <pre>where name <strong>?</strong> 'ER'</pre>
+        </font></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>IN</strong></td>
+      <td> values that match one of a list of values</td>
+      <td> <pre><font color="#003399">where code <strong>in</strong> ('PT','NA','FA')</font></pre></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>IS MISSING</strong> or <strong>IS NULL</strong></td>
+      <td> missing values</td>
+      <td><font color="#003399"> 
+        <pre>where dateofbirth <strong>is missing</strong></pre>
+        <pre>where dateofbirth <strong>is null</strong></pre>
+        </font></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>LIKE</strong> (with<strong>&nbsp;%</strong>,<strong>&nbsp;_</strong>)</td>
+      <td> values that match a specified pattern</td>
+      <td> <pre><font color="#003399">where address <strong>like '% P%PLACE'</strong></font></pre></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>=*</strong></td>
+      <td> values that "sound like" a specified value</td>
+      <td> <pre><font color="#003399">where lastname<strong>=*</strong> 'Smith'</font></pre></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>ANY</strong></td>
+      <td>values that meet a specified condition with respect to <strong>any one</strong> 
+        of the values returned by a subquery</td>
+      <td> <pre><font color="#003399">where dateofbirth &lt; <strong>any</strong>
+   (select dateofbirth
+      from sasuser.payrollmaster
+      where jobcode='FA3')</font></pre></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>ALL</strong></td>
+      <td>values that meet a specified condition with respect to <strong>all</strong> 
+        the values returned by a subquery</td>
+      <td> <pre><font color="#003399">where dateofbirth &lt; <strong>all
+</strong>   (select dateofbirth
+      from sasuser.payrollmaster
+      where jobcode='FA3')</font></pre></td>
+    </tr>
+    <tr valign="top"> 
+      <td><strong>EXISTS</strong></td>
+      <td>the existence of values returned by a subquery</td>
+      <td> <pre><font color="#003399">where <strong>exists</strong>
+   (select * 
+      from sasuser.flightschedule
+      where fa.empid=
+            flightschedule.empid)</font></pre></td>
+    </tr>
+  </tbody></table>
+  <br>
+  <br>
+  <table width="85%" border="0" align="center" cellpadding="2" cellspacing="0">
+    <tbody><tr> 
+      <td valign="top" width="24"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/tip.gif" width="20" height="20" alt="More Information"></td>
+      <td valign="top">To create a negative condition, you can precede any of 
+        these conditional operators, except for ANY and ALL, with the <strong>NOT</strong> 
+        operator.</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tbody><tr> 
+      <td><p>Most of these conditional operators, and their uses, are covered 
+          on the next several pages. ANY, ALL, and EXISTS are discussed later 
+          in the lesson.</p>
+        </td>
+    </tr>
+  </tbody></table>
+  </p><p> <br>
+  <!-- InstanceEndEditable --> 
+</p></center>
+<script>writeNav_regular_bottom();</script><!-- #BeginLibraryItem "/Library/nav_regular_bottom.lbi" --><table width="100%" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="14"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/linegray.gif" width="100%" height="7" alt=" "></td></tr>  <tr>    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">© 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back2&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back2&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next2&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next2&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Performing Advanced Queries Using PROC SQL - 8 of 62_files/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr></tbody></table><p>&nbsp;</p><script>writeLessonDiv()</script><div id="dropmenu0" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:450;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) dropmenu0.style.padding="4px"; for (i=0;i<menu70.length;i++)document.write(beginLink+menu70[i][0]+middleLink+menu70[i][1]+endLink);</script><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_1.htm" target="SAS">&nbsp;Lesson Overview&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_2.htm" target="SAS">&nbsp;Viewing SELECT Statement Syntax&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_3.htm" target="SAS">&nbsp;Displaying All Columns&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_5.htm" target="SAS">&nbsp;Limiting the Number of Rows Displayed&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_6.htm" target="SAS">&nbsp;Eliminating Duplicate Rows from Output&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_8.htm" target="SAS">&nbsp;Subsetting Rows by Using Conditional Operators&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_17.htm" target="SAS">&nbsp;Subsetting Rows by Using Calculated Values&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_21.htm" target="SAS">&nbsp;Enhancing Query Output&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_26.htm" target="SAS">&nbsp;Summarizing and Grouping Data&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_40.htm" target="SAS">&nbsp;Subsetting Data by Using Subqueries&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_41.htm" target="SAS">&nbsp;Subsetting Data by Using Noncorrelated Subqueries&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_51.htm" target="SAS">&nbsp;Subsetting Data by Using Correlated Subqueries&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_57.htm" target="SAS">&nbsp;Validating Query Syntax&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_59.htm" target="SAS">&nbsp;Additional Features&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_60.htm" target="SAS">&nbsp;Lesson Summary&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_61.htm" target="SAS">&nbsp;Lesson Quiz&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m70/m70_62.htm" target="SAS">&nbsp;End of Lesson&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.dropmenu0.captureEvents(Event.CLICK); document.dropmenu0.onclick=hidemenu}</script><script>writeHelpDiv()</script><div id="helpmenu" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:160;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) helpmenu.style.padding="4px"; for (i=0;i<menuHelp.length;i++) if (menuHelp[i] ==",") document.write(""); else document.write(beginHelpLink+menuHelp[i][0]+middleLink+menuHelp[i][1]+endLink); </script><a class="menulink" href="JavaScript: openOther(&#39;../setup.htm&#39;)" target="SAS">&nbsp;Before You Begin&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../trouble.htm&#39;)" target="SAS">&nbsp;Troubleshooting Tips&nbsp;</a><br><a class="menulink" href="JavaScript: openGlossary(&#39;../glossary.htm&#39;)" target="SAS">&nbsp;Glossary&nbsp;</a><br><a class="menulink" href="JavaScript: openDoc(&#39;../sasdoc.htm&#39;)" target="SAS">&nbsp;SAS Documentation&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)" target="SAS">&nbsp;Copyright&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.helpmenu.captureEvents(Event.CLICK); document.helpmenu.onclick=hidemenu}</script><!-- #EndLibraryItem -->
+
+<!-- InstanceEnd -->
+</body></html>

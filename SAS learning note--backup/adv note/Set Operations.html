@@ -1,0 +1,172 @@
+
+<!-- saved from url=(0070)https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_4.htm -->
+<html><!-- InstanceBegin template="/Templates/informationObject.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script language="JavaScript" src="./Set Operations_files/tut.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Set Operations_files/APIConstants.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Set Operations_files/Configuration.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Set Operations_files/UtilityFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Set Operations_files/SCORMFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Set Operations_files/NONEFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Set Operations_files/LMSAPI.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Set Operations_files/API.js.&#19979;&#36733;"></script><meta http-equiv="imagetoolbar" content="no">
+<script language="JavaScript" src="./Set Operations_files/nav.js.&#19979;&#36733;"></script>
+<script language="JavaScript">
+ setPageTitle();
+ setCookie();
+  
+// Drop down menu link- © Dynamic Drive (www.dynamicdrive.com)
+// For full source code and 100's more DHTML scripts, visit http://www.dynamicdrive.com
+// Credit MUST stay intact for use -->
+
+</script><title>Combining Tables Vertically Using PROC SQL - 4 of 33</title>
+
+<!-- InstanceBeginEditable name="extrascript" -->
+<script language="JavaScript">
+</script>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="./Set Operations_files/tut.css">
+
+
+
+</head>
+
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFF0">
+<script>writeinformationObjectTopNav1();</script><table width="100%" border="0" cellpadding="0" cellspacing="0" background="./Set Operations_files/banner.gif">  <tbody><tr>     <td height="49" colspan="2" nowrap=""><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;      <script>setCourseTitle()</script>SAS OnlineTutor<sup><font size="-2">®</font></sup>: Advanced SAS<sup><font size="-2">®</font></sup>      </font><br>      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;	  <script>setLessonTitle()</script>Combining Tables Vertically Using PROC SQL      </font></strong>&nbsp;<img src="./Set Operations_files/bullet.gif" width="8" height="8" alt=" ">&nbsp;<font color="#FFFFFF" size="2"><strong>&nbsp;<script>document.write(myPage+" of "+eval(myModule))</script>4 of 33</strong></font>&nbsp;&nbsp;</td>    <td width="357" rowspan="3" valign="bottom"><img src="./Set Operations_files/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>  </tr>  <tr>     <td colspan="2" valign="bottom" nowrap=""><img src="./Set Operations_files/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Set Operations_files/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Set Operations_files/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><script>writeLessonMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;dropmenu0&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuless.htm&#39;)" onclick="if (ns4) return dropit(event, &#39;document.dropmenu0&#39;)" onmouseover="rOver(&#39;contents&#39;);window.status=&#39;Display the lesson menu.&#39;;return true" onmouseout="rOut(&#39;contents&#39;);window.status=&#39;&#39;;return true" accesskey="m"><img src="./Set Operations_files/contents.gif" width="122" height="19" border="0" alt="lesson menu" name="contents"></a></span></layer></ilayer><script>writePathOrExit()</script><a href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/paths.htm" target="SAS" onmouseover="rOver(&#39;path&#39;);window.status=&#39;Display the Learning Path.&#39;;return true" onmouseout="rOut(&#39;path&#39;);window.status=&#39;&#39;;return true" accesskey="p"><img src="./Set Operations_files/path.gif" alt="Learning Path" width="48" height="19" border="0" name="path"></a><script>writeHelpMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;helpmenu&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuhelp.htm&#39;)" onclick="if(ns4) return dropit(event, &#39;document.helpmenu&#39;)" onmouseover="rOver(&#39;help&#39;);window.status=&#39;Display the help menu.&#39;;return true" onmouseout="rOut(&#39;help&#39;);window.status=&#39;&#39;;return true" accesskey="h"><img src="./Set Operations_files/help.gif" width="48" height="19" border="0" alt="help menu" name="help"></a></span></layer></ilayer><img src="./Set Operations_files/tabright.gif" width="28" height="19" alt=" "></td>  </tr>  <tr>     <td height="3" colspan="2" valign="bottom"><img src="./Set Operations_files/border.gif" width="100%" height="3" alt=" "></td>  </tr>  <tr valign="top" bgcolor="#FFFFF0">     <td nowrap="">&nbsp;&nbsp;&nbsp;</td>    <td valign="middle"><br>      <img src="./Set Operations_files/cleardot.gif" width="411" height="1" alt=" "><br>
+	  
+	  <font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong><!-- InstanceBeginEditable name="TopicTitle" -->Understanding 
+      Set Operations<!-- InstanceEndEditable --></strong></font> <!-- InstanceBeginEditable name="continued" --><font color="#003399" size="3" face="Arial, Helvetica, sans-serif">(continued)</font><!-- InstanceEndEditable -->
+	  
+<script>writeinformationObjectTopNav2();</script></td>    <td><img src="./Set Operations_files/arch.gif" width="357" height="64" align="top" alt=" "></td>  </tr></tbody></table>
+<br>
+<center>
+  <!-- InstanceBeginEditable name="content" --> 
+  <table width="85%" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr valign="top"> 
+      <td> <h2>Introducing Set Operators</h2>
+        <p>Each of the four set operators EXCEPT, INTERSECT, UNION, and OUTER 
+          UNION selects rows and handles columns in a different way, as described 
+          below. <br>
+        </p></td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table width="85%" border="0" cellpadding="2" cellspacing="0">
+    <tbody><tr> 
+      <td valign="top" width="24"><img src="./Set Operations_files/note.gif" width="20" height="20" alt="Note"></td>
+      <td valign="top">In the following chart, Table 1 is the table that is referenced 
+        in the first query and Table 2 is the table that is referenced in the 
+        second query.</td>
+    </tr>
+  </tbody></table>
+  <p><br>
+  <table width="85%" border="1" cellpadding="2" cellspacing="0" bgcolor="#FFFFFF" title="Set Operators">
+    <tbody><tr align="center" valign="top" bgcolor="#F7F7DE"> 
+      <th><font size="-1">Set Operator</font></th>
+      <th><font size="-1">Treatment of Rows</font></th>
+      <th><font size="-1">Treatment of Columns</font></th>
+      <th><font size="-1">Example</font></th>
+    </tr>
+    <tr align="left" valign="top"> 
+      <td><strong>EXCEPT</strong></td>
+      <td> <p>Selects <strong>unique</strong> rows from the <strong>first</strong> 
+          table that are <strong>not</strong> <strong>found</strong> in the <strong>second</strong> 
+          table.<br>
+        </p>
+        <table border="0" align="center">
+          <tbody><tr> 
+            <td valign="top">Table 1</td>
+            <td align="center"> <p><img src="./Set Operations_files/m72_2g1.gif" alt="Diagram of 2 vertical intersecting circles with non-overlapping portion of top circle highlighted" width="61" height="92"></p></td>
+            <td valign="bottom">Table 2</td>
+          </tr>
+        </tbody></table>
+        <br> </td>
+      <td> <p><strong>Overlays</strong> columns based on their <strong>position</strong> 
+          in the SELECT clause without regard to the individual column names.</p></td>
+      <td><pre><font color="#003399">proc sql;
+   select *
+      from table1
+   <strong>except</strong>
+   select *
+      from table2;</font></pre></td>
+    </tr>
+    <tr align="left" valign="top"> 
+      <td><strong>INTERSECT</strong></td>
+      <td> <p>Selects <strong>unique</strong> rows that are <strong>common</strong> 
+          to <strong>both</strong> tables.<br>
+        </p>
+        <table border="0" align="center">
+          <tbody><tr> 
+            <td valign="top">Table 1</td>
+            <td align="center"> <p><img src="./Set Operations_files/m72_2g2.gif" alt="Diagram of 2 vertical intersecting circles with intersecting portion highlighted" width="61" height="92"></p></td>
+            <td valign="bottom">Table 2</td>
+          </tr>
+        </tbody></table>
+        <br> </td>
+      <td><strong>Overlays</strong> columns based on their <strong>position</strong> 
+        in the SELECT clause without regard to the individual column names.</td>
+      <td> <pre><font color="#003399">proc sql;
+   select *
+      from table1
+   <strong>intersect</strong>
+   select *
+      from table2;</font></pre></td>
+    </tr>
+    <tr align="left" valign="top"> 
+      <td><strong>UNION</strong></td>
+      <td> <p>Selects <strong>unique</strong> rows from <strong>one or both</strong> 
+          tables.<br>
+        </p>
+        <table border="0" align="center">
+          <tbody><tr> 
+            <td valign="top">Table 1</td>
+            <td align="center"> <p><img src="./Set Operations_files/m72_2g3.gif" alt="Diagram of 2 vertical intersecting circles with all portions highlighted" width="61" height="92"></p></td>
+            <td valign="bottom">Table 2</td>
+          </tr>
+        </tbody></table>
+        <br> </td>
+      <td><strong>Overlays</strong> columns based on their <strong>position</strong> 
+        in the SELECT clause without regard to the individual column names.</td>
+      <td> <pre><font color="#003399">proc sql;
+   select *
+      from table1
+   <strong>union</strong>
+   select *
+      from table2;</font></pre></td>
+    </tr>
+    <tr align="left" valign="top"> 
+      <td><strong>OUTER UNION</strong></td>
+      <td><p>Selects <strong>all</strong> rows from <strong>both</strong> tables.<br>
+        </p>
+        <table border="0" align="center">
+          <tbody><tr> 
+            <td valign="top">Table 1</td>
+            <td align="center"> <p><img src="./Set Operations_files/m72_2g4.gif" alt="Diagram of 2 non-intersecting circles stacked vertically, with both circles highlighted" width="61" height="122"></p></td>
+            <td valign="bottom">Table 2</td>
+          </tr>
+        </tbody></table>
+        <br> <br> <table width="85%" border="0" cellpadding="2" cellspacing="0">
+          <tbody><tr> 
+            <td valign="top" width="24"><img src="./Set Operations_files/note.gif" width="20" height="20" alt="Note"></td>
+            <td valign="top">The OUTER UNION operator <strong>concatenates</strong> 
+              the results of the queries.</td>
+          </tr>
+        </tbody></table></td>
+      <td>Does <strong>not</strong> overlay columns.</td>
+      <td><pre><font color="#003399">proc sql;
+   select *
+      from table1
+   <strong>outer union</strong>
+   select *
+      from table2;</font></pre></td>
+    </tr>
+  </tbody></table>
+  <br>
+  <br>
+  <table width="85%" border="0" align="center" cellpadding="2" cellspacing="0">
+    <tbody><tr> 
+      <td valign="top" width="24"><img src="./Set Operations_files/note.gif" width="20" height="20" alt="Note"></td>
+      <td valign="top">A set operator that selects only <strong>unique</strong> 
+        rows will display <strong>one occurrence</strong> of a given row in output.</td>
+    </tr>
+  </tbody></table>
+  </p><p> <br>
+  <!-- InstanceEndEditable --> 
+</p></center>
+<script>writeNav_regular_bottom();</script><!-- #BeginLibraryItem "/Library/nav_regular_bottom.lbi" --><table width="100%" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="14"><img src="./Set Operations_files/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="./Set Operations_files/linegray.gif" width="100%" height="7" alt=" "></td></tr>  <tr>    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">© 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back2&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back2&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Set Operations_files/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next2&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next2&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Set Operations_files/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr></tbody></table><p>&nbsp;</p><script>writeLessonDiv()</script><div id="dropmenu0" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:450;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) dropmenu0.style.padding="4px"; for (i=0;i<menu72.length;i++)document.write(beginLink+menu72[i][0]+middleLink+menu72[i][1]+endLink);</script><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_1.htm" target="SAS">&nbsp;Lesson Overview&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_2.htm" target="SAS">&nbsp;Understanding Set Operations&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_9.htm" target="SAS">&nbsp;Using the EXCEPT Set Operator&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_15.htm" target="SAS">&nbsp;Using the INTERSECT Set Operator&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_20.htm" target="SAS">&nbsp;Using the UNION Set Operator&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_25.htm" target="SAS">&nbsp;Using the OUTER UNION Set Operator&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_29.htm" target="SAS">&nbsp;Comparing Outer Unions and Other SAS Techniques&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_31.htm" target="SAS">&nbsp;Lesson Summary&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_32.htm" target="SAS">&nbsp;Lesson Quiz&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60477/m72/m72_33.htm" target="SAS">&nbsp;End of Lesson&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.dropmenu0.captureEvents(Event.CLICK); document.dropmenu0.onclick=hidemenu}</script><script>writeHelpDiv()</script><div id="helpmenu" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:160;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) helpmenu.style.padding="4px"; for (i=0;i<menuHelp.length;i++) if (menuHelp[i] ==",") document.write(""); else document.write(beginHelpLink+menuHelp[i][0]+middleLink+menuHelp[i][1]+endLink); </script><a class="menulink" href="JavaScript: openOther(&#39;../setup.htm&#39;)" target="SAS">&nbsp;Before You Begin&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../trouble.htm&#39;)" target="SAS">&nbsp;Troubleshooting Tips&nbsp;</a><br><a class="menulink" href="JavaScript: openGlossary(&#39;../glossary.htm&#39;)" target="SAS">&nbsp;Glossary&nbsp;</a><br><a class="menulink" href="JavaScript: openDoc(&#39;../sasdoc.htm&#39;)" target="SAS">&nbsp;SAS Documentation&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)" target="SAS">&nbsp;Copyright&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.helpmenu.captureEvents(Event.CLICK); document.helpmenu.onclick=hidemenu}</script><!-- #EndLibraryItem -->
+
+<!-- InstanceEnd -->
+</body></html>
