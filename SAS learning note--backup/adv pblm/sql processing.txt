@@ -1,0 +1,54 @@
+Restrict the number of input rows						INOBS=
+restrict the number of rows that PROC SQL displays or writes to a table		OUTOBS=
+proc sql inobs=5; 
+
+
+The NUMBER | NONUMBER option specifies whether the output from a query should include a column named ROW,
+     proc sql inobs=10 number;            
+        select flightnumber, destination 
+           from sasuser.internationalflights;
+
+The DOUBLE | NODOUBLE option does not affect the appearance of the HTML output.
+Double-space the output	DOUBLE | NODOUBLE
+proc sql double;
+
+The FLOW | NOFLOW | FLOW=n | FLOW=n m between n and m
+option does not affect the appearance of HTML, PDF, or RTF output.
+Flow characters within a column	FLOW | NOFLOW | 
+FLOW=n | FLOW=n m
+proc sql inobs=5 flow=10 15;
+
+Option for Testing and Evaluating Performance
+Specify whether PROC SQL writes timing information for each statement to the SAS log	STIMER | NOSTIMER
+
+The STIMER option in PROC SQL is useful when an operation can be accomplished in more than one way and you are benchmarking each technique.
+
+     proc sql outobs=5;
+        select flightnumber, destination 
+           from sasuser.internationalflights;
+     reset number;
+        select flightnumber, destination 
+           from sasuser.internationalflights
+           where boarded gt 200;
+
+Dictionary tables can be accessed by running a PROC SQL query against the table, using the Dictionary libref
+
+Catalogs	Vcatalg	information about catalog entries
+Columns	Vcolumn	detailed information about variables and their attributes
+Extfiles		currently assigned filerefs
+Indexes	Vindex	information about indexes defined for data files
+Macros	Vmacro	information about both user and system defined macro variables
+Members		general information about data library members
+Options	Voption current settings of SAS system options
+Tables	Vtable	detailed information about data sets
+Titles	Vtitle	text assigned to titles and footnotes
+Views	Vview	general information about data views
+
+     proc sql;
+        describe table dictionary.tables;
+
+Memname (name)
+Nobs (number of observations)
+Nvar (number of variables)
+Crdate (creation date) of the tables in the Sasuser library.
+

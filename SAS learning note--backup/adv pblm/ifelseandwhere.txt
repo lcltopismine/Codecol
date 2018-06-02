@@ -1,0 +1,31 @@
+The number of conditions (values) tested and the type of variable tested affect CPU resources. For numeric variables, SELECT statements should always be slightly more efficient (use less CPU time) than IF-THEN/ELSE statements. The performance gap between IF-THEN/ELSE and SELECT statements gradually widens as the number of conditions increases. For character variables, IF-THEN/ELSE statements are always more efficient than SELECT statements. The performance gap widens quickly between the two techniques as the number of conditions increases.
+
+Use IF-THEN/ELSE statements when
+
+the data values are character values
+the data values are not uniformly distributed
+there are few conditions to check.
+
+Use SELECT statements when
+
+you have a long series of mutually exclusive numeric conditions
+data values are uniformly distributed.
+
+Avoid serial IF statements because they use extra resources.
+
+     proc datasets lib=company;
+        modify organization;
+        rename Job_title=Title;
+     quit;
+
+Use PROC DATASETS instead of a DATA step to modify data attributes
+
+You cannot use the DATASETS procedure to modify the type, length, or position of variables
+ because these attributes directly affect the data portion of the data set. To perform these operations, use the DATA step.
+
+To save CPU resources, use a WHERE statement instead of a subsetting IF statement to subset a SAS data set.
+
+To save CPU resources, you can read variables from a SAS data set instead of reading data from an external file.
+
+
+To reduce I/O operations, you can read variables from a SAS data set instead of reading data from an external file. However, savings in I/O operations are largely dependent on the block size of the external data file and on the page size of the SAS data set.

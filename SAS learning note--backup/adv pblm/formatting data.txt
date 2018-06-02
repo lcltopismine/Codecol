@@ -1,0 +1,60 @@
+     proc format;
+        value dates (multilabel) 
+              '01jan2000'd - '31mar2000'd = '1st Quarter'
+              '01apr2000'd - '30jun2000'd = '2nd Quarter'
+              '01jul2000'd - '30sep2000'd = '3rd Quarter'
+              '01oct2000'd - '31dec2000'd = '4th Quarter'
+              '01jan2000'd - '30jun2000'd = 'First Half of Year'
+              '01jul2000'd - '31dec2000'd = 'Second Half of Year';
+     run; 
+
+multilabel with mlf
+
+     proc tabulate data = sasuser.sale2000 format = dollar15.2;
+        format Date dates.;
+        class Date / mlf;
+        var RevCargo;
+        table Date, RevCargo*(mean median);
+     run; 
+
+proc format;
+        picture rainamt
+                0-2='9.99 slight'
+                2<-4='9.99 moderate'
+                4<-<10='9.99 heavy'
+                other='999 check value';
+     run;
+
+20:		020 check
+3.9:		3.90 moderate
+.5:		0.5 slight
+
+
+proc format;
+   picture grade
+           0-5='9 Elementary School'
+           6-8='9 Middle School'
+           9-12='99 High School';
+run
+
+	09 High School
+
+adding the keyword FMTLIB to the PROC FORMAT statement displays a list of all the formats in the specified catalog.
+
+     libname library 'c:\sas\newfmt';
+     proc format lib=library fmtlib;
+	exclude $geoarea geopop;
+        select $routes;
+
+
+     proc catalog catalog=library.formats;
+        copy out=work.formats;
+        select routes.formatc;
+     run;
+     proc catalog cat=work.formats;
+        contents;
+     run;
+     quit;
+
+
+     run;

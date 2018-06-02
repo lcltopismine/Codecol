@@ -1,0 +1,41 @@
+PROC SQL Queries That Can Be Optimized by an Index
+
+IN WHERE:
+a comparison operator
+the TRIM or SUBSTR function
+the CONTAINS operator
+the LIKE operator
+
+In query
+a correlated subquery
+equal join
+
+A small subset of data (<15% of rows) can be accessed more quickly
+
+
+     proc sql;
+        create unique index EmpID
+           on work.payrollmaster(empid);
+
+     proc sql;
+        create unique index daily
+           on work.marchflights(flightnumber,date);
+
+Determining Whether SAS Is Using an Index
+OPTIONS MSGLEVEL= N | I;
+The IDXWHERE= option enables you to override the decision that SAS makes about whether to use an index
+IDXWHERE=YES | NO;
+
+
+     proc sql;
+        select *
+           from marchflights (idxwhere=no)
+           where flightnumber='182';
+
+     proc sql;
+        select *
+           from marchflights (idxname=daily)
+           where flightnumber='182';
+BOTH ARE DATASET OPTION
+
+

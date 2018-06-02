@@ -1,0 +1,128 @@
+    %let year=2002;
+    proc print data=sasuser.schedule;
+       where year(begin_date)=&year;
+       title "Scheduled Classes for &year";
+    run;
+
+SYSDATE	the date of the SAS invocation (DATE7.)
+SYSDATE9	the date of the SAS invocation (DATE9.)
+SYSDAY	the day of the week of the SAS invocation
+SYSTIME	the time of the SAS invocation
+SYSENV	FORE (interactive execution) or BACK (noninteractive or batch execution)
+SYSSCP	an abbreviation for the operating system that is being used, such as OpenVMS, WIN, HP 300
+SYSVER	the release of SAS that is being used
+SYSJOBID	an identifier for the current SAS session or for the current batch job (the user ID or job name for mainframe systems, the process ID (PID) for other systems)
+
+SYSLAST	the name of the most recently created SAS data set, in the 
+form LIBREF.NAME. This value is always stored in all capital 
+letters. If no data set has been created, the value is _NULL_
+SYSPARM	text that is specified when SAS is invoked
+SYSERR	contains a return code status that is set by the DATA 
+step and some SAS procedures to indicate if the step 
+or procedure executed successfully
+
+%let pattern=Ba;
+where student_name contains "&pattern";
+you must enclose the text string in double quotation marks or the macro variable reference will not be resolved
+
+You can use the SYMBOLGEN system option to monitor the value that is substituted for a macro variable reference.
+OPTIONS NOSYMBOLGEN | SYMBOLGEN;
+SYMBOLGEN specifies that log messages about macro variable references will be displayed.
+where fee>&amount;
+SYMBOLGEN: Macro variable AMOUNT resolves to 975
+
+    %let s=%str(;);
+    %let prog=data new&s x=1&s run&s;
+
+%NRSTR  1    %let Period=%str(May&Jun);
+WARNING: Apparent symbolic reference JUN not resolved.
+2    %put Period resolves to: .
+WARNING: Apparent symbolic reference JUN not resolved.
+Period resolves to: May&Jun
+3
+4    %let Period=%nrstr(May&Jun);
+5    %put Period resolves to: .
+Period resolves to: May&Jun
+
+    %let a=begin;
+    %let b=%nrstr(&a);
+
+    %put UPCASE produces: %upcase(&b);
+    %put QUPCASE produces: %qupcase(&b);
+
+
+6    %let a=begin;
+7    %let b=%nrstr(&a);
+8
+9    %put UPCASE produces: %upcase(&b);
+UPCASE produces: begin
+10   %put QUPCASE produces: %qupcase(&b);
+QUPCASE produces: &A
+
+
+For example, assume that the macro variable date has the value 05JAN2002.
+
+The code %substr(&date,3) will return the value JAN2002.
+The code %substr(&date,3,3) will return the value JAN.
+The code %substr(&date,3,9) will return the value JAN2002 and will produce a warning message.
+
+"01%substr(&sysdate9,3)"d
+
+     %let a=one;
+     %let b=two;
+     %let c=%nrstr(&a &b);
+
+     %put C: &c;
+     %put With SUBSTR: %substr(&c,1,2);
+     %put With QSUBSTR: %qsubstr(&c,1,2);
+
+16   %put With SUBSTR: %substr(&c,1,2);
+With SUBSTR: one
+17   %put With QSUBSTR: %qsubstr(&c,1,2);
+With QSUBSTR: &a
+
+     %let a=a very long value;
+     %let b=%index(&a,v);
+     %put V appears at position &b.;
+
+%SCAN ( argument , n <,delimiters> )
+    %let libref=%scan(&syslast,1,.);
+    %let dsname=%scan(&syslast,2,.);
+1 for group after cut , . for delimiter.
+
+
+47   %let a=one;
+48   %let b=two;
+49   %let c=%nrstr(&a*&b);
+50
+51   %put C: &c;
+C: &a*&b
+52   %put With SCAN: %scan(&c,1,*);
+With SCAN: one
+53   %put With QSCAN: %qscan(&c,1,*);
+With QSCAN: &a 
+
+title "%sysfunc(today(),weekdate.) - SALES REPORT";
+    title "Report Produced on 
+                  %sysfunc(left(%qsysfunc(today(),worddate.)))";
+
+add . to identify var
+    proc &graphics.chart data=sasuser.y&year&month;
+       hbar week / sumvar=&var;
+    run;
+    proc &graphics.plot data=sasuser.y&year&month;
+       plot &var*day;
+
+one . for stop,another one for real .
+    %let lib=sasuser;
+    ...
+    libname &lib 'SAS-data-library';
+    proc &graphics.chart data=&lib..y&year&month;
+    proc &graphics.plot data=&lib..y&year&month;
+    run;
+
+
+%let area=south;
+data work.&area.rate;
+
+

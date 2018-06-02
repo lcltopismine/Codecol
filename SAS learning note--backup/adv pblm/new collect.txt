@@ -1,0 +1,14 @@
+40
+50
+109
+115 small amount
+120 nobs a variable that represents the total number of observations in the input data set
+
+50
+
+5
+7
+9
+13
+17 SYSLAST stores WORK.HOUSES, which is the uppercase name of the data set that was created last.
+22

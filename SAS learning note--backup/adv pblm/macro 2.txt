@@ -1,0 +1,50 @@
+          if paidup<total then do;
+             call symput('foot','Some Fees Are Unpaid');
+          end;
+          else do;
+             call symput('foot','All Students Have Paid');
+          end;
+
+both in ""
+
+data practice;
+  set sasuser.schedule;
+  where location='Boston';
+  call symput('same_val','Hallis, Dr. George');
+  call symput('current_val',teacher);
+run;
+
+    data _null_;
+       set sasuser.courses;
+       call symput(course_code, trim(course_title));
+    run;
+    %put _user_;
+for multi vars
+
+    data teachers;
+       set sasuser.register;
+       length Teacher $ 20;
+       teacher=symget('teach'||left(course_number));
+    run;
+
+    proc sql noprint;
+       select sum(fee) format=dollar10. into :totalfee
+          from sasuser.all;
+    quit;
+    %let totalfee=&totalfee;
+
+    proc sql;
+       select course_code, location, begin_date format=mmddyy10.
+       into :crsid1-:crsid3,
+            :place1-:place3,
+            :date1-:date3
+          from sasuser.schedule
+          where year(begin_date)=2002
+          order by begin_date;
+    quit;
+
+    proc sql noprint;
+       select distinct location into :sites separated by ' '
+          from sasuser.schedule;
+    quit
+Sites	Boston Dallas Seattle

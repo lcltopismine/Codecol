@@ -1,0 +1,106 @@
+     options mcompilenote=all;
+     %macro mymacro;
+     %mend mymacro;
+
+NOTE: The macro MYMACRO completed compilation without errors.
+
+%macro printnum;
+proc print data=sasuser.all label noobs n;
+  where course_number=#
+  var student_name student_company;
+  title "Enrollment for Course &num";
+run;
+%mend;
+
+%let num=6;
+%printnum no ;here
+
+OPTIONS MPRINT | NOMPRINT; check err or debug
+101  %prtlast
+MPRINT(PRTLAST): proc print data=WORK.SALES (obs=5);
+MPRINT(PRTLAST): title "Listing of WORK.SALES";
+MPRINT(PRTLAST): run;
+Send compiled
+
+
+OPTIONS MLOGIC | NOMLOGIC;
+the beginning of macro execution
+the results of arithmetic and logical macro operations
+the end of macro execution.
+
+
+107  %prtlast
+MLOGIC(PRTLAST): Beginning execution.
+
+NOTE: There were 1 observations read from the dataset WORK.SALES.
+NOTE: PROCEDURE PRINT used:
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+
+MLOGIC(PRTLAST): Ending execution.
+
+pos para must have para,The positional parameter value is listed first when mixed.
+
+parabuff take multi buff
+     %macro printz/parmbuff;
+        %put Syspbuff contains: &syspbuff;
+        %let num=1;
+        %let dsname=%scan(&syspbuff,&num);
+        %do %while(&dsname ne);
+           proc print data=sasuser.&dsname;
+           run;
+           %let num=%eval(&num+1);
+           %let dsname=%scan(&syspbuff,&num);
+        %end;
+
+%printz(courses, schedule)
+Syspbuff contains: (courses,schedule)
+
+ %global dsn vars;
+%symdel dsn;
+%local dsn;
+
+OPTIONS MPRINTNEST | NOMPRINTNEST;
+
+OPTIONS MLOGICNEST | NOMLOGICNEST
+     %macro outer;
+        %put THIS IS OUTER;
+        %inner
+     %mend outer;
+	 
+     %macro inner;
+        %put THIS IS INNER;
+        %inrmost
+     %mend inner;
+	 
+     %macro inrmost;
+        %put THIS IS INRMOST;
+     %mend inrmost;
+     %mend printz;
+
+     options mlogic mlogicnest;
+     %outer
+
+MLOGIC(OUTER):  Beginning execution.
+MLOGIC(OUTER):  %PUT THIS IS OUTER
+THIS IS OUTER
+MLOGIC(OUTER.INNER):  Beginning execution.
+MLOGIC(OUTER.INNER):  %PUT THIS IS INNER
+THIS IS INNER
+MLOGIC(OUTER.INNER.INRMOST):  Beginning execution.
+MLOGIC(OUTER.INNER.INRMOST):  %PUT THIS IS INRMOST
+THIS IS INRMOST
+MLOGIC(OUTER.INNER.INRMOST):  Ending execution.
+MLOGIC(OUTER.INNER):  Ending execution.
+MLOGIC(OUTER):  Ending execution.
+
+     %macro printit;
+        %if &syslast ne _NULL_ then %do;
+           proc print data=_last_(obs=5);
+           title "Last Created Data Set Is &syslast";
+           run;
+        %end;
+     %mend;
+
+%SYSEVALF is the only macro function that can evaluate logical expressions that contain floating point or missing values
+%let y=%sysevalf(&a+&b);

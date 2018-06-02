@@ -1,0 +1,18 @@
+ALL	
+Makes only one pass through the data and does not remove duplicate rows.
+ALL cannot be used with OUTER UNION.
+
+
+Corr
+Compares and overlays columns by name instead of by position:
+
+When used with EXCEPT, INTERSECT, and UNION, removes any columns that do not have the same name in both tables.
+
+When used with OUTER UNION, overlays same-named columns and displays columns that have nonmatching names without overlaying.
+
+proc sql;
+   select *
+      from one
+   intersect all
+   select *
+      from two;

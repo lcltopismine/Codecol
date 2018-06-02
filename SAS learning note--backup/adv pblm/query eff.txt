@@ -1,0 +1,21 @@
+When summarizing data for one or more class variables, the tools in each of the following groups are similar in resource usage:
+
+PROC MEANS (or PROC SUMMARY), PROC REPORT, and PROC TABULATE
+PROC SQL and the DATA step with PROC SORT.
+
+a relatively small number of distinct combinations of values of the class variable—the summarized data contains 10% or fewer of the observations in the original data set	
+PROC MEANS (or PROC SUMMARY)
+PROC REPORT
+PROC TABULATE
+
+a relatively large number of distinct combinations of values of the class variable—the summarized data contains more than 10% of the observations in the original data set	
+PROC SQL
+DATA step and PROC SORT
+
+Using a GROUP BY statement in PROC SQL is similar in CPU usage to a PROC SORT step followed by a DATA step.
+
+The TYPES statement in a PROC MEANS step uses the fewest resources. 
+
+A program that contains the NWAY option in multiple PROC MEANS steps uses the most resources because SAS must read the data set separately for each PROC MEANS step. 
+
+The WHERE= data set option in a PROC MEANS step uses more resources than the TYPES statement in PROC MEANS because SAS must calculate all possible combinations of class variables before subsetting. However, the WHERE= data set option in PROC MEANS uses fewer resources than the NWAY option in multiple PROC MEANS steps.

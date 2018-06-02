@@ -1,0 +1,28 @@
+proc sql;
+   select one.x,a,b
+      from one, two
+      where one.x = two.x;
+
+from sasuser.register as r, sasuser.students as s
+
+proc sql;
+   select *
+      from one 
+      left join 
+      two
+      on one.x=two.x;
+
+proc sql;
+   select distinct e.firstname, e.lastname
+      from sasuser.flightschedule as a,
+           sasuser.staffmaster as b,
+           sasuser.payrollmaster as c,
+           sasuser.supervisors as d,
+           sasuser.staffmaster as e
+      where a.date='04mar2000'd and
+            a.destination='CPH' and
+            a.empid=b.empid and
+            a.empid=c.empid and
+            d.jobcategory=substr(c.jobcode,1,2)
+            and d.state=b.state
+            and d.empid=e.empid;
