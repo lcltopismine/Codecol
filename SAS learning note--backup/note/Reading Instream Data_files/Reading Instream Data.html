@@ -1,0 +1,213 @@
+
+<!-- saved from url=(0071)https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_37.htm -->
+<html><!-- InstanceBegin template="/Templates/informationObject.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script language="JavaScript" src="./Reading Instream Data_files/tut.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Reading Instream Data_files/APIConstants.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Reading Instream Data_files/Configuration.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Reading Instream Data_files/UtilityFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Reading Instream Data_files/SCORMFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Reading Instream Data_files/NONEFunctions.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Reading Instream Data_files/LMSAPI.js.&#19979;&#36733;"></script><script language="JavaScript1.2" src="./Reading Instream Data_files/API.js.&#19979;&#36733;"></script><meta http-equiv="imagetoolbar" content="no">
+<script language="JavaScript" src="./Reading Instream Data_files/nav.js.&#19979;&#36733;"></script>
+<script language="JavaScript">
+ setPageTitle();
+ setCookie();
+  
+// Drop down menu link- © Dynamic Drive (www.dynamicdrive.com)
+// For full source code and 100's more DHTML scripts, visit http://www.dynamicdrive.com
+// Credit MUST stay intact for use -->
+
+</script><title>Creating SAS Data Sets from Raw Data - 37 of 48</title>
+
+<!-- InstanceBeginEditable name="extrascript" --> 
+<script language="JavaScript">
+</script>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="./Reading Instream Data_files/tut.css">
+
+
+
+</head>
+
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFF0">
+<script>writeinformationObjectTopNav1();</script><table width="100%" border="0" cellpadding="0" cellspacing="0" background="./Reading Instream Data_files/banner.gif">  <tbody><tr>     <td height="49" colspan="2" nowrap=""><font color="#A6CAF0" size="-1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;      <script>setCourseTitle()</script>SAS OnlineTutor<sup><font size="-2">®</font></sup>: Basic and Intermediate SAS<sup><font size="-2">®</font></sup>      </font><br>      <strong><font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="-1">&nbsp;&nbsp;	  <script>setLessonTitle()</script>Creating SAS Data Sets from Raw Data      </font></strong>&nbsp;<img src="./Reading Instream Data_files/bullet.gif" width="8" height="8" alt=" ">&nbsp;<font color="#FFFFFF" size="2"><strong>&nbsp;<script>document.write(myPage+" of "+eval(myModule))</script>37 of 48</strong></font>&nbsp;&nbsp;</td>    <td width="357" rowspan="3" valign="bottom"><img src="./Reading Instream Data_files/logo_top.gif" width="357" height="72" align="bottom" alt=" "></td>  </tr>  <tr>     <td colspan="2" valign="bottom" nowrap=""><img src="./Reading Instream Data_files/tableft.gif" width="9" height="19" alt=" "><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Reading Instream Data_files/back.gif" alt="back" width="30" height="19" border="0" name="back"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Reading Instream Data_files/next.gif" alt="next" width="30" height="19" border="0" name="next"></a><script>writeLessonMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;dropmenu0&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuless.htm&#39;)" onclick="if (ns4) return dropit(event, &#39;document.dropmenu0&#39;)" onmouseover="rOver(&#39;contents&#39;);window.status=&#39;Display the lesson menu.&#39;;return true" onmouseout="rOut(&#39;contents&#39;);window.status=&#39;&#39;;return true" accesskey="m"><img src="./Reading Instream Data_files/contents.gif" width="122" height="19" border="0" alt="lesson menu" name="contents"></a></span></layer></ilayer><script>writePathOrExit()</script><a href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/paths.htm" target="SAS" onmouseover="rOver(&#39;path&#39;);window.status=&#39;Display the Learning Path.&#39;;return true" onmouseout="rOut(&#39;path&#39;);window.status=&#39;&#39;;return true" accesskey="p"><img src="./Reading Instream Data_files/path.gif" alt="Learning Path" width="48" height="19" border="0" name="path"></a><script>writeHelpMenu()</script><ilayer><layer visibility="show"><span onclick="dropit(event, &#39;helpmenu&#39;);event.cancelBubble=true;return false"><a href="JavaScript: openMenu(&#39;../menuhelp.htm&#39;)" onclick="if(ns4) return dropit(event, &#39;document.helpmenu&#39;)" onmouseover="rOver(&#39;help&#39;);window.status=&#39;Display the help menu.&#39;;return true" onmouseout="rOut(&#39;help&#39;);window.status=&#39;&#39;;return true" accesskey="h"><img src="./Reading Instream Data_files/help.gif" width="48" height="19" border="0" alt="help menu" name="help"></a></span></layer></ilayer><img src="./Reading Instream Data_files/tabright.gif" width="28" height="19" alt=" "></td>  </tr>  <tr>     <td height="3" colspan="2" valign="bottom"><img src="./Reading Instream Data_files/border.gif" width="100%" height="3" alt=" "></td>  </tr>  <tr valign="top" bgcolor="#FFFFF0">     <td nowrap="">&nbsp;&nbsp;&nbsp;</td>    <td valign="middle"><br>      <img src="./Reading Instream Data_files/cleardot.gif" width="411" height="1" alt=" "><br>
+	  
+	  <font color="#003399" size="3" face="Arial, Helvetica, sans-serif"><strong><!-- InstanceBeginEditable name="TopicTitle" -->Reading 
+      Instream Data<!-- InstanceEndEditable --></strong></font> <!-- InstanceBeginEditable name="continued" --><!-- InstanceEndEditable -->
+	  
+<script>writeinformationObjectTopNav2();</script></td>    <td><img src="./Reading Instream Data_files/arch.gif" width="357" height="64" align="top" alt=" "></td>  </tr></tbody></table>
+<br>
+<center>
+  <!-- InstanceBeginEditable name="content" --> 
+<table width="85%" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tbody><tr valign="top"> 
+    <td>
+<p>Throughout this lesson, our program has contained an INFILE statement 
+        that identifies an <strong>external file</strong> to read. </p>
+    </td>
+  </tr>
+</tbody></table>
+<p align="center"> 
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td align="left"> 
+        <p> 
+          </p><pre><font color="#003399">    data sasuser.stress;</font>
+<font color="#003399">       <strong>infile tests;</strong></font>
+<font color="#003399">       input ID 1-4 Name $ 6-25 RestHR 27-29 MaxHR 31-33</font>
+<font color="#003399">             RecHR 35-37 TimeMin 39-40 TimeSec 42-43</font>
+<font color="#003399">             Tolerance $ 45;</font>
+<font color="#003399">       if tolerance='D';</font><font color="#003399">
+</font><font color="#003399">       TotalTime=(timemin*60)+timesec;</font>
+<font color="#003399">    run;</font></pre>
+      </td>
+    </tr>
+  </tbody></table>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td align="left"> 
+        <p>However, you can also read <strong>instream data lines</strong> that 
+          you enter directly in your SAS program, rather than data that is stored 
+          in an external file. Reading instream data is extremely helpful if you 
+          want to create data and test your programming statements on a few observations 
+          that you can specify according to your needs.</p>
+        <p>To read instream data, you use </p>
+        <ul>
+          <li> 
+            <!--DATALINES in V8 -->
+            a <strong>DATALINES statement</strong> as the last statement in the 
+            DATA step (except for the RUN statement) and immediately preceding 
+            the data lines</li>
+          <li>a <strong>null statement</strong> (a single semicolon) to indicate 
+            the end of the input data. </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody></table>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td align="left"> 
+        <p> 
+          </p><pre><font color="#003399">    data sasuser.stress;</font>
+<font color="#003399">       input ID 1-4 Name $ 6-25 RestHR 27-29 MaxHR 31-33</font>
+<font color="#003399">             RecHR 35-37 TimeMin 39-40 TimeSec 42-43</font>
+<font color="#003399">             Tolerance $ 45;
+       <font color="red"><strong>datalines;</strong></font>
+       .
+       .
+       .
+    <em>data lines go here</em></font>
+<font color="#003399">       .
+       .
+       .
+    <font color="red"><strong>;</strong></font></font></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><p align="center"> 
+</p><center>
+  <table border="1" cellspacing="0" cellpadding="10" width="85%" bgcolor="#F7F7DE" title="General form, DATALINES statement">
+    <tbody><tr> 
+      <td align="left"><strong>General form, DATALINES statement:</strong> 
+        <blockquote> <font color="#003399"><nobr><strong>DATALINES</strong><strong>;</strong></nobr></font> 
+        </blockquote>
+        <p> 
+        <table cellpadding="2">
+          <tbody><tr valign="Top"> 
+            <td width="24"><img border="0" src="./Reading Instream Data_files/note.gif" alt="NOTE:" width="20" height="20"></td>
+            <td>You can use only one DATALINES statement in a DATA step. Use separate 
+              DATA steps to enter multiple sets of data. </td>
+          </tr>
+        </tbody></table>
+        </p><p> 
+		<table cellpadding="2">
+          <tbody><tr valign="Top"> 
+            <td width="24"><img border="0" src="./Reading Instream Data_files/note.gif" alt="NOTE:" width="20" height="20"></td>
+            <td> You can also use <strong><font color="#003399">CARDS;</font></strong>  as the last statement in a DATA step (except for the RUN statement) and 
+			immediately preceding the data lines. The CARDS statement is an alias for the DATALINES statement.</td>
+          </tr>
+        </tbody></table>
+		</p><p>
+        <table cellpadding="2">
+          <tbody><tr valign="Top"> 
+            <td width="24"><img border="0" src="./Reading Instream Data_files/note.gif" alt="NOTE:" width="20" height="20"></td>
+            <td> If your data contains semicolons, use the DATALINES4 statement 
+              plus a null statement that consists of four semicolons (;;;;).</td>
+          </tr>
+        </tbody></table>
+      </p></td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"><br>
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td> 
+        <p><strong>Example</strong></p>
+        <p>To read the data for the treadmill stress tests as instream data, you 
+          can submit the following program:</p>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><center>
+  <table cellpadding="0" cellspacing="0" border="0" width="85%">
+    <tbody><tr> 
+      <td> 
+        <pre><font color="#003399">    data sasuser.stress;</font>
+<font color="#003399">       input ID 1-4 Name $ 6-25 RestHR 27-29 MaxHR 31-33</font>
+<font color="#003399">             RecHR 35-37 TimeMin 39-40 TimeSec 42-43</font>
+<font color="#003399">             Tolerance $ 45;</font>
+<font color="#003399">       if tolerance='D';</font>
+<font color="#003399">       TotalTime=(timemin*60)+timesec;</font>
+       <font color="red"><strong>datalines;</strong></font>
+     <font color="#003399"><strong>2458 Murray, W            72  185 128 12 38 D</strong></font>
+     <font color="#003399"><strong>2462 Almers, C            68  171 133 10  5 I</strong></font>
+     <font color="#003399"><strong>2501 Bonaventure, T       78  177 139 11 13 I</strong></font>
+     <font color="#003399"><strong>2523 Johnson, R           69  162 114  9 42 S</strong></font>
+     <font color="#003399"><strong>2539 LaMance, K           75  168 141 11 46 D</strong></font>
+     <font color="#003399"><strong>2544 Jones, M             79  187 136 12 26 N</strong></font>
+     <font color="#003399"><strong>2552 Reberson, P          69  158 139 15 41 D</strong></font>
+     <font color="#003399"><strong>2555 King, E              70  167 122 13 13 I</strong></font>
+     <font color="#003399"><strong>2563 Pitts, D             71  159 116 10 22 S</strong></font>
+     <font color="#003399"><strong>2568 Eberhardt, S         72  182 122 16 49 N</strong></font>
+     <font color="#003399"><strong>2571 Nunnelly, A          65  181 141 15  2 I</strong></font>
+     <font color="#003399"><strong>2572 Oberon, M            74  177 138 12 11 D</strong></font>
+     <font color="#003399"><strong>2574 Peterson, V          80  164 137 14  9 D</strong></font>
+     <font color="#003399"><strong>2575 Quigley, M           74  152 113 11 26 I</strong></font>
+     <font color="#003399"><strong>2578 Cameron, L           75  158 108 14 27 I</strong></font>
+     <font color="#003399"><strong>2579 Underwood, K         72  165 127 13 19 S</strong></font>
+     <font color="#003399"><strong>2584 Takahashi, Y         76  163 135 16  7 D</strong></font>
+     <font color="#003399"><strong>2586 Derber, B            68  176 119 17 35 N</strong></font>
+     <font color="#003399"><strong>2588 Ivan, H              70  182 126 15 41 N</strong></font>
+     <font color="#003399"><strong>2589 Wilcox, E            78  189 138 14 57 I</strong></font>
+     <font color="#003399"><strong>2595 Warren, C            77  170 136 12 10 S</strong></font>
+     <font color="red"><strong>;</strong></font>
+</pre>
+      </td>
+    </tr>
+  </tbody></table>
+</center>
+<p align="center"> 
+</p><center>
+  <table cellpadding="2" width="85%">
+    <tbody><tr valign="Top"> 
+      <td width="41"><img border="0" src="./Reading Instream Data_files/alert.gif" alt="NOTE:" width="37" height="32"></td>
+      <td> Notice that you do not need a RUN statement following the null statement 
+        (the semicolon after the data lines). The null statement functions as 
+        a step boundary when the DATALINES statement is used, so the DATA step 
+        is executed as soon as SAS encounters it. If you do place a RUN 
+        statement after the null statement, any statements between the null statement 
+        and the RUN statement are <strong>not</strong> executed as part of the 
+        DATA step.</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <br>
+</center>
+<!-- InstanceEndEditable --> 
+</center>
+<script>writeNav_regular_bottom();</script><!-- #BeginLibraryItem "/Library/nav_regular_bottom.lbi" --><table width="100%" cellspacing="0" cellpadding="0">  <tbody><tr>    <td width="14"><img src="./Reading Instream Data_files/linebox.gif" width="14" height="7" alt=" "></td><td colspan="2"><img src="./Reading Instream Data_files/linegray.gif" width="100%" height="7" alt=" "></td></tr>  <tr>    <td>&nbsp;</td><td valign="top"> <font size="1" color="gray" face="Verdana, Arial, Helvetica, Sans Serif"><a class="copyrightlink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)"><font face="Arial, Helvetica, sans-serif">Copyright</font></a><font face="Arial, Helvetica, sans-serif">© 2005 SAS Institute Inc., Cary, NC, USA. All rights reserved.</font></font> <font face="Arial, Helvetica, sans-serif"><br><font size="1" color="gray"><a class="copyrightlink" href="http://www.sas.com/Copyright.html" target="_blank">Terms of Use &amp; Legal Information</a> | <a class="copyrightlink" href="http://www.sas.com/Privacy.html" target="_blank">Privacy Statement</a></font></font></td><td width="60"><div align="right"><a href="JavaScript: prevPage()" onmouseover="rOver(&#39;back2&#39;);window.status=&#39;Display the previous page.&#39;;return true" onmouseout="rOut(&#39;back2&#39;);window.status=&#39;&#39;;return true" accesskey="b"><img src="./Reading Instream Data_files/back2.gif" alt="back" width="30" height="19" border="0" name="back2"></a><a href="JavaScript: nextPage()" onmouseover="rOver(&#39;next2&#39;);window.status=&#39;Display the next page.&#39;;return true" onmouseout="rOut(&#39;next2&#39;);window.status=&#39;&#39;;return true" accesskey="n"><img src="./Reading Instream Data_files/next2.gif" alt="next" width="30" height="19" border="0" name="next2"></a></div></td></tr></tbody></table><p>&nbsp;</p><script>writeLessonDiv()</script><div id="dropmenu0" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:450;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) dropmenu0.style.padding="4px"; for (i=0;i<menu12.length;i++)document.write(beginLink+menu12[i][0]+middleLink+menu12[i][1]+endLink);</script><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_1.htm" target="SAS">&nbsp;Lesson Overview&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_2.htm" target="SAS">&nbsp;Raw Data Files&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_3.htm" target="SAS">&nbsp;Steps to Create a SAS Data Set&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_4.htm" target="SAS">&nbsp;Referencing a SAS Library&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_6.htm" target="SAS">&nbsp;Referencing a Raw Data File&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_11.htm" target="SAS">&nbsp;Writing a DATA Step Program&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_19.htm" target="SAS">&nbsp;Submitting the DATA Step Program&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_30.htm" target="SAS">&nbsp;Creating and Modifying Variables&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_35.htm" target="SAS">&nbsp;Subsetting Data&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_37.htm" target="SAS">&nbsp;Reading Instream Data&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_39.htm" target="SAS">&nbsp;Creating a Raw Data File&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_44.htm" target="SAS">&nbsp;Additional Features&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_46.htm" target="SAS">&nbsp;Lesson Summary&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_47.htm" target="SAS">&nbsp;Lesson Quiz&nbsp;</a><br><a class="menulink" href="https://jpsmonline.umd.edu/SASOnlineTutor/sot12/en/60476/m12/m12_48.htm" target="SAS">&nbsp;End of Lesson&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.dropmenu0.captureEvents(Event.CLICK); document.dropmenu0.onclick=hidemenu}</script><script>writeHelpDiv()</script><div id="helpmenu" style="position:absolute;left:0;top:0;layer-background-color:lightyellow;background-color:#F7F7DE;width:160;visibility:hidden;border:1px solid black;padding:0px;"><script language="JavaScript1.2">if (document.all) helpmenu.style.padding="4px"; for (i=0;i<menuHelp.length;i++) if (menuHelp[i] ==",") document.write(""); else document.write(beginHelpLink+menuHelp[i][0]+middleLink+menuHelp[i][1]+endLink); </script><a class="menulink" href="JavaScript: openOther(&#39;../setup.htm&#39;)" target="SAS">&nbsp;Before You Begin&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../trouble.htm&#39;)" target="SAS">&nbsp;Troubleshooting Tips&nbsp;</a><br><a class="menulink" href="JavaScript: openGlossary(&#39;../glossary.htm&#39;)" target="SAS">&nbsp;Glossary&nbsp;</a><br><a class="menulink" href="JavaScript: openDoc(&#39;../sasdoc.htm&#39;)" target="SAS">&nbsp;SAS Documentation&nbsp;</a><br><a class="menulink" href="JavaScript: openOther(&#39;../copyrite.htm&#39;)" target="SAS">&nbsp;Copyright&nbsp;</a><br></div><script language="JavaScript1.2">if (document.layers) {document.helpmenu.captureEvents(Event.CLICK); document.helpmenu.onclick=hidemenu}</script><!-- #EndLibraryItem -->
+
+<!-- InstanceEnd -->
+</body></html>
