@@ -1,0 +1,12 @@
+ *rename cur and history;
+ proc datasets library=quarter1 nolist;
+    change salesData=sales;
+ quit;
+*rename only second one;
+ proc datasets library=quarter1 nolist;
+    change sales(gennum=2)=newsales;
+ quit;
+ *delete all;
+  proc datasets library=quarter1 nolist;
+    delete newsales(gennum=ALL);
+ quit;

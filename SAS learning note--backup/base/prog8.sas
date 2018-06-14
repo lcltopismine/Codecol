@@ -1,0 +1,62 @@
+ select (toy);
+    when ("Bear") price=35.00;
+    when ("Violin") price=139.00;
+    when ("Top","Whistle","Duck") price=7.99;
+    otherwise put "Check unknown toy: " toy=;
+ end;
+ 
+  select;
+    when (toy="Bear" and month in ('OCT', 'NOV', 'DEC')) price=45.00;
+    when (toy="Bear" and month in ('JAN', 'FEB')) price=25.00;
+    when (toy="Bear") price=35.00;
+    otherwise;
+ end;
+ *combined if;
+  if totaltime>800 then 
+          do;
+             testlength='Long';
+             message='Run blood panel';
+          end;
+       else if 750<=totaltime<=800 then testlength='Normal';
+       else if totaltime<750 then TestLength='Short';
+  
+  *readin dataset;
+   data lab23.drug1h(drop=placebo);
+        set research.cltrials(drop=triglycerides uricacid);
+        if placebo='YES';
+     run;
+*by group operation
+need to sort var and then group, only last obs taken in this example;
+ proc sort data=sasuser.pilots out=work.pilots;
+   by state;
+run;
+data work.pilotjob(drop=salary);
+   set work.pilots(keep=state salary);
+   by state;
+   if first.state then TotalPay=0;
+   totalpay+salary;
+   if last.state;
+run;
+proc print data=work.pilotjob noobs;
+   sum totalpay;
+   format totalpay dollar12.0;
+run;
+*readin single obs
+ data work.getobs5(drop=obsnum);
+    obsnum=5;
+    set company.usa(keep=manager payroll) point=obsnum;
+    output;
+    stop;
+ run;
+ proc print data=work.getobs5 noobs;
+ run;
+ *read the final record;
+  data work.addtoend(drop=timemin timesec);
+    set clinic.stress2(keep=timemin timesec) end=last;
+    TotalMin+timemin;
+    TotalSec+timesec;
+    TotalTime=totalmin*60+timesec;
+    if last;
+ run;
+ proc print data=work.addtoend noobs;
+ run;

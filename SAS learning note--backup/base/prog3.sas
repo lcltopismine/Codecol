@@ -1,0 +1,44 @@
+*select partiuclar columns to print;
+proc print data=clinic.admit;
+        var age height weight fee;
+     run;
+*remove index--ADD noobs;
+proc print data=work.example noobs;
+        var age height weight fee;
+     run;
+*use id to select primary key;
+ proc print data=sales.reps;
+    id idnum lastname;
+ run;
+ *if u use both id and var to the same column, it will show twice;
+ proc print data=sales.reps;
+    id idnum lastname;
+    var idnum sex jobcode salary;
+ run; 
+ *use where to select condition;
+ proc print data=clinic.admit;
+    var age height weight fee;
+    where age>30;
+ run;
+*When you test for multiple values of the same variable, you specify the variable name in each expression:
+*      where actlevel='LOW' or actlevel='MOD';
+*      where fee=124.80 or fee=178.20; 
+*You can use the IN operator as a convenient alternative:
+      where actlevel in ('LOW','MOD'); 
+*     where fee in (124.80,178.20); 
+*	in==or in range;
+
+*Try to sort data with Proc sort;
+ proc sort data=clinic.admit out=work.wgtadmit;
+    by descending weight age;
+ run;
+ proc print data=work.wgtadmit;
+    var age height weight fee;
+    where age>30;
+ run;
+*sum a variable, a new line will store it;
+ proc print data=clinic.insure;
+    var name policy balancedue;
+    where pctinsured < 100;
+    sum balancedue;
+ run;
