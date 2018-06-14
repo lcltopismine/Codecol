@@ -1,0 +1,47 @@
+##From course 41st
+
+su[username] Change user id, if no argument,change to root
+whoami to check current user
+
+##set env
+export TEST=1
+
+su user(eg:oracle)
+echo #TEST
+1
+##suggest that switch user won't lose env
+
+su - user
+echo $TEST
+nothing
+##After add - the env has been refreshed
+
+su -c used to exce conmand.
+su -c command(use '' if more than one word)
+su -c 'echo $ORACLE_HOME' - oracle
+Get output
+su -c 'echo $ORACLE_HOME'  oracle
+No output,because the environment did not change to oracle
+
+You can also use sudo to change 
+You can use you own password instead root password to operate
+Given that you get access
+
+USing sudo
+sudo -l			List command available
+sudo command		Run command as root=(sudo -u root command)
+sudo -u user command
+
+sudo su			Switch to super user account
+sudo su -		Same with additional root env
+sudo su - user		Switch to username account
+
+sudo -s			Start a shell
+
+Edit sudo
+use visudo		Edit the /etc/sudoers file
+Has to been excuted as root
+
+Difference between su and sudo
+Sudo allows you to run program as others
+To switch users in sudo, use sudo -s or sudo su

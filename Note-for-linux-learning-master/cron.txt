@@ -1,0 +1,34 @@
+
+if repeat jobs needed, u can use cron service.
+example:perfrom mantanence
+|||||
+||||+--		>>>>Day of the week(0-6)
+|||+---		>>>>Month of the year(1-12)
+||+----		>>>>Day of the month(1-31)
+|+-----		>>>>Hour(0-23)
++------		>>>>Minute(0-59)
+
+07**1
+#Run every monday at 07:00
+0,30(minute) * * * * every 30 minutes
+0,30 * * * * /opt/acme/file
+==
+*/2 * * * * /opt/acme/file
+0-4 * * * * /opt/acme/file
+
+Crontab
+Crontab file 	install new crontab from file
+crontab -e	edit your cron jobs(invoke $EDITOR)
+crontab -r      Remove all of cron jobs
+
+Example:
+>>crontab -l
+>>cat my-cron
+#Run every monday at 07:00
+0 7 * * 1 /opt/sales/bi-weekly.data
+>>crontab my-cron	#install files
+##ser editor to vi
+>>$ EDITOR=vi
+>>crontab -e
+>>crtonab -r to delete jobs
+>>crtonab -l

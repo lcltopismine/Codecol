@@ -1,0 +1,22 @@
+##From course 15th
+using  man:
+combination key:
+Enter: down one line
+Space: down a page
+g : first page
+gg: last page
+
+Enviromnent variables:
+Usually uppercase
+access: $echo +EV
+$PATH:  contains command search path
+	contains a list of directories
+	Will search in order
+
+which : locate a command
+	if multiple command exist, find first one in $PATH
+Check full command in /bin
+--help /-h /man helps
+
+man -k search-term
+man -k canledar

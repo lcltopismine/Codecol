@@ -1,0 +1,39 @@
+##From course 31st
+I/O name        Abbreviation    File Descriptor
+StandardInput   stdin           0
+Standardoutput  stdout          1
+Standerror      stderr          2
+
+Redirection
+
+>       Redirect output to file
+        overwrite existing contents
+
+>>      Redirect output to file
+        append to any existing contents
+
+<       Redirect input from file to command
+
+2>&1    combine stderr and stdout
+
+2>/dev/null
+/dev/null 2>&1
+
+ls -l >files.txt
+ls -l>>files.txt
+sort<files.txt >sorted.txt
+
+ls files.txt nothere > out
+print on console: No such file
+out: files.txt
+
+ls files.txt nothere 2 > out
+print on console: file.txt
+out: No such file
+
+Combined version:
+ls files.txt nothere 1 > out 2>out.err
+ls files.txt nothere > out.both 2>&1
+ls files.txt nothere 2> /dev/null
+
+

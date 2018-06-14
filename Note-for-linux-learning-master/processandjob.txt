@@ -1,0 +1,53 @@
+##From course 39th
+ps: show process of your session
+-e :	all process
+-f :	full format
+-u username:Display username's process
+-p pid	Display info for PID
+
+note pid=process identity number
+     ppid=parent process id
+common command:
+ps -e
+ps-ef
+ps -eH(==ps -e --forest)	Display a process tree
+ps -fu root
+
+Other ways to view process:
+pstree		Display processes in tree format
+top		Interactive process viewer
+htop		Interactive process viewer
+
+Foreground and background processes:
+
+Foreground process: the shell prompt will not display until the process end
+background process: normally long term processes,still execute and perform theirtasks,however they do not block you from entering further command at the shell prompt 
+
+command &	start command in bkgrond
+Crtl+C		kill foreground process
+Crtl+z		Suspend(stop) the foreground process
+bg [%num]	bkgrd a suspended process(if no num,bkgrd current stop process)
+fg [%num]	foregrd a bkgrd process
+kill		kill a process by job id or pid
+jobs[%num]	list current jobs
+
+Kill jobs
+if in foregrd, use crtl+C
+kill [-sig] pid
+use kill -l to check sig,default 15,SIGTERM
+
+kill 123 =kill -15 123=kill -TERM 123(job id = 123)
+IF not work,use 9 instead(SIGKILL)
+
+./long-running-program &
+jobs %% %+ check current jobs
+jobs %-	   check previous jobs
+
+fg %2
+fg %1
+^Z
+jobs
+
+kill %1
+
+

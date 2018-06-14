@@ -1,0 +1,31 @@
+##cp from ntwk
+
+SCP:secure copy
+SFTP: SSH file transfer protocol
+SSH : Transfer files between different networks
+
+scp source destination
+copy file to des
+
+sftp host
+Start a secure file transfer session with host
+sftp jason@host,log in to check whether the file
+has been transferred correctly
+
+ftp host
+Start a file transfer session with host!Not secure as scp/sftp
+
+sftp linuxsvr (your host)
+
+lls: local ls ,show the file in remote host
+put file, transfer file on server
+lpwd:local working directory
+
+scp: cp from local to your sys
+scp file server:path_name
+
+use ssh log in server to check
+ssh server
+
+scp file 'different_user'@server:fullpath
+ 

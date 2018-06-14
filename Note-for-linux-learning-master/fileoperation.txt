@@ -1,0 +1,62 @@
+rm filename
+rm -r dir
+rm -f file : force removal
+ls s*
+rm s*
+
+cp source_f des_f
+cp -i interactive mode
+cp -r source directory  destination directory
+if destination directory does not exist,
+create a new one
+
+Example
+cp d1 d2
+diff d1 d2 --->no diff
+cp s* dir ---> copy s* to dir(maybe more than 1 file)
+cp -r dir dir2 
+cp -r dir dir2 dir3---> copy both dir and dir2 to dir3
+
+move file/dir
+mv (-i) source des
+mv dir firstdir
+Warning: if file2 exist,
+mv 1 file2 will overwrite file2
+try to use -i
+
+Sort file
+sort -k F Sort by key, F is the field name
+-r 	  Sort in reverse order
+-u	  Sort unique
+sort [-mode] filename: sort text inside of file.
+sort -ru file
+sort -u -k2(1:2,arrange by 2)
+
+tar [-] c |x| t f tarfile [pattern]
+group file but cannot compress! 
+c:	create tar archive
+x:	extract file from archive
+t: 	display table of contents
+v:	be verbose
+z:	use compress
+f file	use this file(This is a must)
+
+tar cf tps.tar tpsreports(directory where you want to tar)
+tar tf tps.tar
+list the file zipped into the folder
+
+cd another dir
+tar xf tps.tar tpsreport
+tar xvf tps.tar tpsreport: extract files, then list files have been extracted.
+if you want to zip:
+tar cfz tps.tgz tpsreport(des repo)
+
+Compress files:
+gzip		compress file
+gunzip	 	Uncompress file
+gzcat		Concatenates compressed file
+zcat		Concatenates compressed file
+
+Disk usage
+du -k
+du -h

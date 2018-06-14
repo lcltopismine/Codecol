@@ -1,0 +1,29 @@
+##From course findfile 25th
+find [path] [expression]
+find file matches expression.
+no argument then check current directory
+and sub-directory below current
+
+-iname pattern ingore case
+-ls perform ls for the result
+
+-mtime days find file are days old
+-size num file of desired size
+-newer file find file newer than that file
+-exce command {} \;
+
+find /sbin -name makedev
+find /sbin -iname makedev
+find /bin -name *v
+find . -mtime +10 -mtime -13
+find . -name t* -ls
+find -size +1M
+find . -newer lscommand.txt
+find . -mmin +1 -mmin -200
+find . -type d -newer filename
+
+locate ,not in real time ,has lag.
+Usage:locate pattern
+ 
+-
+

@@ -1,0 +1,32 @@
+
+grep		Display lines match the pattern
+eg: grep pattern file
+options:
+-i		ignore case
+-n		show row number
+-c 		count number of occurance
+-v		print lines do not match
+
+grep -v pattern(eg:o) filename
+grep -ci pattern      filename
+return how many time s pattern shows
+grep -ni pattern      filename
+return the line number where pattern shows
+
+file file return the type of the file
+strings :Display printable strings for binary files
+
+Pipe
+Pipe symbol : |
+command-out | com-in
+grep pattern file== cat file| grep pattern
+strings ginat.mp3 | grep -i john|head -1(shows the first line)| cut -d'' -f2(cut on second field)
+
+cut [file]: allows to use selected portions of files
+cut -d delimiter
+cut -f N:Display Nth field
+
+tr ':' ' '	change all the : in the string towards ''
+column -t fetch input and transfer them into table
+
+cat filename| less/more	or less filename

@@ -1,0 +1,29 @@
+short cut:
+If you want to go back beginning of the line, use shift+'^'
+else if you want to go to the end of the line, use shift+'$'
+
+'i': insert at current position
+'a': append at current position
+'A': ~ at the end of the line
+
+':W' : save the file
+'q!' : quit without save
+'Wq!': write and quit
+
+:set nu: open line number
+:set nonu: close it
+
+dd delete a line
+D  Delete from current position
+Both above not in insert mode
+'shift+`' change CASe
+
+search: /the forward search the
+	?the backward search the
+copy a word: command mode, press v to select, y to yank,p to paste
+copy:yy paste:p
+'TESTTTTTTTTTTTTTTTTTTTTTT'
+
+
+
+

@@ -1,0 +1,27 @@
+##from course 42nd
+Shell history could help to check the history command
+
+history:		Display the shell history
+HISTSIZE		Control number of command to retain history
+export HISTSIZE=1000
+
+!N			Repeat command line N
+!!			Repeat previous command
+!string			
+
+!:N			<event><sep><word>
+!			!==!! run command has been executed
+:N			repeat a word in command line
+			0=command, 1=first argument
+!^			!^==!:1
+			!$==!:end
+Example
+hisroty
+!1
+!$
+!^
+!!
+echo $HISTSIZE
+!h
+!!
+echo !:2

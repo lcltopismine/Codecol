@@ -1,0 +1,16 @@
+##From course 16th: working with directory
+pwd : current location = $echo PWD
+cd $OLDPWD get back towards old directory just visited.
+cd :get into directory
+cd ..: parent directory
+cd dire_name
+echo $PATH(PATH is a searching path for the directory)
+which directory : check if directory exists
+cat filename: show file
+mkdir [-p] directory:
+mkdir changlin
+mkdir changlin/1/2
+rmdir [-p] directory: only empty folder
+rm -rf directory Recursively remove directory.
+
+

@@ -1,0 +1,19 @@
+##From course 17th
+ls -l  long command ls
+hidden file begins with a period
+show them ,use -ls  -a -l combined
+as ls -al/-la
+ls -F reveal file types
+ls -t list by time
+ls -r reverse order
+what is the meaning of ls -latr?
+
+
+ls -R list files recursively
+tree -d list directoried directly
+tree -C colorize output
+
+ls -d directory name
+ls --color
+working with space: use \
+my note.txt ---> 'my note.txt'

@@ -1,0 +1,27 @@
+##Course from 37th
+Envir var: Name, value pairs
+
+printenv to show all env
+printenv name to show single
+Try printenv | less if too much output
+Warning: CASE SENSITIVE
+Normally all env in capital letter
+
+you can also use echo env
+echo $PATH
+
+create env
+export VAR='value
+export EDITOR='vi'
+It can update and overwrite env,double check
+export TZ = 'US/Pacific'   %set timezone
+
+Remove env
+unset VAR
+unset TZ
+
+If you want to persist your ev,
+go ~/.bash_profile to update
+
+To check env like TZ,use man date
+

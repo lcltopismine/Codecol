@@ -1,0 +1,14 @@
+##From course 32nd
+diff 	f1 f2		Compare two files
+sdiff 	f1 f2		Compare side by side
+vimdiff f1 f2		Highlight difference in vim
+
+diff f1 f2
+Start from diff
+#Line1--Action--#Line2
+Action=(A)dd (C)hange (D)elete
+
+vimdiff
+Crtl-w		Change between screen
+qa		Quit all
+qa!		Force quit all

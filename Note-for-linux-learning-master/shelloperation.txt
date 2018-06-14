@@ -1,0 +1,20 @@
+
+echo $PS1
+[\u@\h \W]\$
+[adminuser@localhost ~]$ PS1='\u @\h \$ '
+adminuser @localhost $ PS1='<changlin @\h \>$ '
+<changlin @localhost \>$ PS1='<\t \u@\h \w>\$'
+<13:08:41 adminuser@localhost ~>$pwd
+/home/adminuser
+<13:09:13 adminuser@localhost ~>$cd /var/log
+<13:09:18 adminuser@localhost /var/log>$PS1='\d \t \h \W>\$'
+Thu Dec 29 13:10:45 localhost log>$
+
+if you want persist change, add command to .bash_profile
+Use cd    vim .bash_profile
+
+At the end of the file:
+#My custom prompt:
+export PS1='[\t\n persist \u@\h \w]\$'
+
+remerber to save file

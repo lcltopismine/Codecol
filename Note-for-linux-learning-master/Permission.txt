@@ -1,0 +1,78 @@
+
+From ls -l:
+'-' :	regular file
+d   :	directory
+'|' :	Symbolic link
+
+Permission catgories:
+Symbol		category
+u		User
+g		Group
+o		other
+a		All
+
+use groups command to check the group
+or type id -Gn
+
+-rw-r--r-- means:
+-	:regular file
+rw-	:permission for user 
+r--	:permission for group
+r--	:permission for other
+
+permission change--->chmod command
+change group:ugoa
+change permission:+-=
+change access:rwx
+
+chmod g+w a.txt
+chmod g-w a.txt
+
+chmod g+wx u+rwx  a.txt
+chmod g=r set permission exactly as instructed
+
+Numeric based permission:
+Order: r-->4
+Order: w-->2
+Order: x-->1
+
+example: -rwx-r--r-- -744
+chmod 500 filename
+
+File permission mask:Default permission
+if not specify
+777 for directory
+666 for file
+
+use umask to change default permission given to 
+the file or directory!!
+umask -s mode inverse of chmod
+Usage:
+			Directory	File
+Base Permission		777		666
+Subtract Umask		022		022	mode in umask
+Actual permission	755		644	What the permission left
+
+Octal(8) permission is an estimation!!
+			Directory	File
+Base Permission		777		666
+Subtract Umask		007		007	mode in umask
+Actual permission	770		660	What the permission left
+
+negative means 'no permission'
+
+Common umask:
+022	-->755
+002	-->775(no update)
+077	-->700
+007	-->770
+
+umask 0022(8)=022
+chmod 0644(8)=644
+special mode:
+setuid
+setgid
+sticky
+
+touch filename: initialize a file
+
